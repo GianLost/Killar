@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "WAZ6Wn0tVCs/uiJjcJ00ly3UFuChs61taQVZclJivgKj0Ph3bt4zxIEtwTd8hhUCAT51Ojc0XbZNRJl3mRccPQ==",
+  "success": true,
+  "projectFilePath": "D:\\Workspace\\Killar\\Killar.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ufo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.30\\microsoft.netcore.app.host.win-x64.3.1.30.nupkg.sha512"
+  ],
+  "logs": []
+}
