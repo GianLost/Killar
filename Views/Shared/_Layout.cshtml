@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/all.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/fontawesome.min.css" asp-append-version="true" />
 
@@ -24,7 +25,8 @@
 
     <header>
 
-        <nav class="navbar fixed-top navbar-expand-lg navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+        <nav
+            class="navbar fixed-top navbar-expand-lg navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
 
             <div class="container">
 
@@ -45,16 +47,19 @@
                         @if (Context.Session.GetString("login") == null)
                         {
                             <li class="nav-item">
-                                <a class="nav-link ml-2" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i> Home
+                                <a class="nav-link ml-2" asp-controller="Home" asp-action="Index"><i
+                                    class="fa-solid fa-house"></i> Home
                                     <span class="sr-only">(current)</span></a>
                             </li>
 
                             <li class="nav-item ml-2">
-                                <a class="nav-link" asp-controller="" asp-action=""><i class="fa-solid fa-align-justify"></i> Logon</a>
+                                <a class="nav-link" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-align-justify"></i> Logon</a>
                             </li>
 
                             <li class="nav-item ml-2">
-                                <a class="nav-link" asp-controller="" asp-action=""><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                                <a class="nav-link" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-right-to-bracket"></i> Login</a>
                             </li>
 
 
@@ -141,7 +146,7 @@
                             </li>
 
                         }
-                        
+
                     </ul>
 
                 </div>
