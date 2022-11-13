@@ -1,52 +1,185 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Killar</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Gianluca Vialli">
+
+    <title>@ViewData["Title"] - WR KILLAR BROTHERHOOD -</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="/css/FontAwesome/all.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/fontawesome.min.css" asp-append-version="true" />
+
 </head>
+
 <body>
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Killar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">- WR KILLAR BROTHERHOOD
+                    -</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house-user"></i> Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fa-solid fa-lock"></i> Privacy</a>
-                        </li>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                    <ul class="navbar-nav ml-auto mr-5 text-center">
+
+                        @if (Context.Session.GetString("login") == null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link ml-2" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-house"></i> Home
+                                    <span class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="nav-item ml-2">
+                                <a class="nav-link" asp-controller="" asp-action=""><i class="fa-solid fa-align-justify"></i> Logon</a>
+                            </li>
+
+                            <li class="nav-item ml-2">
+                                <a class="nav-link" asp-controller="" asp-action=""><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                            </li>
+
+
+                        }
+                        @if (Context.Session.GetInt32("tipo") == 0)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="" asp-action="">Home
+                                    <span class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Área Restrita
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Cadastrar
+                                        Usuários</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Posts
+                                        Cadastrados</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Usuários
+                                        Cadastrados</a>
+
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Blog Killar
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Crie um Post</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Sobre a
+                                        Killar</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Comunidade</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Meu Perfil</a>
+
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="" asp-action="">Sair</a>
+                            </li>
+
+                        }
+                        @if (Context.Session.GetInt32("tipo") == 1)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="" asp-action="">Home
+                                    <span class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Área player
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Sobre a
+                                        Killar</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Crie um Post</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Comunidade</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action="">Meu Perfil</a>
+
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="" asp-action="">Sair</a>
+                            </li>
+
+                        }
+                        
                     </ul>
+
                 </div>
+
             </div>
+
         </nav>
+
     </header>
-    <div class="container">
+
+    <div class="container mt-5">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted text-center">
+
         <div class="container">
-            &copy; - <a href="https://github.com/Gianluca-Vialli/Killar2.0">WR KILLAR BROTHERHOOD</a> - @DateTime.Now.ToString("dd/MM/yyyy") - <a href="https://github.com/Gianluca-Vialli"><i class="fa-brands fa-github"></i> Gianluca-Vialli</a> - <a href="https://www.linkedin.com/in/gianluca-vialli-5a2a8a226/"><i class="fa-brands fa-linkedin"></i> Contact me</a>
+
+            &copy; - <a href="https://github.com/Gianluca-Vialli/Killar2.0">WR KILLAR BROTHERHOOD</a> -
+            @DateTime.Now.ToString("dd/MM/yyyy") - <a href="https://github.com/Gianluca-Vialli"><i
+                    class="fa-brands fa-github"></i> Gianluca-Vialli</a> - <a
+                href="https://www.linkedin.com/in/gianluca-vialli-5a2a8a226/"><i class="fa-brands fa-linkedin"></i> My
+                LinkedIn</a>
+
         </div>
+
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/FontAwesome/all.min.js" asp-append-version="true"></script>
     <script src="~/js/FontAwesome/fontawesome.min.js" asp-append-version="true"></script>
+
     @RenderSection("Scripts", required: false)
+
 </body>
+
 </html>
