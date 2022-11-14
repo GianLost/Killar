@@ -11,7 +11,7 @@ namespace Killar.Models
             optionsBuilder.UseMySql("Server=localhost;DataBase=dbkillar;Uid=root;"); // String de conexão
         }
 
-        public DbSet<User> Usuarios { get; set; }
+        public DbSet<Users> Usuarios { get; set; }
 
     }
 

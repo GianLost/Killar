@@ -1,0 +1,215 @@
+@using Microsoft.AspNetCore.Http;
+
+@model Users
+
+@{
+    ViewData["Title"] = "Cadastro de Usuário";
+}
+
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gianluca Vialli">
+
+    <title>Cadastro de Usuário</title>
+
+</head>
+
+<body class="text-center">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-10 col-xl-10 col-lg-10 col-sm-12 offset-md-1">
+
+                <form name="formuser" method="post" asp-controller="Users" asp-action="RegisterUser"
+                    class="needs-validation mt-5">
+
+                    <h1 class="mt-5 mb-4">Cadastre-se</h1>
+
+                    <img class="mb-4 img-fluid" src="../images/friend-cadastro.png"
+                        alt="Imagem de fundo RegisterUser Page">
+
+                    <hr class="mb-4">
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Seu Nome" asp-for="Name" type="text" class="form-control" required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Data de Nascimento" id="BirthDate" asp-for="BirthDate" type="date"
+                                class="form-control" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Nick Wr(aaaa#0000)" asp-for="LoginWr" type="text" class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Nick Name" asp-for="LoginName" type="text" class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Crie sua senha" asp-for="Password" type="password" class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Repita a senha" asp-for="CheckedPassword" type="password"
+                                class="form-control" required>
+
+                        </div>
+
+                    </div>
+
+                    <hr class="mb-4">
+
+                    <div class="d-block my-3">
+
+                        <div class="col-md-12 mb-3">
+
+                            <label asp-for="Elo" for="Elo">Elo Atual</label>
+
+                            <select class="custom-select d-block w-100" asp-for="Elo" for="Elo" id="Elo" required>
+
+                                <option value="">Choose...</option>
+
+                                <option asp-for="Elo" for="Elo" value="Ferro">Ferro</option>
+                                <option asp-for="Elo" for="Elo" value="Bronze">Bronze</option>
+                                <option asp-for="Elo" for="Elo" value="Ouro">Ouro</option>
+                                <option asp-for="Elo" for="Elo" value="Platina">Platina</option>
+                                <option asp-for="Elo" for="Elo" value="Esmeralda">Esmeralda</option>
+                                <option asp-for="Elo" for="Elo" value="Diamante">Diamante</option>
+                                <option asp-for="Elo" for="Elo" value="Mestre">Mestre</option>
+                                <option asp-for="Elo" for="Elo" value="Grão-Mestre">Grão-Mestre</option>
+                                <option asp-for="Elo" for="Elo" value="Desafiante">Desafiante</option>
+
+                            </select>
+
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-block my-3">
+
+                        <div class="col-md-12 mb-3">
+
+                            <label asp-for="Lane" for="Lane">Lane Principal</label>
+
+                            <select class="custom-select d-block w-100" asp-for="Lane" for="Lane" id="Lane" required>
+
+                                <option value="">Choose...</option>
+
+                                <option asp-for="Lane" for="Lane" value="Suporte">Suporte</option>
+                                <option asp-for="Lane" for="Lane" value="AD Carry">AD Carry</option>
+                                <option asp-for="Lane" for="Lane" value="Mid Lane">Mid Lane</option>
+                                <option asp-for="Lane" for="Lane" value="Jungle">Jungle</option>
+                                <option asp-for="Lane" for="Lane" value="Top Lane">Top Lane</option>
+
+                            </select>
+
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+
+                        </div>
+
+                        @if (Context.Session.GetInt32("type") == 0)
+                        {
+                            <div class="col-md-12 mb-3">
+
+                                <label asp-for="Tipo" for="Tipo">Selecione o Nível de Usuário</label>
+
+                                <select class="custom-select d-block w-100" asp-for="Tipo" for="Tipo" id="Tipo" required>
+
+                                    <option value="">Choose...</option>
+
+                                    <option asp-for="@Users.ADMIN" for="ADMIN" value="@Users.ADMIN">Administrador</option>
+                                    <option asp-for="@Users.PADRAO" for="PADRAO" value="@Users.PADRAO">Padrão</option>
+
+                                </select>
+
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+
+                            </div>
+                        }
+
+                        @if (Context.Session.GetString("login") == null || Context.Session.GetInt32("type") == 1)
+                        {
+                            <div class="col-md-12 mb-3">
+
+                                <label asp-for="Tipo" for="Tipo">Selecione o Nível de Usuário</label>
+
+                                <select class="custom-select d-block w-100" asp-for="Tipo" for="Tipo" id="Tipo" required>
+
+                                    <option value="">Choose...</option>
+                                    <option asp-for="@Users.PADRAO" for="PADRAO" value="@Users.PADRAO">Padrão</option>
+
+                                </select>
+
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+
+                            </div>
+                        }
+
+                    </div>
+
+                    <hr class="mb-4">
+
+                    <input name="Id" type="hidden" asp-for="Id">
+                    <input value=@Context.Session.GetInt32("IdUser") type="hidden" asp-for="Id">
+
+                    <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="">Cadastre-se</button>
+
+                    <div class="mt-5 frase">
+
+                        <p>Já se cadastrou? <a asp-controller="Home" asp-action="Login"
+                        style="color: #007bff;">Entrar</a></p>
+
+                    </div>
+
+                </form>
+
+                <p class="text-danger">@ViewData["message"]</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

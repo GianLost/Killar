@@ -4,9 +4,15 @@ namespace Killar.Models
 {
     public class UserService
     {
-        public void AddUser()
+        public void AddUser(Users newUser)
         {
+            using (KillarContext dataBase = new KillarContext())
+            {
+
+                dataBase.Usuarios.Add(newUser);
+                dataBase.SaveChanges();
             
+            }
         }
 
         public void ListUser()

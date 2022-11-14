@@ -1,36 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using Killar.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Killar.Models;
 
 namespace Killar.Controllers
 {
-    public class HomeController : Controller
+    public class UsersController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<UsersController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public UsersController(ILogger<UsersController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult RegisterUser()
         {
             return View();
         }
-
-        public IActionResult Login()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public IActionResult Login(int id)
+        public IActionResult RegisterUser(Users newRegisterUser)
         {
+            
+            UserService us = new UserService();
+            us.AddUser(newRegisterUser);
+            ViewData["message"] = "Usuário Cadastrado com sucesso !";
+
             return RedirectToAction("Index", "Home");
         }
 

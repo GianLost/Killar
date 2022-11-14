@@ -3,10 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Killar.Models
 {
-    public class User
+    public class Users
     {
 
         public static int ADMIN = 0;
+
         public static int PADRAO = 1;
 
         public int Id { get; set; } // Primary Key for convention
@@ -32,7 +33,7 @@ namespace Killar.Models
 
         public string Elo { get; set; }
 
-        public string Tipo { get; set; }
+        public int Tipo { get; set; }
 
     }
 }

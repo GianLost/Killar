@@ -22,7 +22,7 @@ namespace Killar.Migrations
                     CheckedPassword = table.Column<string>(maxLength: 100, nullable: true),
                     Lane = table.Column<string>(nullable: true),
                     Elo = table.Column<string>(nullable: true),
-                    Tipo = table.Column<string>(nullable: true)
+                    Tipo = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
