@@ -44,6 +44,12 @@ namespace Killar.Controllers
             
         }
 
+        public IActionResult UserList()
+        {
+            Authentication.CheckIfUserIsAdministrator(this);
+            return View(new UserService().ListUser());
+        }
+
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();

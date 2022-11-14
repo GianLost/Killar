@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Killar.Models
 {
@@ -15,14 +16,20 @@ namespace Killar.Models
             }
         }
 
-        public void ListUser()
+        public List<Users> ListUser()
         {
-
+            using (KillarContext dataBase = new KillarContext())
+            {
+                return dataBase.Usuarios.ToList();
+            }
         }
 
-        public void ListUser(int id)
+        public Users ListUser(int id)
         {
-
+            using (KillarContext dataBase = new KillarContext())
+            {
+                return dataBase.Usuarios.Find(id);
+            }
         }
 
         public void Profile()
