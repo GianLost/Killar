@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Killar.Models;
+using System;
 
 namespace Killar.Controllers
 {
@@ -28,22 +29,34 @@ namespace Killar.Controllers
         public IActionResult Login(string login, string password)
         {
 
-            if (Authentication.CheckLoginAndPassword(login, password, this))
+            try
             {
-                return RedirectToAction("Index");
+
+                if (Authentication.CheckLoginAndPassword(login, password, this))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewData["Erro"] = "Usuário ou senha inválidos";
+                    return View();
+                }
+
             }
-            else
+            catch (Exception e)
             {
-                ViewData["Erro"] = "Usuário ou senha inválidos";
+
+                _logger.LogError("Erro ao Realizar Login!" + e.Message);
                 return View();
+                
             }
-    
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

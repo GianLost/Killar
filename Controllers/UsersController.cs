@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using Killar.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -18,23 +19,30 @@ namespace Killar.Controllers
         {
             return View();
         }
+        
         [HttpPost]
         public IActionResult RegisterUser(Users newRegisterUser)
         {
+            try{
+
+                UserService us = new UserService();
+                us.AddUser(newRegisterUser);
+                ViewData["message"] = "Usuário Cadastrado com sucesso !";
+
+                return RedirectToAction("Index", "Home");
+
+            }catch (Exception e) {
+
+                UserService us = new UserService();
+                us.AddUser(newRegisterUser);
+                ViewData["message"] = "Usuário Cadastrado com sucesso !";
+                
+                _logger.LogError("Erro ao se Cadastrar!" + e.Message);
+
+                return RedirectToAction("Index", "Home");
+            }
             
-            UserService us = new UserService();
-            us.AddUser(newRegisterUser);
-            ViewData["message"] = "Usuário Cadastrado com sucesso !";
-
-            return RedirectToAction("Index", "Home");
         }
-
-
-
-
-
-
-
 
         public IActionResult Logout()
         {
@@ -45,7 +53,7 @@ namespace Killar.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
