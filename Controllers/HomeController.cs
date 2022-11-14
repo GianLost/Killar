@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Killar.Models;
@@ -29,9 +25,19 @@ namespace Killar.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(int id)
+        public IActionResult Login(string login, string password)
         {
-            return RedirectToAction("Index", "Home");
+
+            if (Authentication.CheckLoginAndPassword(login, password, this))
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewData["Erro"] = "Usuário ou senha inválidos";
+                return View();
+            }
+    
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

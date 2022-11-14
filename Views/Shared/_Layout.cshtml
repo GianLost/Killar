@@ -53,12 +53,11 @@
                             </li>
 
                             <li class="nav-item ml-2">
-                                <a class="nav-link" asp-controller="Users" asp-action="RegisterUser"><i
-                                    class="fa-solid fa-align-justify"></i> Logon</a>
+                                <a class="nav-link" asp-controller="Users" asp-action="RegisterUser"><i class="fa-solid fa-pen-to-square"></i> Register</a>
                             </li>
 
                             <li class="nav-item ml-2">
-                                <a class="nav-link" asp-controller="" asp-action=""><i
+                                <a class="nav-link" asp-controller="Home" asp-action="Login"><i
                                     class="fa-solid fa-right-to-bracket"></i> Login</a>
                             </li>
 
@@ -67,7 +66,8 @@
                         @if (Context.Session.GetInt32("type") == 0)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="" asp-action="">Home
+                                <a class="nav-link" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Home
                                     <span class="sr-only">(current)</span></a>
                             </li>
 
@@ -75,17 +75,17 @@
 
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Área Restrita
+                                   <i class="fa-solid fa-skull-crossbones"></i> Área Restrita
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Cadastrar
-                                        Usuários</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Posts
-                                        Cadastrados</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Usuários
-                                        Cadastrados</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Cadastrar Usuários</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Posts Cadastrados</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i>Usuários Cadastrados</a>
 
                                 </div>
 
@@ -95,54 +95,62 @@
 
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Blog Killar
+                                    <i class="fa-solid fa-gamepad"></i> Àrea Player
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Crie um Post</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Sobre a
-                                        Killar</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Comunidade</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Meu Perfil</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Crie um Post</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Sobre a Killar</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Comunidade</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Meu Perfil</a>
 
                                 </div>
 
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="" asp-action="">Sair</a>
+                                <a class="nav-link" asp-controller="Users" asp-action="Logout"><i class="fa-solid fa-door-open"></i> Sair</a>
                             </li>
 
                         }
                         @if (Context.Session.GetInt32("type") == 1)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="" asp-action="">Home
-                                    <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" asp-controller="" asp-action=""><i
+                                class="fa-solid fa-house"></i> Home
+                                <span class="sr-only">(current)</span></a>
                             </li>
 
                             <li class="nav-item dropdown">
 
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Área player
+                                    <i class="fa-solid fa-gamepad"></i> Área player
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Sobre a
-                                        Killar</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Crie um Post</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Comunidade</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action="">Meu Perfil</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Sobre a Killar</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Crie um Post</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Comunidade</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                    class="fa-solid fa-house"></i> Meu Perfil</a>
 
                                 </div>
 
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="" asp-action="">Sair</a>
+                                <a class="nav-link" asp-controller="Users" asp-action="Logout">
+                                <i class="fa-solid fa-door-open"></i> Sair</a>
                             </li>
 
                         }

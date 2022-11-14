@@ -29,6 +29,19 @@ namespace Killar.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+
+
+
+
+
+
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
