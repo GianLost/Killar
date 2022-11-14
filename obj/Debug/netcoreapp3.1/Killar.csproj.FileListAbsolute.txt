@@ -38,9 +38,6 @@ D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Killar.csprojAssemblyReference.cache
-D:\Workspace\Killar\obj\Debug\netcoreapp3.1\staticwebassets\Killar.StaticWebAssets.xml
 D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
@@ -52,3 +49,5 @@ D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Serilog.Formatting.Compact.dll
 D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Serilog.Sinks.Async.dll
 D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
 D:\Workspace\Killar\bin\Debug\netcoreapp3.1\Serilog.Sinks.RollingFile.dll
+D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Killar.csproj.AssemblyReference.cache
+D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Killar.GeneratedMSBuildEditorConfig.editorconfig
