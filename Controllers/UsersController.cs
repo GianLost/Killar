@@ -102,6 +102,52 @@ namespace Killar.Controllers
 
         }
 
+        public IActionResult UserProfileEdit(int id)
+        {
+
+            try
+            {
+
+                Authentication.CheckLogin(this);
+                Users UserFound = new UsersService().ListUser(id);
+
+                return View(UserFound);
+
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Erro ao Buscar por Usuário a ser Editado !" + e.Message);
+                return View();
+            }
+
+        }
+
+        [HttpPost]
+        public IActionResult UserProfileEdit(Users editUser)
+        {
+            try
+            {
+
+                Authentication.CheckLogin(this);
+                new UsersService().EditUserProfile(editUser);
+
+                return RedirectToAction("UserProfile", "Users");
+
+            }
+            catch (Exception e)
+            {
+
+                Authentication.CheckLogin(this);
+                new UsersService().EditUserProfile(editUser);
+
+                _logger.LogError("Erro ao Editar Usuário !" + e.Message);
+
+                return RedirectToAction("UserProfile", "Users");
+
+            }
+
+        }
+
         public IActionResult UserDelete(int id)
         {
             try

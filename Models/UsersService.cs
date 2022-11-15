@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -64,16 +65,34 @@ namespace Killar.Models
             }
         }
 
+        public void EditUserProfile(Users editUser)
+        {
+            using (KillarContext dataBase = new KillarContext())
+            {
+                Users u = dataBase.Usuarios.Find(editUser.Id);
+                u.Name = editUser.Name;
+                u.BirthDate = editUser.BirthDate;
+                u.LoginWr = editUser.LoginWr;
+                u.LoginName = editUser.LoginName;
+                u.Password = editUser.Password;
+                u.CheckedPassword = editUser.CheckedPassword;
+                u.Lane = editUser.Lane;
+                u.Elo = editUser.Elo;
+                u.Tipo = editUser.Tipo;
+
+                dataBase.SaveChanges();
+            }
+        }
+
         public List<Users> ProfileUser(int id)
         {
-            using (var dataBase = new KillarContext())
+            using (KillarContext dataBase = new KillarContext())
             {
 
                 List<Users> UserList = new List<Users>();
-
                 Users UserFound = dataBase.Usuarios.Where(p => p.Id == id).SingleOrDefault();
-
                 UserList.Add(UserFound);
+
                 return UserList;
 
             }
