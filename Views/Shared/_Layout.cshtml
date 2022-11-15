@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/styleIndex.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styleUserList.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styleUserDelete.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/all.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/fontawesome.min.css" asp-append-version="true" />
 
@@ -54,7 +55,7 @@
                             </li>
 
                             <li class="nav-item ml-2">
-                                <a class="nav-link" asp-controller="Users" asp-action="RegisterUser"><i class="fa-solid fa-pen-to-square"></i> Register</a>
+                                <a class="nav-link" asp-controller="Users" asp-action="RegisterUser"><i class="fa-solid fa-user-plus"></i> Cadastre-se</a>
                             </li>
 
                             <li class="nav-item ml-2">
@@ -81,12 +82,11 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="Users" asp-action="RegisterUser"><i
-                                    class="fa-solid fa-house"></i> Cadastrar Usuários</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Posts Cadastrados</a>
-                                    <a class="dropdown-item" asp-controller="Users" asp-action="UserList"><i
-                                    class="fa-solid fa-house"></i>Usuários Cadastrados</a>
+                                    <a class="dropdown-item" asp-controller="Users" asp-action="RegisterUser"><i class="fa-solid fa-user-plus"></i> Cadastrar Usuários</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-envelopes-bulk"></i> Posts Cadastrados</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="Users" asp-action="UserList"><i class="fa-solid fa-list-check"></i> Usuários Cadastrados</a>
 
                                 </div>
 
@@ -101,21 +101,20 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Crie um Post</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Sobre a Killar</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Comunidade</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Meu Perfil</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-regular fa-comments"></i> Crie um Post</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-user-secret"></i> Sobre a Killar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-people-group"></i> Comunidade</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-user-ninja"></i> Meu Perfil</a>
 
                                 </div>
 
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Users" asp-action="Logout"><i class="fa-solid fa-door-open"></i> Logout</a>
+                                <a class="nav-link" asp-controller="Users" asp-action="Logout"><i class="fa-solid fa-door-open"></i> Sair</a>
                             </li>
 
                         }
@@ -136,14 +135,13 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Sobre a Killar</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Crie um Post</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Comunidade</a>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Meu Perfil</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-regular fa-comments"></i> Crie um Post</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-user-secret"></i> Sobre a Killar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-people-group"></i> Comunidade</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-user-ninja"></i> Meu Perfil</a>
 
                                 </div>
 
@@ -151,7 +149,7 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Users" asp-action="Logout">
-                                <i class="fa-solid fa-door-open"></i> Logout</a>
+                                <i class="fa-solid fa-door-open"></i> Sair</a>
                             </li>
 
                         }

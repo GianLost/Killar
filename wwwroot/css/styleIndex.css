@@ -1,8 +1,22 @@
-/* Index */
 
 * {
     font-family: 'fantasy';
 }
+
+.dropdown-menu {
+    background-color: #fff;
+    box-shadow: #007bff 5px 5px 10px;
+    border: 1px solid #fff;
+}
+
+.dropdown-menu a{
+    color: #007bff;
+}
+
+.dropdown-menu a:hover {
+    background-color: #007bff;
+}
+
 
 /* Start Top-Carosel Css */
 
@@ -182,11 +196,6 @@
 }
 
 /* End Mid-Page Css*/
-
-
-.cad-dell {
-    margin-top: 250px;
-}
 
 
 
@@ -370,9 +379,20 @@
 }
 
 @media (max-width: 990px) {
+    
     .slideshow-container {
         border-radius: 20px;
         margin-top: 170%;
+    }
+
+    .dropdown-menu {
+        background-color: #fff;
+        box-shadow: #fff 5px 5px 10px;
+        border: 1px solid #fff;
+    }
+    
+    .dropdown-menu a{
+        color: #007bff;
     }
 
     .prev,
@@ -416,6 +436,16 @@
 
     .modal-card {
         margin-left: 0;
+    }
+
+    .dropdown-menu {
+        background-color: #fff;
+        box-shadow: #fff 5px 5px 10px;
+        border: 1px solid #fff;
+    }
+    
+    .dropdown-menu a{
+        color: #007bff;
     }
 }
 

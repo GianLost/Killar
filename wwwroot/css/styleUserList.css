@@ -1,3 +1,8 @@
+* {
+    font-family: 'fantasy';
+}
+
+
 .userFormList-container {
     align-items: center;
 }
@@ -5,7 +10,7 @@
 .userFormList {
     padding: 50px;
     margin-left: 8%;
-    margin-top: 3%;
+    margin-top: 4%;
     background-color: #007bff;
     box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 8px;
     border-radius: 15px;
@@ -19,6 +24,7 @@
 .userFormList table{
     box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 8px;
     border-radius: 5px;
+    
 }
 
 
@@ -39,6 +45,7 @@
 @media (max-width: 768px) {
     .userFormList {
         margin-left: 0;
+        margin-top: 15%;
     }
 }
 
