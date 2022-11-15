@@ -27,8 +27,7 @@
 
     <header>
 
-        <nav
-            class="navbar fixed-top navbar-expand-lg navbar-toggleable-sm navbar-dark bg-primary border-bottom">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-toggleable-sm navbar-dark bg-primary border-bottom">
 
             <div class="container">
 
@@ -55,7 +54,8 @@
                             </li>
 
                             <li class="nav-item ml-2">
-                                <a class="nav-link" asp-controller="Users" asp-action="RegisterUser"><i class="fa-solid fa-user-plus"></i> Cadastre-se</a>
+                                <a class="nav-link" asp-controller="Users" asp-action="RegisterUser"><i
+                                    class="fa-solid fa-user-plus"></i> Cadastre-se</a>
                             </li>
 
                             <li class="nav-item ml-2">
@@ -68,8 +68,7 @@
                         @if (Context.Session.GetInt32("type") == 0)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="" asp-action=""><i
-                                    class="fa-solid fa-house"></i> Home
+                                <a class="nav-link" asp-controller="" asp-action=""><i class="fa-solid fa-house"></i> Home
                                     <span class="sr-only">(current)</span></a>
                             </li>
 
@@ -77,16 +76,19 @@
 
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                   <i class="fa-solid fa-skull-crossbones"></i> Área Restrita
+                                    <i class="fa-solid fa-skull-crossbones"></i> Área Restrita
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="Users" asp-action="RegisterUser"><i class="fa-solid fa-user-plus"></i> Cadastrar Usuários</a>
+                                    <a class="dropdown-item" asp-controller="Users" asp-action="RegisterUser"><i
+                                        class="fa-solid fa-user-plus"></i> Cadastrar Usuários</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-envelopes-bulk"></i> Posts Cadastrados</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                        class="fa-solid fa-envelopes-bulk"></i> Posts Cadastrados</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="Users" asp-action="UserList"><i class="fa-solid fa-list-check"></i> Usuários Cadastrados</a>
+                                    <a class="dropdown-item" asp-controller="Users" asp-action="UserList"><i
+                                        class="fa-solid fa-list-check"></i> Usuários Cadastrados</a>
 
                                 </div>
 
@@ -101,29 +103,33 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-regular fa-comments"></i> Crie um Post</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                        class="fa-regular fa-comments"></i> Crie um Post</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-user-secret"></i> Sobre a Killar</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                        class="fa-solid fa-user-secret"></i> Sobre a Killar</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-people-group"></i> Comunidade</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                        class="fa-solid fa-people-group"></i> Comunidade</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-user-ninja"></i> Meu Perfil</a>
+                                    <a class="dropdown-item" asp-controller="Users" asp-action="UserProfile"><i
+                                        class="fa-solid fa-user-ninja"></i> Meu Perfil</a>
 
                                 </div>
 
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Users" asp-action="Logout"><i class="fa-solid fa-door-open"></i> Sair</a>
+                                <a class="nav-link" asp-controller="Users" asp-action="Logout"><i
+                                    class="fa-solid fa-door-open"></i> Sair</a>
                             </li>
 
                         }
                         @if (Context.Session.GetInt32("type") == 1)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="" asp-action=""><i
-                                class="fa-solid fa-house"></i> Home
-                                <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" asp-controller="" asp-action=""><i class="fa-solid fa-house"></i> Home
+                                    <span class="sr-only">(current)</span></a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -135,13 +141,17 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-regular fa-comments"></i> Crie um Post</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                        class="fa-regular fa-comments"></i> Crie um Post</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-user-secret"></i> Sobre a Killar</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                        class="fa-solid fa-user-secret"></i> Sobre a Killar</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-people-group"></i> Comunidade</a>
+                                    <a class="dropdown-item" asp-controller="" asp-action=""><i
+                                        class="fa-solid fa-people-group"></i> Comunidade</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" asp-controller="" asp-action=""><i class="fa-solid fa-user-ninja"></i> Meu Perfil</a>
+                                    <a class="dropdown-item" asp-controller="Users" asp-action="UserProfile"><i
+                                        class="fa-solid fa-user-ninja"></i> Meu Perfil</a>
 
                                 </div>
 
@@ -149,7 +159,7 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Users" asp-action="Logout">
-                                <i class="fa-solid fa-door-open"></i> Sair</a>
+                                    <i class="fa-solid fa-door-open"></i> Sair</a>
                             </li>
 
                         }
@@ -174,8 +184,10 @@
 
         <div class="container-fluid">
 
-            <a href=""><i class="fa-regular fa-calendar-days"></i></a> - @DateTime.Now.ToString("dd/MM/yyyy") - <a href="https://github.com/Gianluca-Vialli"><i class="fa-brands fa-github"></i> Gianluca-Vialli</a> - <a href="https://www.linkedin.com/in/gianluca-vialli-5a2a8a226/"><i class="fa-brands fa-linkedin"></i> My
-            LinkedIn</a>
+            <a href=""><i class="fa-regular fa-calendar-days"></i></a> - @DateTime.Now.ToString("dd/MM/yyyy") - <a
+                href="https://github.com/Gianluca-Vialli"><i class="fa-brands fa-github"></i> Gianluca-Vialli</a> - <a
+                href="https://www.linkedin.com/in/gianluca-vialli-5a2a8a226/"><i class="fa-brands fa-linkedin"></i> My
+                LinkedIn</a>
 
         </div>
 

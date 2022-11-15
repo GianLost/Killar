@@ -16,25 +16,22 @@
     border-radius: 15px;
 }
 
-.userFormList h2{
+.userFormList h2 {
     color: #fff;
     margin-top: -15px;
 }
 
-.userFormList table{
+.userFormList table {
     box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 8px;
     border-radius: 5px;
-    
+
 }
 
 
 
 /* Medias */
 
-@media (max-width: 1200px) {
-    
-
-}
+@media (max-width: 1200px) {}
 
 @media (max-width: 992px) {
     .userFormList {
@@ -49,6 +46,4 @@
     }
 }
 
-@media (max-width: 576px) {
-    
-}
+@media (max-width: 576px) {}

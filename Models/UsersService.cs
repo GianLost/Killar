@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace Killar.Models
 {
     public class UsersService
@@ -12,7 +13,7 @@ namespace Killar.Models
 
                 dataBase.Usuarios.Add(newUser);
                 dataBase.SaveChanges();
-            
+
             }
         }
 
@@ -63,9 +64,19 @@ namespace Killar.Models
             }
         }
 
-        public void ProfileUser()
+        public List<Users> ProfileUser(int id)
         {
+            using (var dataBase = new KillarContext())
+            {
 
+                List<Users> UserList = new List<Users>();
+
+                Users UserFound = dataBase.Usuarios.Where(p => p.Id == id).SingleOrDefault();
+
+                UserList.Add(UserFound);
+                return UserList;
+
+            }
         }
 
         public Users SearchForId(int id)

@@ -1,0 +1,72 @@
+@model List<Users>
+
+@{
+    ViewData["Title"] = "Seu Perfil";
+}
+
+<body class="text-center">
+
+    <main role="main" class="p-5">
+        @foreach (Users u in Model)
+        {
+
+            <div class="container col-md-8 profileContainer p-5 border-primary">
+
+                <h1 class=" text-center mb-4">Olá @u.Name, <span> este são seus dados.</span></h1>
+
+                <hr class="mb-4 mt-3">
+
+                <img class="rounded-circle border-primary" src="../images/perfil.png" alt="Imagem de perfil">
+
+                <hr class="mb-4">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <label for="">Nome:</label>
+                        <input class="form-control" placeholder="@u.Name" readonly />
+
+                        <label for="">Data de Nascimento:</label>
+                        <input class="form-control" placeholder="@u.BirthDate.ToString("dd/MM/yyyy")" readonly />
+
+                        <label for="">Nick Wr(aaaa#0000):</label>
+                        <input class="form-control" placeholder="@u.LoginWr" readonly />
+
+                        <label for="">Nick Name</label>
+                        <input class="form-control" placeholder="@u.LoginName" readonly />
+
+                    </div>
+
+                    <div class=" col-md-6">
+
+                        <label for="">Sua senha:</label>
+                        <input class="form-control" placeholder="@u.CheckedPassword" readonly />
+
+                        <label for="">Elo Atual:</label>
+                        <input class="form-control" placeholder="@u.Lane" readonly />
+
+                        <label for="">Lane Principal:</label>
+                        <input class="form-control" placeholder="@u.Elo" readonly />
+
+                        <label for="">Tipo:</label>
+                        <input class="form-control" placeholder="@u.Tipo.ToString()" readonly />
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class=" mt-3">
+
+                <a class="btn btn-lg btn-outline-primary mr-5 mt-4" href="/Users/UserEdit?Id=@u.Id">Alterar dados</a>
+                <a class="btn btn-lg btn-outline-primary mr-5 mt-4" href="/Users/UserDelete?Id=@u.Id"> Exluir Usuário</a>
+
+            </div>
+
+        }
+
+    </main>
+
+</body>

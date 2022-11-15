@@ -8,7 +8,8 @@
 
                 <h1 class="text-danger text-center bold">Alerta!</h1>
                 <hr>
-                <p class="text-justify">Tem certeza que deseja escluir o usuário: <b>@Model.Name</b> ? Essa ação excluirá a conta de forma permanente, e não poderá ser desfeita.</p>
+                <p class="text-justify">Tem certeza que deseja escluir o usuário: <b>@Model.Name</b> ? Essa ação
+                    excluirá a conta de forma permanente, e não poderá ser desfeita.</p>
                 <hr>
 
             </div>
@@ -17,9 +18,11 @@
         <form asp-action="UserDelete" asp-controller="Users" method="post">
 
             <input type="hidden" asp-for="Id">
-            
-            <button class="btn btn-outline-primary btn-md mt-3" name="decision" type="submit" value="Delete"><i class="fa-solid fa-trash"></i> Excluir</button>
-            <button class="btn btn-outline-primary btn-md mt-3" name="decision" type="submit" value="Cancel"><i class="fa-solid fa-rotate-left"></i> Cancelar</button>
+
+            <button class="btn btn-outline-primary btn-md mt-3" name="decision" type="submit" value="Delete"><i
+                    class="fa-solid fa-trash"></i> Excluir</button>
+            <button class="btn btn-outline-primary btn-md mt-3" name="decision" type="submit" value="Cancel"><i
+                    class="fa-solid fa-rotate-left"></i> Cancelar</button>
 
         </form>
     </div>

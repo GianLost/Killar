@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using Killar.Models;
 using Microsoft.AspNetCore.Http;
@@ -134,24 +135,42 @@ namespace Killar.Controllers
             try
             {
 
-                Authentication.CheckLogin(this);
                 UsersService us = new UsersService();
+                Authentication.CheckLogin(this);
 
-                if (decision == "Delete")
+                switch (decision)
                 {
-                    us.DeleteUser(deleteuser.Id);
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    return RedirectToAction("UserList", "Users");
-                }
+                    case "Delete":
+                        if (HttpContext.Session.GetInt32("type") == 0)
+                        {
+                            us.DeleteUser(deleteuser.Id);
+                            return RedirectToAction("UserList", "Users");
+                        }
+                        if (HttpContext.Session.GetInt32("type") == 1)
+                        {
+                            us.DeleteUser(deleteuser.Id);
+                            HttpContext.Session.Clear();
+                            return RedirectToAction("Index", "Home");
+                        }
+                        break;
 
+                    case "Cancel":
+                        if (HttpContext.Session.GetInt32("type") == 0)
+                        {
+                            return RedirectToAction("UserList", "Users");
+                        }
+                        if (HttpContext.Session.GetInt32("type") == 1)
+                        {
+                            return RedirectToAction("UserProfile", "Users");
+                        }
+                        break;
+                }
+                return View(deleteuser);
             }
             catch (Exception e)
             {
                 _logger.LogError("Erro ao Excluir Usuário !" + e.Message);
-                return RedirectToAction("UserList", "Users");  
+                return RedirectToAction("UserList", "Users");
 
             }
 
@@ -159,7 +178,34 @@ namespace Killar.Controllers
 
         public IActionResult UserProfile()
         {
-            return View();
+            try
+            {
+                if (HttpContext.Session.GetInt32("IdUser") == null)
+                {
+                    return RedirectToAction("Login", "Home");
+                }
+
+                Authentication.CheckLogin(this);
+                UsersService ur = new UsersService();
+                int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");
+                List<Users> UserList = ur.ProfileUser(IdUserSession);
+                return View(UserList);
+
+            }catch (Exception e)
+            {
+                if (HttpContext.Session.GetInt32("IdUser") == null)
+                {
+                    return RedirectToAction("Login", "Home");
+                }
+                
+                Authentication.CheckLogin(this);
+                UsersService ur = new UsersService();
+                int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");
+                List<Users> UserList = ur.ProfileUser(IdUserSession);
+
+                _logger.LogError("Erro ao Exibir o Perfil de Usuário !" + e.Message);
+                return View(UserList);
+            }
         }
 
         public IActionResult Logout()

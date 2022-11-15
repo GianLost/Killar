@@ -1,4 +1,3 @@
-
 * {
     font-family: 'fantasy';
 }
@@ -9,7 +8,7 @@
     border: 1px solid #fff;
 }
 
-.dropdown-menu a{
+.dropdown-menu a {
     color: #007bff;
 }
 
@@ -379,7 +378,7 @@
 }
 
 @media (max-width: 990px) {
-    
+
     .slideshow-container {
         border-radius: 20px;
         margin-top: 170%;
@@ -390,8 +389,8 @@
         box-shadow: #fff 5px 5px 10px;
         border: 1px solid #fff;
     }
-    
-    .dropdown-menu a{
+
+    .dropdown-menu a {
         color: #007bff;
     }
 
@@ -443,8 +442,8 @@
         box-shadow: #fff 5px 5px 10px;
         border: 1px solid #fff;
     }
-    
-    .dropdown-menu a{
+
+    .dropdown-menu a {
         color: #007bff;
     }
 }
