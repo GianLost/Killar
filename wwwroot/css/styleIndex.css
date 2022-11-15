@@ -5,6 +5,7 @@
 }
 
 /* Start Top-Carosel Css */
+
 .carousel-container {
     margin-top: 70px;
     padding: 15px;
@@ -29,6 +30,7 @@
 
 .carousel-item img {
     border-radius: 40px;
+    margin-top: 10px;
 }
 
 .indicador li {
@@ -182,7 +184,9 @@
 /* End Mid-Page Css*/
 
 
-
+.cad-dell {
+    margin-top: 250px;
+}
 
 
 
@@ -409,10 +413,18 @@
     .footer a {
         font-size: 12px;
     }
+
+    .modal-card {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 576px) {
     .container-second-carousel {
         display: none;
+    }
+
+    .modal-card {
+        margin-left: 0;
     }
 }

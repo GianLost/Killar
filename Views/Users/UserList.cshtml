@@ -1,21 +1,27 @@
+@using Microsoft.AspNetCore.Http
+
 @model ICollection<Users>
+
 @{
     ViewData["Title"] = "Listagem De Usuarios Cadastrados";
 }
 
 <body class="text-center">
 
-    <main role="main">
+    <main role="main userFormList-container">
 
-        <div class="container-fluid">
+        <div class="container-fluid ">
 
             <div class="row">
 
-                <div class="col-md-12 col-sm-4 lista-user">
+                <div class="col-md-10 col-xl-10 col-lg-10 col-sm-10 userFormList">
 
-                    <table class="table table-responsive table-striped table-dark text-justify">
+                    <h2 class="mb-4">Lista de Usuários Cadastrados</h2>
 
-                        <thead>
+                    <table
+                        class=" table table-responsive table-bordered table-hover table-striped table-light text-center">
+
+                        <thead class="thead-dark text-center">
 
                             <tr>
                                 <th>Id</th>
@@ -47,18 +53,18 @@
                                     <td>@u.Elo</td>
                                     <td>@u.Tipo</td>
 
-                                    <td><a href="/Users/EditarUser?id=@u.Id">Editar</a></td>
-                                    <td><a href="/Users/ExcluirUser?id=@u.Id">Excluir</a></td>
+                                    <td><a href="/Users/UserEdit?id=@u.Id">Editar</a></td>
+                                    <td><a href="/Users/UserDelete?id=@u.Id">Excluir</a></td>
                                 </tr>
                             }
                         </tbody>
 
                     </table>
 
-                    <a class="btn btn-lg btn-primary" href="/Users/RegisterUser">Cadastrar um novo usuario</a>
+                    <a class="btn btn-lg btn-dark mt-4" href="/Users/RegisterUser">Cadastrar um novo usuario</a>
 
                 </div>
-
+                
             </div>
 
         </div>

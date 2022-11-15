@@ -1,0 +1,29 @@
+@model Users
+
+<div class="container mt-5">
+    <div class="cad-dell col-md-5 offset-md-3">
+        <div class="row">
+
+            <div class="mt-2">
+
+                <h1 class="text-danger text-center bold">Alerta!</h1>
+                <hr>
+                <p class="text-justify">Tem certeza que deseja escluir o usuário: <b>@Model.Name</b> ? Essa ação excluirá a conta de forma permanente, e não poderá ser desfeita.</p>
+                <hr>
+
+            </div>
+
+        </div>
+        <form asp-action="UserDelete" asp-controller="Users" method="post">
+
+            <input type="hidden" asp-for="Id">
+            
+            <input class="btn btn-sm btn-dark mt-3" name="decision" type="submit" value="Delete">
+            <input class="btn btn-sm btn-dark mt-3" name="decision" type="submit" value="Cancel">
+
+        </form>
+    </div>
+
+
+
+</div>

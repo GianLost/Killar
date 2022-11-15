@@ -1,0 +1,47 @@
+.userFormList-container {
+    align-items: center;
+}
+
+.userFormList {
+    padding: 50px;
+    margin-left: 8%;
+    margin-top: 3%;
+    background-color: #007bff;
+    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 8px;
+    border-radius: 15px;
+}
+
+.userFormList h2{
+    color: #fff;
+    margin-top: -15px;
+}
+
+.userFormList table{
+    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 8px;
+    border-radius: 5px;
+}
+
+
+
+/* Medias */
+
+@media (max-width: 1200px) {
+    
+
+}
+
+@media (max-width: 992px) {
+    .userFormList {
+        margin-left: 8%;
+    }
+}
+
+@media (max-width: 768px) {
+    .userFormList {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    
+}

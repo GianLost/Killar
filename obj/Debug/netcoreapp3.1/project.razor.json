@@ -14422,6 +14422,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Workspace\\Killar\\Views\\Users\\UserDelete.cshtml",
+      "TargetPath": "Views\\Users\\UserDelete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Workspace\\Killar\\Views\\Users\\UserEdit.cshtml",
+      "TargetPath": "Views\\Users\\UserEdit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Workspace\\Killar\\Views\\Users\\RegisterUser.cshtml",
       "TargetPath": "Views\\Users\\RegisterUser.cshtml",
       "FileKind": "mvc"
