@@ -22,7 +22,7 @@ namespace Killar.Controllers
             {
                 CheckIfUserAdministratorExists(dataBase);
 
-                string PasswordUser = password;
+                string PasswordUser = Cryptography.EncryptedText(password);
 
                 IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.LoginName == login && searchForUser.Password == PasswordUser);
 
@@ -57,7 +57,7 @@ namespace Killar.Controllers
                 Users admin = new Users();
                 admin.Name = "Administrador";
                 admin.LoginName = "admin";
-                admin.Password = "123";
+                admin.Password = Cryptography.EncryptedText("123");
                 admin.Tipo = Users.ADMIN;
 
 

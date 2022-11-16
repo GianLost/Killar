@@ -12,6 +12,8 @@ namespace Killar.Models
             using (KillarContext dataBase = new KillarContext())
             {
 
+                newUser.Password = Cryptography.EncryptedText(newUser.Password);
+                newUser.CheckedPassword = Cryptography.EncryptedText(newUser.CheckedPassword);
                 dataBase.Usuarios.Add(newUser);
                 dataBase.SaveChanges();
 
