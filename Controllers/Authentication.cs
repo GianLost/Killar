@@ -70,7 +70,7 @@ namespace Killar.Controllers
         {
             if (!(controller.HttpContext.Session.GetInt32("type") == Users.ADMIN))
             {
-                controller.Request.HttpContext.Response.Redirect("");
+                controller.Request.HttpContext.Response.Redirect("/Home/Login");
             }
         }
 

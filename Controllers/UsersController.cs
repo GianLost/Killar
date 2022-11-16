@@ -51,17 +51,17 @@ namespace Killar.Controllers
         public IActionResult UserList(string q, int pages = 1)
         {
             Authentication.CheckLogin(this);
+            Authentication.CheckIfUserIsAdministrator(this);
             int usersPerPage = 8;
 
             UsersService us = new UsersService();
-            if (q == null)
-            {
+            if(q == null){
                 q = string.Empty;
             }
-
-            int registersQuantity = us.CountRegister();
-            ViewData["pageQuantity"] = (int)Math.Ceiling((double)registersQuantity / usersPerPage);
-            ICollection<Users> userList = us.GetUsers(q, pages, usersPerPage);
+             
+             int registersQuantity = us.CountRegister();
+             ViewData["pageQuantity"] = (int)Math.Ceiling((double)registersQuantity/usersPerPage);
+             ICollection<Users> userList = us.GetUsers(q, pages, usersPerPage);
 
             return View(userList);
         }
@@ -73,6 +73,7 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
+                Authentication.CheckIfUserIsAdministrator(this);
                 Users UserFound = new UsersService().ListUser(id);
 
                 return View(UserFound);
@@ -93,6 +94,7 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
+                Authentication.CheckIfUserIsAdministrator(this);
                 new UsersService().EditUser(editUser);
 
                 return RedirectToAction("Index", "Home");
@@ -102,6 +104,7 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
+                Authentication.CheckIfUserIsAdministrator(this);
                 new UsersService().EditUser(editUser);
 
                 _logger.LogError("Erro ao Editar Usuário !" + e.Message);
@@ -247,14 +250,13 @@ namespace Killar.Controllers
                 List<Users> UserList = ur.ProfileUser(IdUserSession);
                 return View(UserList);
 
-            }
-            catch (Exception e)
+            }catch (Exception e)
             {
                 if (HttpContext.Session.GetInt32("IdUser") == null)
                 {
                     return RedirectToAction("Login", "Home");
                 }
-
+                
                 Authentication.CheckLogin(this);
                 UsersService ur = new UsersService();
                 int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");
