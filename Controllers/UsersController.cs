@@ -37,10 +37,6 @@ namespace Killar.Controllers
             catch (Exception e)
             {
 
-                UsersService us = new UsersService();
-                us.AddUser(newRegisterUser);
-                ViewData["message"] = "Usuário Cadastrado com sucesso !";
-
                 _logger.LogError("Erro ao se Cadastrar!" + e.Message);
 
                 return RedirectToAction("Index", "Home");

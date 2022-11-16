@@ -1,0 +1,4 @@
+2022-11-16T16:33:20.2296552-03:00 0HMM813LC4RM4:0000000B [ERR] Erro ao Realizar Login!The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior. (8fbb02c4)
+2022-11-16T16:35:49.4681859-03:00 0HMM813LC4RM5:00000045 [ERR] Erro ao se Cadastrar!The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior. (8b5cc8a1)
+2022-11-16T16:38:36.0952668-03:00 0HMM813LC4RM5:0000005F [ERR] Erro ao se Cadastrar!The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior. (8b5cc8a1)
+2022-11-16T16:43:59.1041740-03:00 0HMM819UEAQLO:00000027 [ERR] Erro ao Realizar Login!The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior. (8fbb02c4)

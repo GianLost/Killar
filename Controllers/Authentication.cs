@@ -38,6 +38,7 @@ namespace Killar.Controllers
                     controller.HttpContext.Session.SetString("login", FoundUserList[0].LoginName);
                     controller.HttpContext.Session.SetString("name", FoundUserList[0].Name);
                     controller.HttpContext.Session.SetString("password", FoundUserList[0].Password);
+                    controller.HttpContext.Session.SetString("checkedPassword", FoundUserList[0].CheckedPassword);
                     controller.HttpContext.Session.SetInt32("type", FoundUserList[0].Tipo);
                     controller.HttpContext.Session.SetInt32("IdUser", FoundUserList[0].Id);
 
@@ -48,7 +49,7 @@ namespace Killar.Controllers
 
         public static void CheckIfUserAdministratorExists(KillarContext dataBase)
         {
-            IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.LoginName == "admin");
+            IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.Tipo == 0);
 
             if (UserFound.ToList().Count == 0)
             {
@@ -57,7 +58,8 @@ namespace Killar.Controllers
                 Users admin = new Users();
                 admin.Name = "Administrador";
                 admin.LoginName = "admin";
-                admin.Password = Cryptography.EncryptedText("123");
+                admin.Password = Cryptography.EncryptedText("123456");
+                admin.CheckedPassword = Cryptography.EncryptedText("123456");
                 admin.Tipo = Users.ADMIN;
 
 
