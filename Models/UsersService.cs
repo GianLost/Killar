@@ -18,14 +18,6 @@ namespace Killar.Models
             }
         }
 
-        public List<Users> ListUser()
-        {
-            using (KillarContext dataBase = new KillarContext())
-            {
-                return dataBase.Usuarios.ToList();
-            }
-        }
-
         public Users ListUser(int id)
         {
             using (KillarContext dataBase = new KillarContext())
@@ -103,6 +95,33 @@ namespace Killar.Models
             using (KillarContext dataBase = new KillarContext())
             {
                 return dataBase.Usuarios.Find(id);
+            }
+        }
+
+        public int CountRegister()
+        {
+            using (KillarContext dataBase = new KillarContext())
+            {
+                return dataBase.Usuarios.Count();
+            }
+        }
+
+        public ICollection<Users> GetUsers(string q, int page, int size) // Método de paginação
+        {
+            using (KillarContext dataBase = new KillarContext())
+            {
+                int jump = (page - 1) * size;
+                IQueryable<Users> query = dataBase.Usuarios.Where(u => u.Name.Contains(q, StringComparison.OrdinalIgnoreCase));
+
+                if (q != null)
+                {
+
+                    query = query.OrderBy(u => u.Name);
+
+                }
+
+                return query.Skip(jump).Take(size).ToList();
+
             }
         }
 

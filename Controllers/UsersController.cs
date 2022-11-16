@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Killar.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -49,11 +48,22 @@ namespace Killar.Controllers
 
         }
 
-        public IActionResult UserList()
+        public IActionResult UserList(string q, int pages = 1)
         {
             Authentication.CheckLogin(this);
-            Authentication.CheckIfUserIsAdministrator(this);
-            return View(new UsersService().ListUser());
+            int usersPerPage = 8;
+
+            UsersService us = new UsersService();
+            if (q == null)
+            {
+                q = string.Empty;
+            }
+
+            int registersQuantity = us.CountRegister();
+            ViewData["pageQuantity"] = (int)Math.Ceiling((double)registersQuantity / usersPerPage);
+            ICollection<Users> userList = us.GetUsers(q, pages, usersPerPage);
+
+            return View(userList);
         }
 
         public IActionResult UserEdit(int id)
@@ -181,8 +191,8 @@ namespace Killar.Controllers
             try
             {
 
-                UsersService us = new UsersService();
                 Authentication.CheckLogin(this);
+                UsersService us = new UsersService();
 
                 switch (decision)
                 {
@@ -237,13 +247,14 @@ namespace Killar.Controllers
                 List<Users> UserList = ur.ProfileUser(IdUserSession);
                 return View(UserList);
 
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 if (HttpContext.Session.GetInt32("IdUser") == null)
                 {
                     return RedirectToAction("Login", "Home");
                 }
-                
+
                 Authentication.CheckLogin(this);
                 UsersService ur = new UsersService();
                 int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");

@@ -1,0 +1,16 @@
+* {
+    font-family: 'fantasy';
+}
+
+.buttonProfile {
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 15px;
+    box-shadow: #000 -2px 2px 5px;
+}
+
+.buttonProfile:hover {
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+}

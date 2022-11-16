@@ -1,9 +1,7 @@
-@using Microsoft.AspNetCore.Http
-
 @model ICollection<Users>
 
 @{
-    ViewData["Title"] = "Listagem De Usuarios Cadastrados";
+    ViewData["Title"] = "Listagem De Usuários Cadastrados";
 }
 
 <body class="text-center">
@@ -16,57 +14,100 @@
 
                 <div class="col-md-10 col-xl-10 col-lg-10 col-sm-10 userFormList">
 
-                    <h2 class="mb-4">Lista de Usuários Cadastrados</h2>
+                    <h4>@ViewData["msg"]</h4>
 
-                    <table class=" table table-responsive table-bordered table-striped table-light text-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form asp-controller="Users" asp-action="UserList" method="Get">
 
-                        <thead class="thead-dark text-center">
+                                <div class="form-group mb-2">
 
-                            <tr>
-                                <th>Id</th>
-                                <th>Nome</th>
-                                <th>Data de Nascimento</th>
-                                <th>Nick WR</th>
-                                <th>Nome de Usuário</th>
-                                <th>Senha</th>
-                                <th>Lane</th>
-                                <th>Elo</th>
-                                <th>Tipo</th>
+                                    <p style="float:left; margin-right:10px;">
+                                        <input class="btn btn-md btn-light text-justify" type="text"
+                                            placeholder="Busque por usuários" name="q" />
+                                        <input class="btn btn-md btn-dark" type="submit" value="Pesquisar" />
+                                    </p>
 
-                            </tr>
+                                </div>
 
-                        </thead>
+                            </form>
 
-                        <tbody>
+                        </div>
 
-                            @foreach (Users u in Model)
-                            {
-                                <tr>
-                                    <td>@u.Id</td>
-                                    <td>@u.Name</td>
-                                    <td>@u.BirthDate</td>
-                                    <td>@u.LoginWr</td>
-                                    <td>@u.LoginName</td>
-                                    <td>@u.Password</td>
-                                    <td>@u.Lane</td>
-                                    <td>@u.Elo</td>
-                                    <td>@u.Tipo</td>
+                        @if (Model.Count != 0)
+                        {
 
-                                    <td><a href="/Users/UserEdit?id=@u.Id"><i class="fa-solid fa-user-pen"></i></a></td>
-                                    <td><a href="/Users/UserDelete?id=@u.Id"><i class="fa-solid fa-user-xmark"></i></a></td>
-                                </tr>
-                            }
-                        </tbody>
+                            <table class=" table table-responsive table-bordered table-striped table-light text-center">
 
-                    </table>
+                                <thead class="thead-dark text-center">
 
-                    <a class="btn btn-lg btn-dark mt-4" href="/Users/RegisterUser">Cadastrar um novo usuario</a>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nome</th>
+                                        <th>Data de Nascimento</th>
+                                        <th>Nick WR</th>
+                                        <th>Nome de Usuário</th>
+                                        <th>Senha</th>
+                                        <th>Lane</th>
+                                        <th>Elo</th>
+                                        <th>Tipo</th>
+
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    @foreach (Users u in Model)
+                                    {
+                                        <tr>
+                                            <td>@u.Id</td>
+                                            <td>@u.Name</td>
+                                            <td>@u.BirthDate</td>
+                                            <td>@u.LoginWr</td>
+                                            <td>@u.LoginName</td>
+                                            <td>@u.Password</td>
+                                            <td>@u.Lane</td>
+                                            <td>@u.Elo</td>
+                                            <td>@u.Tipo</td>
+
+                                            <td><a href="/Users/UserEdit?id=@u.Id"><i class="fa-solid fa-user-pen"></i></a></td>
+                                            <td><a href="/Users/UserDelete?id=@u.Id"><i class="fa-solid fa-user-xmark"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+
+                            </table>
+
+                            <div class="filterButton-container">
+
+                                <p>Páginas : </p>
+
+                                @for (int i = 1; i <= (int)ViewData["pageQuantity"]; i++)
+                                { // paginação cria os links para as pginas
+                                    <a class="btn btn-sm btn-outline-primary" href="/Users/UserList?pages=@i">@i</a>
+
+                                }
+
+                            </div>
+
+                        }
+                        else
+                        {
+                            <strong class="text-center">Nenhum registro encontrado</strong>
+                        }
+
+                    </div>
+
+                    <div style="margin-top: 45px;">
+                        <a class="btn btn-lg btn-dark" href="/Users/RegisterUser">Cadastrar um novo usuario</a>
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>
 
     </main>
 
