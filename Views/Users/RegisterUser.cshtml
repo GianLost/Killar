@@ -44,7 +44,8 @@
 
                         <div class="col-md-6 mb-3">
 
-                            <input placeholder="Seu Nome" id="name" asp-for="Name" type="text" class="form-control" required>
+                            <input placeholder="Seu Nome" id="name" asp-for="Name" type="text" class="form-control"
+                                required>
 
                         </div>
 
@@ -61,29 +62,29 @@
 
                         <div class="col-md-6 mb-3">
 
-                            <input placeholder="Nick Wr(aaaa#0000)" id="loginWr" asp-for="LoginWr" type="text" class="form-control"
-                                required>
-
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-
-                            <input placeholder="Nick Name" id="loginName" asp-for="LoginName" type="text" class="form-control"
-                                required>
-
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-
-                            <input placeholder="Crie sua senha" id="password" asp-for="Password" type="password" class="form-control"
-                                required>
-
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-
-                            <input placeholder="Repita a senha" id="checkedPassword" asp-for="CheckedPassword" type="password"
+                            <input placeholder="Nick Wr(aaaa#0000)" id="loginWr" asp-for="LoginWr" type="text"
                                 class="form-control" required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Nick Name" id="loginName" asp-for="LoginName" type="text"
+                                class="form-control" required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Crie sua senha" id="password" asp-for="Password" type="password"
+                                class="form-control" required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
+                            <input placeholder="Repita a senha" id="checkedPassword" asp-for="CheckedPassword"
+                                type="password" class="form-control" required>
 
                         </div>
 
@@ -194,7 +195,8 @@
                     <input name="Id" type="hidden" asp-for="Id">
                     <input value=@Context.Session.GetInt32("IdUser") type="hidden" asp-for="Id">
 
-                    <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="return ValidateFormUserRegister()">Cadastre-se</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit"
+                        onclick="return ValidateFormUserRegister()">Cadastre-se</button>
 
                     <div class="mt-5 frase">
 

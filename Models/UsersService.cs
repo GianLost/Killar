@@ -37,8 +37,8 @@ namespace Killar.Models
                 u.BirthDate = editUser.BirthDate;
                 u.LoginWr = editUser.LoginWr;
                 u.LoginName = editUser.LoginName;
-                u.Password = editUser.Password;
-                u.CheckedPassword = editUser.CheckedPassword;
+                u.Password = Cryptography.EncryptedText(editUser.Password);
+                u.CheckedPassword = Cryptography.EncryptedText(editUser.CheckedPassword);
                 u.Lane = editUser.Lane;
                 u.Elo = editUser.Elo;
                 u.Tipo = editUser.Tipo;
@@ -68,8 +68,8 @@ namespace Killar.Models
                 u.BirthDate = editUser.BirthDate;
                 u.LoginWr = editUser.LoginWr;
                 u.LoginName = editUser.LoginName;
-                u.Password = editUser.Password;
-                u.CheckedPassword = editUser.CheckedPassword;
+                u.Password = Cryptography.EncryptedText(editUser.Password);
+                u.CheckedPassword = Cryptography.EncryptedText(editUser.CheckedPassword);
                 u.Lane = editUser.Lane;
                 u.Elo = editUser.Elo;
                 u.Tipo = editUser.Tipo;

@@ -29,16 +29,22 @@ namespace Killar.Controllers
 
                 UsersService us = new UsersService();
                 us.AddUser(newRegisterUser);
-                ViewData["message"] = "Usuário Cadastrado com sucesso !";
 
-                return RedirectToAction("Index", "Home");
+                if (HttpContext.Session.GetInt32("type") == 0)
+                {
+
+                    return RedirectToAction("RegisterUser", "Users");
+                }
+                else
+                {
+                    HttpContext.Session.Clear();
+                    return RedirectToAction("Login", "Home");
+                }
 
             }
             catch (Exception e)
             {
-
                 _logger.LogError("Erro ao se Cadastrar!" + e.Message);
-
                 return RedirectToAction("Index", "Home");
             }
 
@@ -51,13 +57,14 @@ namespace Killar.Controllers
             int usersPerPage = 8;
 
             UsersService us = new UsersService();
-            if(q == null){
+            if (q == null)
+            {
                 q = string.Empty;
             }
-             
-             int registersQuantity = us.CountRegister();
-             ViewData["pageQuantity"] = (int)Math.Ceiling((double)registersQuantity/usersPerPage);
-             ICollection<Users> userList = us.GetUsers(q, pages, usersPerPage);
+
+            int registersQuantity = us.CountRegister();
+            ViewData["pageQuantity"] = (int)Math.Ceiling((double)registersQuantity / usersPerPage);
+            ICollection<Users> userList = us.GetUsers(q, pages, usersPerPage);
 
             return View(userList);
         }
@@ -98,15 +105,8 @@ namespace Killar.Controllers
             }
             catch (Exception e)
             {
-
-                Authentication.CheckLogin(this);
-                Authentication.CheckIfUserIsAdministrator(this);
-                new UsersService().EditUser(editUser);
-
                 _logger.LogError("Erro ao Editar Usuário !" + e.Message);
-
                 return RedirectToAction("Index", "Home");
-
             }
 
         }
@@ -145,14 +145,8 @@ namespace Killar.Controllers
             }
             catch (Exception e)
             {
-
-                Authentication.CheckLogin(this);
-                new UsersService().EditUserProfile(editUser);
-
                 _logger.LogError("Erro ao Editar Usuário !" + e.Message);
-
                 return RedirectToAction("UserProfile", "Users");
-
             }
 
         }
@@ -244,22 +238,14 @@ namespace Killar.Controllers
                 UsersService ur = new UsersService();
                 int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");
                 List<Users> UserList = ur.ProfileUser(IdUserSession);
+
                 return View(UserList);
 
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
-                if (HttpContext.Session.GetInt32("IdUser") == null)
-                {
-                    return RedirectToAction("Login", "Home");
-                }
-                
-                Authentication.CheckLogin(this);
-                UsersService ur = new UsersService();
-                int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");
-                List<Users> UserList = ur.ProfileUser(IdUserSession);
-
                 _logger.LogError("Erro ao Exibir o Perfil de Usuário !" + e.Message);
-                return View(UserList);
+                return RedirectToAction("Login", "Home");
             }
         }
 

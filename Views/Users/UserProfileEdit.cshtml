@@ -29,8 +29,28 @@
                         <label class="mt-2" for="">Nome:</label>
                         <input placeholder="Seu Nome" asp-for="@Model.Name" type="text" class="form-control" required>
 
+                        <label class="mt-2" for="">Nick Name</label>
+                        <input placeholder="Nick Name" asp-for="@Model.LoginName" type="text" class="form-control"
+                            required>
+
+                        <label class="mt-2" for="">Nick Wr(aaaa#0000):</label>
+                        <input placeholder="Nick Wr(aaaa#0000)" asp-for="@Model.LoginWr" type="text"
+                            class="form-control" required>
+
                         <label class="mt-2" for="">Data de Nascimento:</label>
                         <input placeholder="Data de Nascimento" id="BirthDate" asp-for="@Model.BirthDate" type="date"
+                            class="form-control" required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="mt-2" class="mt-3" for="">Sua senha</label>
+                        <input placeholder="Digite sua senha" asp-for="@Model.Password" type="password"
+                            class="form-control" required>
+
+                        <label class="mt-2" for="">Confirme a senha</label>
+                        <input placeholder="Repita a senha" asp-for="@Model.CheckedPassword" type="password"
                             class="form-control" required>
 
                         <label class="mt-2" asp-for="@Model.Lane" for="@Model.Lane">Lane Principal</label>
@@ -51,22 +71,6 @@
                         <div class="invalid-feedback">
                             Please provide a valid state.
                         </div>
-
-                        <label class="mt-2" for="">Nick Wr(aaaa#0000):</label>
-                        <input placeholder="Nick Wr(aaaa#0000)" asp-for="@Model.LoginWr" type="text"
-                            class="form-control" required>
-
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <label class="mt-2" for="">Nick Name</label>
-                        <input placeholder="Nick Name" asp-for="@Model.LoginName" type="text" class="form-control"
-                            required>
-
-                        <label class="mt-2" class="mt-3" for="">Sua senha</label>
-                        <input placeholder="Repita a senha" asp-for="@Model.Password" type="password"
-                            class="form-control" required>
 
                         <label class="mt-2" asp-for="@Model.Elo" for="Elo">Elo Atual</label>
 
@@ -90,10 +94,6 @@
                         <div class="invalid-feedback">
                             Please provide a valid state.
                         </div>
-
-                        <label class="mt-2" for="">Confirme a senha</label>
-                        <input placeholder="Repita a senha" asp-for="@Model.CheckedPassword" type="password"
-                            class="form-control" required>
 
                     </div>
 

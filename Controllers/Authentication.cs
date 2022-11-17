@@ -18,17 +18,17 @@ namespace Killar.Controllers
 
         public static bool CheckLoginAndPassword(string login, string password, Controller controller)
         {
-            using (KillarContext dataBase = new KillarContext())
+            using (KillarContext dataBase = new KillarContext()) // inicia-se uma conexão 
             {
-                CheckIfUserAdministratorExists(dataBase);
+                CheckIfUserAdministratorExists(dataBase); // utilizo o método que verifica se existe um usuário administrador e que se caso não existir cria um novo.
 
                 string PasswordUser = Cryptography.EncryptedText(password);
 
-                IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.LoginName == login && searchForUser.Password == PasswordUser);
+                IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.LoginName == login && searchForUser.Password == PasswordUser); // Armazena no objeto userFound uma busca de verificação que avalia se os dados de login e senha são correspondentes.
 
                 List<Users> FoundUserList = UserFound.ToList();
 
-                if (FoundUserList.Count == 0)
+                if (FoundUserList == null)
                 {
                     return false;
                 }
@@ -49,11 +49,11 @@ namespace Killar.Controllers
 
         public static void CheckIfUserAdministratorExists(KillarContext dataBase)
         {
-            IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.Tipo == 0);
+            IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.Tipo == 0); // busco pelo identificador de usuário administrador para checkar se já existe algum.
 
             if (UserFound.ToList().Count == 0)
             {
-                //crio usuario admin automático casa não exista um
+                //crio usuário admin automático casa não exista um
 
                 Users admin = new Users();
                 admin.Name = "Administrador";
@@ -62,7 +62,6 @@ namespace Killar.Controllers
                 admin.CheckedPassword = Cryptography.EncryptedText("123456");
                 admin.Tipo = Users.ADMIN;
 
-
                 dataBase.Usuarios.Add(admin);
                 dataBase.SaveChanges();
             }
@@ -70,8 +69,9 @@ namespace Killar.Controllers
 
         public static void CheckIfUserIsAdministrator(Controller controller)
         {
-            if (!(controller.HttpContext.Session.GetInt32("type") == Users.ADMIN))
+            if (!(controller.HttpContext.Session.GetInt32("type") == Users.ADMIN)) // se o tipo de usuário da sessão não corresponder à um usuário administrador redireciona para a página de login. 
             {
+                controller.HttpContext.Session.Clear();
                 controller.Request.HttpContext.Response.Redirect("/Home/Login");
             }
         }
