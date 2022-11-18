@@ -8,9 +8,8 @@ namespace Killar.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=localhost;port=3306;database=dbkillar;uid=root;SslMode=None;ConvertZeroDateTime=true;pooling=no"); // String de conexão
+            optionsBuilder.UseMySql("server=localhost;port=3306;database=dbkillar;uid=root;SslMode=None;ConvertZeroDateTime=true;pooling=no");
         }
-
         public DbSet<Users> Usuarios { get; set; }
 
     }

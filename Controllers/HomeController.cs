@@ -37,7 +37,7 @@ namespace Killar.Controllers
                 }
                 else
                 {
-                    ViewData["Erro"] = "Usuário ou senha inválidos";
+                    ViewData["ErrorLogin"] = "Usuário ou senha inválidos";
                     return View();
                 }
 

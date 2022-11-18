@@ -22,13 +22,13 @@ namespace Killar.Controllers
             {
                 CheckIfUserAdministratorExists(dataBase); // utilizo o método que verifica se existe um usuário administrador e que se caso não existir cria um novo.
 
-                string PasswordUser = Cryptography.EncryptedText(password);
+                string PasswordUser = Cryptography.EncryptedText(password); // Transforma em Hash MD5 a string digitada no campo de senha no momento do login
 
-                IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.LoginName == login && searchForUser.Password == PasswordUser); // Armazena no objeto userFound uma busca de verificação que avalia se os dados de login e senha são correspondentes.
+                IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.LoginName == login && searchForUser.CheckedPassword == PasswordUser); // Armazena no objeto userFound uma busca de verificação que avalia se os dados de login e senha são correspondentes.
 
                 List<Users> FoundUserList = UserFound.ToList();
 
-                if (FoundUserList == null)
+                if (FoundUserList.Count == 0)
                 {
                     return false;
                 }

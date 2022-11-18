@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Killar.Models
 {
-    public static class Cryptography
+    public class Cryptography
     {
-        public static string EncryptedText(this string password)
+        public static string EncryptedText(string password)
         {
             MD5 MD5Hasher = MD5.Create();
 
