@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Killar.Models
@@ -34,6 +35,10 @@ namespace Killar.Models
         public string Elo { get; set; }
 
         public int Tipo { get; set; }
+
+        public ICollection<Posts> PostsList { get;set; } // Coleção de Post dos usuários
+
+        public ICollection<Comments> CommentsList { get;set; } // Coleção de Comentários dos usuários
 
     }
 }

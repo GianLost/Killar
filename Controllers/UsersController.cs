@@ -29,10 +29,10 @@ namespace Killar.Controllers
 
                 UsersService us = new UsersService();
                 us.AddUser(newRegisterUser);
-                
+
                 // caso o Usuário que esteja criando o cadastro seja um administrador ele se manterá na mesma página após o cadastro. Caso contrário será redirecionado para a página de login.
 
-                if (HttpContext.Session.GetInt32("type") == 0) 
+                if (HttpContext.Session.GetInt32("type") == 0)
                 {
 
                     return RedirectToAction("RegisterUser", "Users");
@@ -52,7 +52,7 @@ namespace Killar.Controllers
 
         }
 
-        public IActionResult UserList(string q, int pages =1)
+        public IActionResult UserList(string q, int pages = 1)
         {
             Authentication.CheckLogin(this);
             Authentication.CheckIfUserIsAdministrator(this);
@@ -234,7 +234,7 @@ namespace Killar.Controllers
         {
             try
             {
-            
+
                 Authentication.CheckLogin(this);
                 UsersService ur = new UsersService();
                 int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");

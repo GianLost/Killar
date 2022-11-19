@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 
@@ -55,7 +54,7 @@ namespace Killar.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new { RequestId = System.Diagnostics.Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

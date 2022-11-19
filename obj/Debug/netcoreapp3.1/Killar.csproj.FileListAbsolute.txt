@@ -178,3 +178,7 @@ D:\Workspace\Killar2.0\obj\Debug\netcoreapp3.1\Killar.csproj.CopyComplete
 D:\Workspace\Killar2.0\obj\Debug\netcoreapp3.1\Killar.dll
 D:\Workspace\Killar2.0\obj\Debug\netcoreapp3.1\Killar.pdb
 D:\Workspace\Killar2.0\obj\Debug\netcoreapp3.1\Killar.genruntimeconfig.cache
+D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\PostList.cshtml.g.cs
+D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\_FormRegisterPost.cshtml.g.cs
+D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\RegisterPost.cshtml.g.cs

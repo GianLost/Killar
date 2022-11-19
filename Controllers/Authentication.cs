@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Killar.Models;
@@ -36,6 +37,7 @@ namespace Killar.Controllers
                 {
 
                     controller.HttpContext.Session.SetString("login", FoundUserList[0].LoginName);
+                    controller.HttpContext.Session.SetString("date", DateTime.Now.ToString("dd/MM/yyyy"));
                     controller.HttpContext.Session.SetString("name", FoundUserList[0].Name);
                     controller.HttpContext.Session.SetString("password", FoundUserList[0].Password);
                     controller.HttpContext.Session.SetString("checkedPassword", FoundUserList[0].CheckedPassword);

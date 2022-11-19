@@ -3,14 +3,16 @@ using System;
 using Killar.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Killar.Migrations
 {
     [DbContext(typeof(KillarContext))]
-    partial class KillarContextModelSnapshot : ModelSnapshot
+    [Migration("20221119004356_CreateKillarDataBase")]
+    partial class CreateKillarDataBase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1JbGM6GeMrRxArS4MXaekkD1Oix17U87sTSnBIGuNr1DbqlT5DKhwrFn12h62MlfavaSqYkajPLtOICHOOZG4g==",
+  "dgSpecHash": "w6eMRbQ8zExEWNUmEQfcowTrlJEqa0JlMnX0E7z1W+rYSQfPrxz1Ch3JzlKx5innjKD+sFQ5Qz4e1H5KxPnBow==",
   "success": true,
-  "projectFilePath": "D:\\Workspace\\Killar2.0\\Killar.csproj",
+  "projectFilePath": "D:\\Workspace\\Killar\\Killar.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ufo\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
     "C:\\Users\\Ufo\\.nuget\\packages\\microsoft.entityframeworkcore\\3.0.0\\microsoft.entityframeworkcore.3.0.0.nupkg.sha512",
