@@ -1,5 +1,4 @@
-@model ICollection<Posts>
-
+@model List<Posts>
 @{
     ViewData["Title"] = "Listagem De Usuários Cadastrados";
 
@@ -35,27 +34,28 @@
                                     <p style="float:left; margin-right:10px;">
                                         <!-- *********** Retirar estilos in-line *********** -->
 
-                                        <label style="color: #fff; margin-left: -190px; font-weigth: bold;"
-                                            for="">Quantidade a Exibir:</label>
-                                        <select class="form-control mb-3 name=" ItemsPerPage" id="ItemsPerPage">
-
-                                            <option value=@Model.Count> Todos os Posts</option>
-                                            <option value="10">/10</option>
-
-                                        </select>
-
                                         <label style="color: #fff; margin-left: -250px; font-weigth: bold;"
                                             for="">Filtrar Por:</label>
+
                                         <select name="FilterType" class="form-control mb-3">
                                             <option value="Nome">Autor</option>
                                             <option value="Conteudo">Conteúdo</option>
                                         </select>
 
+                                        <label style="color: #fff; margin-left: -190px; font-weigth: bold;"
+                                            for="">Quantidade a Exibir:</label>
+
+                                        <select class="form-control mb-3" name="itemsPerPage" id="itemsPerPage">
+
+                                            <option value="8">/8</option>
+                                            <option value=@Model.Count> Todos os Posts</option>
+
+                                        </select>
+
                                         <input type="text" class="btn btn-md btn-light text-justify mr-3"
                                             placeholder="Busque por Postagens" name="Filter" class="form-control" />
-
-                                        <input class="btn btn-md btn-dark btn-searchUser" type="submit"
-                                            value="Pesquisar" />
+                                        <button class="btn btn-md btn-dark btn-searchUser"
+                                            type="submit">Pesquisar</button>
 
                                     </p>
 
@@ -85,21 +85,25 @@
 
                                 <tbody class="text-justify">
 
-                                    @foreach (Posts p in Model)
+                                    @for (int i = (currentPage - 1) * postsNumberPerPage; i < (postsNumberPerPage *
+                                   currentPage < Model.Count ? postsNumberPerPage * currentPage : Model.Count); i++)
                                     {
-                                        var indexOf = p.Content.IndexOf("");
-                                        var subIndex = p.Content.Substring(indexOf, p.Content.Length / 2);
+                                        var indexOf = @Model[i].Content.IndexOf("");
+                                        var subIndex = @Model[i].Content.Substring(indexOf, @Model[i].Content.Length / 2);
 
                                         <tr>
 
-                                            <td>@p.Id</td>
-                                            <td>@p.Author</td>
-                                            <td>@p.PostDate</td>
+                                            <td>@Model[i].Id</td>
+                                            <td>@Model[i].Author</td>
+                                            <td>@Model[i].PostDate</td>
                                             <td>@subIndex</td>
 
-                                            <td><a href="/Posts/PostEdit?id=@p.Id"><i class="fa-solid fa-user-pen"></i></a></td>
-                                            <td><a href="/Posts/PostDelete?id=@p.Id"><i class="fa-solid fa-user-xmark"></i></a>
+                                            <td><a href="/Posts/PostEdit?id=@Model[i].Id"><i
+                                                class="fa-solid fa-user-pen"></i></a></td>
+                                            <td><a href="/Posts/PostDelete?id=@Model[i].Id"><i
+                                                class="fa-solid fa-user-xmark"></i></a>
                                             </td>
+
                                         </tr>
                                     }
 
@@ -113,7 +117,7 @@
 
                                 @for (int i = 1; i <= pagesTotalNumber; i++)
                                 { // paginação cria os links para as páginas
-                                    <a class="btn btn-sm btn-outline-primary" href="/Posts/PostList?pages=@i">@i</a>
+                                    <a class="btn btn-sm btn-outline-primary" href="/Posts/PostList?currentPage=@i">@i</a>
 
                                 }
 

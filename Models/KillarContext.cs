@@ -12,7 +12,7 @@ namespace Killar.Models
         }
         public DbSet<Users> Usuarios { get; set; }
         public DbSet<Posts> Posters { get;set; }
-        public DbSet<Comments> Comentarios { get;set; }
+        public DbSet<Comments> Comentarios { get;set;}
 
     }
 

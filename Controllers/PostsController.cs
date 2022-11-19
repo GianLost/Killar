@@ -55,15 +55,17 @@ namespace Killar.Controllers
             Authentication.CheckLogin(this);
 
             PostsFilter filterPosts = null;
+
             if (!string.IsNullOrEmpty(filter))
             {
                 filterPosts = new PostsFilter();
                 filterPosts.Filter = filter;
                 filterPosts.FilterType = filterType;
             }
+
             PostsService ps = new PostsService();
 
-            ViewData["postsPerPage"] = (string.IsNullOrEmpty(itemsPerPage) ? 10 : Int32.Parse(itemsPerPage));
+            ViewData["postsPerPage"] = (string.IsNullOrEmpty(itemsPerPage) ? 8 : Int32.Parse(itemsPerPage));
 
             ViewData["currentPage"] = (currentPage != 0 ? currentPage : 1);
 
