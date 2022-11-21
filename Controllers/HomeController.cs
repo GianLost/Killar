@@ -32,17 +32,18 @@ namespace Killar.Controllers
             try
             {
 
-                if (Authentication.CheckLoginAndPassword(login, password, this))
+                if (Authentication.CheckLoginAndPassword(login, password, this)) // Verifica se login e senha estão de acordo com os dados do banco, se a verificação retornar verdadeiro estabelece uma sessão;
                 {
 
-                    Users us = new Users();
                     ViewData["logged"] = "Bem Vindo, " + HttpContext.Session.GetString("login");
+
                     return View("Index");
                     
                 }
                 else
                 {
                     ViewData["ErrorLogin"] = "Usuário ou senha inválidos";
+                    
                     return View();
                 }
 

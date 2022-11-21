@@ -39,7 +39,6 @@ namespace Killar.Controllers
                 }
                 else
                 {
-                    HttpContext.Session.Clear();
                     return RedirectToAction("Login", "Home");
                 }
 
@@ -59,17 +58,20 @@ namespace Killar.Controllers
 
             // Esse método só será utilizado por usuários administradores que obterão em formato de lista todos os usuários cadastrados.
 
-            int usersPerPage = 8;
+            int usersPerPage = 8; // definindo a quantidade de usuários exibidos por página
 
             UsersService us = new UsersService();
-            if (q == null)
+
+            if (q == null) // verifica se a busca da filtragem é nula, se verdadeiro atribui-se o valor como vazio;
             {
                 q = string.Empty;
             }
 
-            int registersQuantity = us.CountRegister();
-            ViewData["pageQuantity"] = (int)Math.Ceiling((double)registersQuantity / usersPerPage);
-            ICollection<Users> userList = us.GetUsers(q, pages, usersPerPage);
+            int registersQuantity = us.CountRegister(); // Método CountRegister retorna a quantidade de registros realizados;
+
+            ViewData["pageQuantity"] = (int)Math.Ceiling((double)registersQuantity / usersPerPage); // Atriundo ao ViewData["pageQuantity"] através do método Math(), o valor total de páginas a serem apresentadas de acordo com o número total de usuários por página;
+
+            ICollection<Users> userList = us.GetUsers(q, pages, usersPerPage); // Objeto de coleção de usuários que armazena os valores da busca feita pela filtragem, o número de páginas a serem apresentadas na paginação, e o número de usuários que serão listados por página para que os dados armazenados sejam utilizados como retorno;
 
             return View(userList);
         }
@@ -82,7 +84,8 @@ namespace Killar.Controllers
 
                 Authentication.CheckLogin(this);
                 Authentication.CheckIfUserIsAdministrator(this);
-                Users UserFound = new UsersService().ListUser(id);
+
+                Users UserFound = new UsersService().ListUser(id); // Objeto que busca pelo Id do usuário selecionado para edição (Válido apenas para Usuário admin);
 
                 return View(UserFound);
 
@@ -103,7 +106,8 @@ namespace Killar.Controllers
 
                 Authentication.CheckLogin(this);
                 Authentication.CheckIfUserIsAdministrator(this);
-                new UsersService().EditUser(editUser);
+
+                new UsersService().EditUser(editUser); // Chamada do método que modifica e sobrescreve os dados ao editar o usuário;
 
                 return RedirectToAction("Index", "Home");
 
@@ -123,7 +127,8 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
-                Users UserFound = new UsersService().ListUser(id);
+
+                Users UserFound = new UsersService().ListUser(id); // Objeto que busca pelo Id do usuário selecionado para edição;
 
                 return View(UserFound);
 
@@ -143,7 +148,8 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
-                new UsersService().EditUserProfile(editUser);
+
+                new UsersService().EditUserProfile(editUser); // Chamada do método que raliza as edições e sobrescreve os dados editados;
 
                 return RedirectToAction("UserProfile", "Users");
 
@@ -164,8 +170,10 @@ namespace Killar.Controllers
                 {
 
                     Authentication.CheckLogin(this);
+
                     UsersService us = new UsersService();
-                    Users FoundUser = us.SearchForId(id);
+
+                    Users FoundUser = us.SearchForId(id); // Busca pelo Id de usuário a ser excluído;
 
                     return View(FoundUser);
 
@@ -190,12 +198,16 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
+
                 UsersService us = new UsersService();
 
                 switch (decision)
                 {
+                    // Verifica a opção escolhida pelo usuário e exclui caso a verificação retorne excluir, ou simplesmente redireciona novamente uma nova página de acordo com o nível de usuário se a verificação retornar cancelar;
+
                     case "Delete":
-                        if (HttpContext.Session.GetInt32("type") == 0)
+
+                        if (HttpContext.Session.GetInt32("type") == 0) // Tipo armazenado na sessão
                         {
                             us.DeleteUser(deleteuser.Id);
                             return RedirectToAction("UserList", "Users");
@@ -206,9 +218,11 @@ namespace Killar.Controllers
                             HttpContext.Session.Clear();
                             return RedirectToAction("Index", "Home");
                         }
+
                         break;
 
                     case "Cancel":
+
                         if (HttpContext.Session.GetInt32("type") == 0)
                         {
                             return RedirectToAction("UserList", "Users");
@@ -217,8 +231,10 @@ namespace Killar.Controllers
                         {
                             return RedirectToAction("UserProfile", "Users");
                         }
+
                         break;
                 }
+
                 return View(deleteuser);
             }
             catch (Exception e)
@@ -236,11 +252,14 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
-                UsersService ur = new UsersService();
-                int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");
-                List<Users> UserList = ur.ProfileUser(IdUserSession);
 
-                return View(UserList);
+                UsersService us = new UsersService();
+
+                int IdUserSession = (int)HttpContext.Session.GetInt32("IdUser");
+
+                List<Users> UserList = us.ProfileUser(IdUserSession); // Faz a chamada do método de perfil do usuário que tem como parâmetro o Id do usuário na sessão. O valor da chamada é atribuído a uma lista de usuários;
+
+                return View(UserList); // Retorna uma listagem dos dados de usuário cadastrados de acordo com o Id registrado na sessão
 
             }
             catch (Exception e)
@@ -252,6 +271,8 @@ namespace Killar.Controllers
 
         public IActionResult Logout()
         {
+            // Encerra a sessão limpando os dados e redirecionando para página de login;
+            
             HttpContext.Session.Clear();
             return RedirectToAction("Login", "Home");
         }

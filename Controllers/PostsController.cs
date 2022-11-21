@@ -27,8 +27,10 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
+
                 PostsService ps = new PostsService();
                 int newPostId = ps.AddPost(newPost);
+                
                 if (newPostId != 0)
                 {
                     ViewData["messagePost"] = "Postagem realizada com sucesso";

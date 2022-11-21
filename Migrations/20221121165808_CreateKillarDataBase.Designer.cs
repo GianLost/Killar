@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Killar.Migrations
 {
     [DbContext(typeof(KillarContext))]
-    [Migration("20221119004356_CreateKillarDataBase")]
+    [Migration("20221121165808_CreateKillarDataBase")]
     partial class CreateKillarDataBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

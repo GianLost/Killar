@@ -19,13 +19,13 @@ namespace Killar.Controllers
 
         public static bool CheckLoginAndPassword(string login, string password, Controller controller)
         {
-            using (KillarContext dataBase = new KillarContext()) // inicia-se uma conexão 
+            using (KillarContext dataBase = new KillarContext()) // inicia-se uma conexão;
             {
-                CheckIfUserAdministratorExists(dataBase); // utilizo o método que verifica se existe um usuário administrador e que se caso não existir cria um novo.
+                CheckIfUserAdministratorExists(dataBase); // Chama-se o método que verifica se existe um usuário administrador e que se caso não existir cria um novo;
 
-                string PasswordUser = Cryptography.EncryptedText(password); // Transforma em Hash MD5 a string digitada no campo de senha no momento do login
+                string PasswordUser = Cryptography.EncryptedText(password); // Transforma em Hash MD5 a string digitada no campo de senha no momento do login;
 
-                IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.LoginName == login && searchForUser.CheckedPassword == PasswordUser); // Armazena no objeto userFound uma busca de verificação que avalia se os dados de login e senha são correspondentes.
+                IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.LoginName == login && searchForUser.CheckedPassword == PasswordUser); // Armazena no objeto userFound uma busca de verificação que avalia se os dados de login e senha digitados são correspondentes aos que estão presentes no banco de dados;
 
                 List<Users> FoundUserList = UserFound.ToList();
 
@@ -51,11 +51,11 @@ namespace Killar.Controllers
 
         public static void CheckIfUserAdministratorExists(KillarContext dataBase)
         {
-            IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.Tipo == 0); // busco pelo identificador de usuário administrador para checkar se já existe algum.
+            IQueryable<Users> UserFound = dataBase.Usuarios.Where(searchForUser => searchForUser.Tipo == 0); // busco pelo identificador (Tipo) para verificar a existência de um usuário administrador;
 
             if (UserFound.ToList().Count == 0)
             {
-                //crio usuário admin automático casa não exista um
+                //crio usuário admin automático casa não exista um;
 
                 Users admin = new Users();
                 admin.Name = "Administrador";
