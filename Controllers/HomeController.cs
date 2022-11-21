@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Killar.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 
@@ -32,7 +34,11 @@ namespace Killar.Controllers
 
                 if (Authentication.CheckLoginAndPassword(login, password, this))
                 {
-                    return RedirectToAction("Index");
+
+                    Users us = new Users();
+                    ViewData["logged"] = "Bem Vindo, " + HttpContext.Session.GetString("login");
+                    return View("Index");
+                    
                 }
                 else
                 {

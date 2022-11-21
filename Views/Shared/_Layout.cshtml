@@ -36,6 +36,13 @@
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">- WR KILLAR BROTHERHOOD
                     -</a>
 
+                @if (Context.Session.GetString("login") != null)
+                {
+                    <a class="showUser btn btn-sm btn-outline-light" asp-area="" asp-controller="Users"
+                    asp-action="UserProfile">Olá,
+                        @Context.Session.GetString("login")</a>
+                }
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -105,9 +112,9 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="Posts" asp-action="RegisterPost"><i
-                                            class="fa-regular fa-comments"></i> Crie um Post</a>
-                                        <div class="dropdown-divider"></div>
+                                    <!--<a class="dropdown-item" asp-controller="Posts" asp-action="RegisterPost"><i
+                                                        class="fa-regular fa-comments"></i> Crie um Post</a>
+                                    <div class="dropdown-divider"></div>-->
                                 <a class="dropdown-item" asp-controller="" asp-action=""><i
                                         class="fa-solid fa-user-secret"></i> Sobre a Killar</a>
                                     <div class="dropdown-divider"></div>
@@ -143,9 +150,9 @@
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                    <a class="dropdown-item" asp-controller="Posts" asp-action="RegisterPost"><i
-                                            class="fa-regular fa-comments"></i> Crie um Post</a>
-                                        <div class="dropdown-divider"></div>
+                                    <!--<a class="dropdown-item" asp-controller="Posts" asp-action="RegisterPost"><i
+                                                        class="fa-regular fa-comments"></i> Crie um Post</a>
+                                    <div class="dropdown-divider"></div>-->
                                 <a class="dropdown-item" asp-controller="" asp-action=""><i
                                         class="fa-solid fa-user-secret"></i> Sobre a Killar</a>
                                     <div class="dropdown-divider"></div>

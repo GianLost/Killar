@@ -1,4 +1,5 @@
 @model List<Posts>
+
 @{
     ViewData["Title"] = "Listagem De Usuários Cadastrados";
 
@@ -7,6 +8,7 @@
     int postsNumberPerPage = (Model.Count < postsPerPage ? Model.Count : postsPerPage);
 
     int pagesTotalNumber = 0;
+
     if (postsNumberPerPage > 0)
     {
         pagesTotalNumber = Model.Count / postsNumberPerPage + (Model.Count % postsNumberPerPage == 0 ? 0 : 1);
@@ -22,9 +24,7 @@
             <div class="row">
 
                 <div class="col-md-10 col-xl-10 col-lg-10 col-sm-10 userFormList">
-
-                    <h4>@ViewData["msg"]</h4>
-
+                    
                     <div class="row">
                         <div class="col-md-12">
                             <form asp-controller="Posts" asp-action="PostList" method="POST">
@@ -54,7 +54,7 @@
 
                                         <input type="text" class="btn btn-md btn-light text-justify mr-3"
                                             placeholder="Busque por Postagens" name="Filter" class="form-control" />
-                                        <button class="btn btn-md btn-dark btn-searchUser"
+                                        <button class="btn btn-md btn-dark"
                                             type="submit">Pesquisar</button>
 
                                     </p>
@@ -88,23 +88,46 @@
                                     @for (int i = (currentPage - 1) * postsNumberPerPage; i < (postsNumberPerPage *
                                    currentPage < Model.Count ? postsNumberPerPage * currentPage : Model.Count); i++)
                                     {
+                                        var stringLength = @Model[i].Content.Length;
                                         var indexOf = @Model[i].Content.IndexOf("");
                                         var subIndex = @Model[i].Content.Substring(indexOf, @Model[i].Content.Length / 2);
 
-                                        <tr>
+                                        if (stringLength >= 150){
+                                            
+                                            <tr>
 
-                                            <td>@Model[i].Id</td>
-                                            <td>@Model[i].Author</td>
-                                            <td>@Model[i].PostDate</td>
-                                            <td>@subIndex</td>
+                                                <td>@Model[i].Id</td>
+                                                <td>@Model[i].Author</td>
+                                                <td>@Model[i].PostDate</td>
+                                                <td>@subIndex</td>
 
-                                            <td><a href="/Posts/PostEdit?id=@Model[i].Id"><i
-                                                class="fa-solid fa-user-pen"></i></a></td>
-                                            <td><a href="/Posts/PostDelete?id=@Model[i].Id"><i
-                                                class="fa-solid fa-user-xmark"></i></a>
-                                            </td>
+                                                <td><a href="/Posts/PostEdit?id=@Model[i].Id"><i
+                                                    class="fa-solid fa-user-pen"></i></a></td>
+                                                <td><a href="/Posts/PostDelete?id=@Model[i].Id"><i
+                                                    class="fa-solid fa-user-xmark"></i></a>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
+                                            
+                                        }else{
+                                            
+                                            <tr>
+                                                
+                                                <td>@Model[i].Id</td>
+                                                <td>@Model[i].Author</td>
+                                                <td>@Model[i].PostDate</td>
+                                                <td>@Model[i].Content</td>
+
+                                                <td><a href="/Posts/PostEdit?id=@Model[i].Id"><i
+                                                    class="fa-solid fa-user-pen"></i></a></td>
+                                                <td><a href="/Posts/PostDelete?id=@Model[i].Id"><i
+                                                    class="fa-solid fa-user-xmark"></i></a>
+                                                </td>
+
+                                            </tr>
+
+                                        }
+
                                     }
 
                                 </tbody>

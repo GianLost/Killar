@@ -2,6 +2,10 @@
     font-family: 'fantasy';
 }
 
+.showUser {
+   margin-left: 20%;
+}
+
 .dropdown-menu {
     background-color: #fff;
     box-shadow: #007bff 5px 5px 10px;
@@ -379,6 +383,10 @@
 
 @media (max-width: 990px) {
 
+    .showUser {
+        display: none;
+    }
+
     .slideshow-container {
         border-radius: 20px;
         margin-top: 170%;
@@ -403,6 +411,10 @@
 }
 
 @media (max-width: 768px) {
+
+    .showUser {
+        display: none;
+    }
 
     .modal-card {
         margin-left: 33px;
