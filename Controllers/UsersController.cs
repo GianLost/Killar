@@ -46,7 +46,7 @@ namespace Killar.Controllers
             catch (Exception e)
             {
                 _logger.LogError("Erro ao se Cadastrar!" + e.Message);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
 
         }
@@ -93,7 +93,7 @@ namespace Killar.Controllers
             catch (Exception e)
             {
                 _logger.LogError("Erro ao Buscar por Usuário a ser Editado !" + e.Message);
-                return View();
+                return RedirectToAction("Login", "Home");
             }
 
         }
@@ -115,7 +115,7 @@ namespace Killar.Controllers
             catch (Exception e)
             {
                 _logger.LogError("Erro ao Editar Usuário !" + e.Message);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Home");
             }
 
         }
@@ -136,7 +136,7 @@ namespace Killar.Controllers
             catch (Exception e)
             {
                 _logger.LogError("Erro ao Buscar por Usuário a ser Editado !" + e.Message);
-                return View();
+                return RedirectToAction("Login", "Home");
             }
 
         }
@@ -157,7 +157,7 @@ namespace Killar.Controllers
             catch (Exception e)
             {
                 _logger.LogError("Erro ao Editar Usuário !" + e.Message);
-                return RedirectToAction("UserProfile", "Users");
+                return RedirectToAction("Login", "Home");
             }
 
         }
@@ -184,7 +184,7 @@ namespace Killar.Controllers
             {
 
                 _logger.LogError("Erro ao Buscar por Usuário a ser Excluído !" + e.Message);
-                return View();
+                return RedirectToAction("Login", "Home");
 
             }
 
@@ -240,7 +240,7 @@ namespace Killar.Controllers
             catch (Exception e)
             {
                 _logger.LogError("Erro ao Excluir Usuário !" + e.Message);
-                return RedirectToAction("UserList", "Users");
+                return RedirectToAction("Login", "Home");
 
             }
 
@@ -272,7 +272,7 @@ namespace Killar.Controllers
         public IActionResult Logout()
         {
             // Encerra a sessão limpando os dados e redirecionando para página de login;
-            
+
             HttpContext.Session.Clear();
             return RedirectToAction("Login", "Home");
         }

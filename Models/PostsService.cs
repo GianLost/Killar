@@ -10,7 +10,7 @@ namespace Killar.Models
         {
             using (KillarContext dataBase = new KillarContext())
             {
-                dataBase.Add (newPost); // Adiciona ao banco de dados os dados de usuários que foram registrados;
+                dataBase.Add(newPost); // Adiciona ao banco de dados os dados de usuários que foram registrados;
                 dataBase.SaveChanges(); // Salva no Banco as alterações;
 
                 return newPost.Id;
@@ -63,6 +63,39 @@ namespace Killar.Models
                 List<Posts> PostList = query.OrderBy(e => e.PostDate).ToList(); // Atribui á uma lista de Posts uma busca que ordena os resultados de acordo com a data da publicação dos posts;
 
                 return PostList;
+            }
+        }
+
+        public void EditPost(Posts postEdit)
+        {
+            using (KillarContext dataBase = new KillarContext())
+            {
+
+                Posts foundPost = dataBase.Posters.Find(postEdit.Id);
+                foundPost.Content = postEdit.Content;
+
+                dataBase.SaveChanges();
+            }
+        }
+
+        public void DeletePost(int id)
+        {
+            using (KillarContext dataBase = new KillarContext())
+            {
+
+                Posts foundPost = dataBase.Posters.Find(id);
+                dataBase.Posters.Remove(foundPost);
+
+                dataBase.SaveChanges();
+            }
+        }
+
+        public Posts GetPostDetail(int id)
+        {
+            using (KillarContext dataBase = new KillarContext())
+            {
+                Posts foundPost = dataBase.Posters.Where(p => p.Id == id).SingleOrDefault();
+                return foundPost;
             }
         }
 

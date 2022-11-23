@@ -13,7 +13,7 @@ namespace Killar.Models
             {
 
                 newUser.Password = Cryptography.EncryptedText(newUser.Password); // Utiliza a classe de criptografia para transformar em Hash MD5 o valor digitado no campo senha ao cadastrar o usuário;
-                
+
                 newUser.CheckedPassword = Cryptography.EncryptedText(newUser.CheckedPassword); // Utiliza a classe de criptografia para transformar em Hash MD5 o valor digitado no campo Senha Verificada ao cadastrar o usuário;
 
                 dataBase.Usuarios.Add(newUser); // Adiciona na tabela usuários os dados registrados;

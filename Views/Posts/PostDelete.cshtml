@@ -1,0 +1,36 @@
+@model Posts
+
+@{
+    ViewData["Title"] = "Excluir Postagem";
+}
+
+<div class="container mt-5">
+    <div class="cad-dell col-md-5 offset-md-3">
+        <div class="row">
+
+            <div class="mt-2">
+
+                <h1 class="text-danger text-center bold">Alerta!</h1>
+                <hr>
+                <p class="text-justify">Tem certeza que deseja escluir sua postagem: <b>@Model.Author</b> ? Essa ação
+                    excluirá o Post de forma permanente, e não poderá ser desfeita.</p>
+                <hr>
+
+            </div>
+
+        </div>
+        <form asp-action="PostDelete" asp-controller="Posts" method="post">
+
+            <input type="hidden" asp-for="Id">
+
+            <button class="btn btn-outline-primary btn-md mt-3" name="decision" type="submit" value="yes"><i
+                    class="fa-solid fa-trash"></i> Excluir</button>
+            <button class="btn btn-outline-primary btn-md mt-3" name="decision" type="submit" value="Cancel"><i
+                    class="fa-solid fa-rotate-left"></i> Cancelar</button>
+
+        </form>
+    </div>
+
+
+
+</div>

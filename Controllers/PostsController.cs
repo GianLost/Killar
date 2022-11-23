@@ -30,7 +30,7 @@ namespace Killar.Controllers
 
                 PostsService ps = new PostsService();
                 int newPostId = ps.AddPost(newPost);
-                
+
                 if (newPostId != 0)
                 {
                     ViewData["messagePost"] = "Postagem realizada com sucesso";
@@ -47,7 +47,7 @@ namespace Killar.Controllers
             {
 
                 _logger.LogError("Erro ao Cadastrar Post!" + e.Message);
-                return RedirectToAction("RegisterPost");
+                return RedirectToAction("Login", "Home");
             }
 
         }
@@ -72,6 +72,89 @@ namespace Killar.Controllers
             ViewData["currentPage"] = (currentPage != 0 ? currentPage : 1);
 
             return View(ps.GetPostsFull(filterPosts));
+        }
+
+        public IActionResult PostEdit(int id)
+        {
+            try{
+
+                Authentication.CheckLogin(this);
+                Authentication.CheckIfUserIsAdministrator(this);
+
+                Posts foundPost = new PostsService().GetPostDetail(id);
+                return View(foundPost);
+
+            }catch(Exception e){
+
+                _logger.LogError("Erro ao buscar Post para ser editado!" + e.Message);
+                return RedirectToAction("Login", "Home");
+
+            }
+    
+        }
+
+        [HttpPost]
+        public IActionResult PostEdit(Posts postEdit)
+        {
+            try{
+
+                Authentication.CheckLogin(this);
+                Authentication.CheckIfUserIsAdministrator(this);
+
+                new PostsService().EditPost(postEdit);
+
+                return RedirectToAction("PostList");
+
+            }catch(Exception e){
+
+                _logger.LogError("Erro ao Editar Post!" + e.Message);
+                return RedirectToAction("Login", "Home");
+
+            }
+            
+        }
+
+        public IActionResult PostDelete(int id)
+        {
+            
+            try{
+
+                Authentication.CheckLogin(this);
+
+                PostsService ps = new PostsService();
+                Posts foundPost = ps.GetPostDetail(id);
+
+                return View(foundPost);
+
+            }catch(Exception e){
+
+                _logger.LogError("Erro ao buscar Post a ser deletado!" + e.Message);
+                return RedirectToAction("Login", "Home");
+
+            }
+        }
+
+        [HttpPost]
+        public IActionResult PostDelete(int id, string decision)
+        {
+            try{
+
+                if (decision == "yes")
+                {
+                    Authentication.CheckLogin(this);
+
+                    PostsService ps = new PostsService();
+                    ps.DeletePost(id);
+                }
+                return RedirectToAction("PostList");
+
+            }catch(Exception e){
+
+                _logger.LogError("Erro ao deletar o Post!" + e.Message);
+                return RedirectToAction("Login", "Home");
+
+            }
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

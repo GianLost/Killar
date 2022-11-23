@@ -1,0 +1,41 @@
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Administrador','Post Teste 1. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','3');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Carol','Post Teste 2. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','5');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Laurinha','Post Teste 3. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','4');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Leonardo','Post Teste 4. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','9');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Lídia','Post Teste 5. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','7');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Lucas','Post Teste 6. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','2');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Administrador','Post Teste 7. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','3');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Mário','Post Teste 8. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','8');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Administrador','Post Teste 9. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','3');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Maycon','Post Teste 10. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','10');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Administrador','Post Teste 11. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','3');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Carol','Post Teste 12. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','5');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Laurinha','Post Teste 13. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','4');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Leonardo','Post Teste 14. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','9');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Lídia','Post Teste 15. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','7');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Lucas','Post Teste 16. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','2');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Administrador','Post Teste 17. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','3');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Mário','Post Teste 18. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','8');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Administrador','Post Teste 19. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','3');
+
+INSERT INTO `posters`( `Author`, `Content`, `PostDate`, `UsersId`) VALUES ('Maycon','Post Teste 20. Esse é um  post para testar o cadastro e listagem da classe de postagens da página, mantendo um número significativo de caractéres para também testar a capacidade de redução da string dentro da tabela','22/11/2022 23:02:21','10');
+
+

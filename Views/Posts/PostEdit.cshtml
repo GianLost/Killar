@@ -20,7 +20,7 @@
                 <h2 class="mb-4 mr-5">Crie seu Post</h2>
                 <div class="">
 
-                    <form id="frmCadastro" asp-controller="Posts" asp-action="RegisterPost" method="post">
+                    <form id="frmCadastro" asp-controller="Posts" asp-action="PostEdit" method="post">
 
                         <p>
 
@@ -41,7 +41,7 @@
                         <p class="text-danger mt-3">@ViewData["messagePost"]</p>
                         <p class="text-danger mt-3">@ViewData["messagePostError"]</p>
 
-                        <button class="btn btn-primary btn-lg mt-5 but-post" type="submit">Postar</button>
+                        <button class="btn btn-primary btn-lg mt-5 but-post" type="submit">Salvar Alterações</button>
 
                     </form>
 

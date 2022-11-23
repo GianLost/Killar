@@ -22,7 +22,8 @@
 
                                 <div class="form-group mb-2">
 
-                                    <p style="float:left; margin-right:10px;"> <!-- *********** Retirar estilos in-line *********** -->
+                                    <p style="float:left; margin-right:10px;">
+                                        <!-- *********** Retirar estilos in-line *********** -->
                                         <input class="btn btn-md btn-light text-justify" type="text"
                                             placeholder="Busque por usuários" name="q" />
                                         <input class="btn btn-md btn-dark btn-searchUser" type="submit"
@@ -73,7 +74,8 @@
                                             <td>@u.Tipo</td>
 
                                             <td><a href="/Users/UserEdit?id=@u.Id"><i class="fa-solid fa-user-pen"></i></a></td>
-                                            <td><a href="/Users/UserDelete?id=@u.Id"><i class="fa-solid fa-user-xmark"></i></a></td>
+                                            <td><a href="/Users/UserDelete?id=@u.Id"><i class="fa-solid fa-user-xmark"></i></a>
+                                            </td>
 
                                         </tr>
 
@@ -88,7 +90,7 @@
                                 <p>Páginas : </p>
 
                                 @for (int i = 1; i <= (int)ViewData["pageQuantity"]; i++)
-                                {   // paginação cria os links para as páginas
+                                { // paginação cria os links para as páginas
                                     <a class="btn btn-sm btn-outline-primary" href="/Users/UserList?pages=@i">@i</a>
 
                                 }

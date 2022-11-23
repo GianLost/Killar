@@ -38,12 +38,12 @@ namespace Killar.Controllers
                     ViewData["logged"] = "Bem Vindo, " + HttpContext.Session.GetString("login");
 
                     return View("Index");
-                    
+
                 }
                 else
                 {
                     ViewData["ErrorLogin"] = "Usuário ou senha inválidos";
-                    
+
                     return View();
                 }
 
@@ -52,7 +52,7 @@ namespace Killar.Controllers
             {
 
                 _logger.LogError("Erro ao Realizar Login!" + e.Message);
-                return View();
+                return RedirectToAction("Login", "Home");
 
             }
 

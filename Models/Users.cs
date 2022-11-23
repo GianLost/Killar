@@ -36,9 +36,9 @@ namespace Killar.Models
 
         public int Tipo { get; set; }
 
-        public ICollection<Posts> PostsList { get;set; } // Coleção de Post dos usuários
+        public ICollection<Posts> PostsList { get; set; } // Coleção de Post dos usuários
 
-        public ICollection<Comments> CommentsList { get;set; } // Coleção de Comentários dos usuários
+        public ICollection<Comments> CommentsList { get; set; } // Coleção de Comentários dos usuários
 
     }
 }
