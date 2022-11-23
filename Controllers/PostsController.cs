@@ -1,5 +1,6 @@
 using System;
 using Killar.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -29,18 +30,20 @@ namespace Killar.Controllers
                 Authentication.CheckLogin(this);
 
                 PostsService ps = new PostsService();
-                int newPostId = ps.AddPost(newPost);
+                ps.AddPost(newPost);
 
-                if (newPostId != 0)
+                if (HttpContext.Session.GetInt32("type") == 0)
                 {
-                    ViewData["messagePost"] = "Postagem realizada com sucesso";
+
+                    return RedirectToAction("PostList");
+
                 }
                 else
                 {
-                    ViewData["messagePostError"] = "Falha na Postagem";
-                }
 
-                return RedirectToAction("PostList");
+                    return RedirectToAction("RegisterPost");
+
+                }
 
             }
             catch (Exception e)
@@ -76,7 +79,8 @@ namespace Killar.Controllers
 
         public IActionResult PostEdit(int id)
         {
-            try{
+            try
+            {
 
                 Authentication.CheckLogin(this);
                 Authentication.CheckIfUserIsAdministrator(this);
@@ -84,19 +88,22 @@ namespace Killar.Controllers
                 Posts foundPost = new PostsService().GetPostDetail(id);
                 return View(foundPost);
 
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
 
                 _logger.LogError("Erro ao buscar Post para ser editado!" + e.Message);
                 return RedirectToAction("Login", "Home");
 
             }
-    
+
         }
 
         [HttpPost]
         public IActionResult PostEdit(Posts postEdit)
         {
-            try{
+            try
+            {
 
                 Authentication.CheckLogin(this);
                 Authentication.CheckIfUserIsAdministrator(this);
@@ -105,19 +112,22 @@ namespace Killar.Controllers
 
                 return RedirectToAction("PostList");
 
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
 
                 _logger.LogError("Erro ao Editar Post!" + e.Message);
                 return RedirectToAction("Login", "Home");
 
             }
-            
+
         }
 
         public IActionResult PostDelete(int id)
         {
-            
-            try{
+
+            try
+            {
 
                 Authentication.CheckLogin(this);
 
@@ -126,7 +136,9 @@ namespace Killar.Controllers
 
                 return View(foundPost);
 
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
 
                 _logger.LogError("Erro ao buscar Post a ser deletado!" + e.Message);
                 return RedirectToAction("Login", "Home");
@@ -137,7 +149,8 @@ namespace Killar.Controllers
         [HttpPost]
         public IActionResult PostDelete(int id, string decision)
         {
-            try{
+            try
+            {
 
                 if (decision == "yes")
                 {
@@ -148,7 +161,9 @@ namespace Killar.Controllers
                 }
                 return RedirectToAction("PostList");
 
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
 
                 _logger.LogError("Erro ao deletar o Post!" + e.Message);
                 return RedirectToAction("Login", "Home");

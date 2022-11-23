@@ -30,8 +30,10 @@ namespace Killar.Models
         [StringLength(100)]
         public string CheckedPassword { get; set; }
 
+        [StringLength(40)]
         public string Lane { get; set; }
 
+        [StringLength(40)]
         public string Elo { get; set; }
 
         public int Tipo { get; set; }

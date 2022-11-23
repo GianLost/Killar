@@ -34,19 +34,13 @@ namespace Killar.Models
                     )
                     {
                         case "Nome": // FilterType = Name
-                            query =
-                                dataBase
-                                    .Posters
-                                    .Where(p =>
-                                        p.Author.Contains(postfilter.Filter));
+
+                            query = dataBase.Posters.Where(p => p.Author.Contains(postfilter.Filter, StringComparison.OrdinalIgnoreCase));
 
                             break;
+
                         case "Conteudo": // FilterType = Conteudo
-                            query =
-                                dataBase
-                                    .Posters
-                                    .Where(p =>
-                                        p.Content.Contains(postfilter.Filter));
+                            query = dataBase.Posters.Where(p => p.Content.Contains(postfilter.Filter, StringComparison.OrdinalIgnoreCase));
 
                             break;
                         default:
@@ -60,7 +54,7 @@ namespace Killar.Models
                     query = dataBase.Posters; // Caso o filtro não tenha sido informado;
                 }
 
-                List<Posts> PostList = query.OrderBy(e => e.PostDate).ToList(); // Atribui á uma lista de Posts uma busca que ordena os resultados de acordo com a data da publicação dos posts;
+                List<Posts> PostList = query.OrderBy(e => e.PostDate).ToList(); // Atribui à uma lista de Posts uma busca que ordena os resultados de acordo com a data da publicação dos posts;
 
                 return PostList;
             }
@@ -99,47 +93,5 @@ namespace Killar.Models
             }
         }
 
-        /* public Posts ListPosts(int id)
-        {
-            // inutilizado no momento...
-            using (KillarContext dataBase = new KillarContext())
-            {
-                return dataBase.Posters.Find(id);
-            }
-        }
-
-        public int CountRegister()
-        {
-            // inutilizado no momento...
-            using (KillarContext dataBase = new KillarContext())
-            {
-                return dataBase.Posters.Count();
-            }
-        }
-
-        
-        public ICollection<Posts> GetPosts(string q, int page, int size) // Método de paginação
-        {
-            // inutilizado no momento...
-            using (KillarContext dataBase = new KillarContext())
-            {
-                int jump = (page - 1) * size;
-                IQueryable<Posts> query =
-                    dataBase
-                        .Posters
-                        .Where(p =>
-                            p
-                                .Content
-                                .Contains(q,
-                                StringComparison.OrdinalIgnoreCase));
-
-                if (q != null)
-                {
-                    query = query.OrderBy(p => p.Content);
-                }
-
-                return query.Skip(jump).Take(size).ToList();
-            }
-        } */
     }
 }
