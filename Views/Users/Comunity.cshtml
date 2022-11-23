@@ -9,10 +9,10 @@
 
     <main role="main">
 
-        <div class="container-fluid col-md-6 offset-md-3 comunity-container">
+        <div class="container-fluid community col-md-6 offset-md-3">
             @foreach (Posts item in Model)
             {
-                <div class="row mt-5">
+                <div class="col-md-10 comunity-container">
 
                     <article id="post-@item.Id" class="article text-justify">
 
@@ -27,12 +27,14 @@
                             <p>@item.Content</p>
 
                         </div>
+
                     </article>
+
                 </div>
 
-                <div class="">
+                <div class="col-md-10">
 
-                    <hr class="col-md-10">
+                    <hr>
 
                     <div class="modal-comment">
 

@@ -6,12 +6,12 @@
 
     <input name="PostsId" value="@Model" type="hidden"/>
 
-    <input type="hidden" name="UsersId" asp-for="@Model"/>
+    <input type="hidden" name="UsersId" value=@Context.Session.GetInt32("IdUser") asp-for="@Model"/>
 
     <input class="form-control btn-block mb-2" type="hidden" name="Author" value=@Context.Session.GetString("login") placeholder="Digite seu Nome" class="comment-name mb-3 ml-3" required/>
 
     <textarea class="form-control mb-2" name="Content" placeholder="Digite seu Comentário" class="comment-text ml-3" rows="4" cols="40" required></textarea>
-    
+
     <input class="btn btn-sm btn-dark" type="submit" value="Comentar"/>
 
 </form>
