@@ -14442,11 +14442,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\Killar\\Views\\Posts\\RegisterPost.cshtml",
-      "TargetPath": "Views\\Posts\\RegisterPost.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "e:\\Killar\\Views\\Users\\UserDelete.cshtml",
       "TargetPath": "Views\\Users\\UserDelete.cshtml",
       "FileKind": "mvc"
@@ -14494,6 +14489,11 @@
     {
       "FilePath": "e:\\Killar\\Views\\Users\\_CommentList.cshtml",
       "TargetPath": "Views\\Users\\_CommentList.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Killar\\Views\\Users\\_RegisterPost.cshtml",
+      "TargetPath": "Views\\Users\\_RegisterPost.cshtml",
       "FileKind": "mvc"
     },
     {

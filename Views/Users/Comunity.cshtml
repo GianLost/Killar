@@ -1,13 +1,20 @@
 @model List<Posts>
+@using Killar.Models;
 @{
     Layout = "_LayoutBlog";
     ViewData["Title"] = "Comunidade";
+
+    var post = new Posts();
 }
 
 
 <body class="text-center">
 
     <main role="main">
+
+        <div class="cold-md-10">
+            <partial name="_RegisterPost" model="@post" />
+        </div>
 
         <div class="container-fluid community col-md-6 offset-md-3">
             @foreach (Posts item in Model)
@@ -30,19 +37,22 @@
 
                     </article>
 
+                    <section id="comments-@item.Id" class="comments">
+
+                            <h4 class="comente">Comente nesta publicação:</h4>
+
+                            <partial name="_CommentForm" model="@item.Id" />
+
+                    </section>
+
                 </div>
 
                 <div class="col-md-10">
-
-                    <hr>
 
                     <div class="modal-comment">
 
                         <section id="comments-@item.Id" class="comments">
 
-                            <h4 class="comente">Comente nesta publicação:</h4>
-
-                            <partial name="_CommentForm" model="@item.Id" />
                             <partial name="_CommentList" model="@item.Comment" />
 
                         </section>

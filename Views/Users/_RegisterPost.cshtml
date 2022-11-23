@@ -15,7 +15,7 @@
 
         <div class="row justify-content-md-center">
 
-            <div class="jumbotron col-md-6 col-lg-6 col-sm-12 mt-5">
+            <div class="jumbotron col-md-10 col-lg-10 col-sm-10 mt-5">
 
                 <h2 class="mb-4 mr-5">Crie seu Post</h2>
 
@@ -25,21 +25,18 @@
 
                         <p>
 
-                            <input value="@postDate" class="form-control btn-block" type="hidden" asp-for="PostDate" />
-                            <input value="@postAuthor" class="form-control btn-block" type="hidden" asp-for="Author" />
+                            <input value="@postDate" class="form-control btn-block" type="hidden" name="PostDate" />
+                            <input value="@postAuthor" class="form-control btn-block" type="hidden" name="Author" />
 
                         </p>
 
                         <p>
-                            <textarea class="form-control btn-block" placeholder="Insira seu Texto" asp-for="Content"
+                            <textarea class="form-control btn-block" placeholder="Insira seu Texto" name="Content"
                             cols="40" rows="5" required></textarea>
-                            <p class="text-danger">@ViewData["messagePost"]</p>
-                            <p class="text-danger">@ViewData["messagePostError"]</p>
                         </p>
 
-                        <input value=@Context.Session.GetInt32("IdUser") type="hidden" asp-for="UsersId">
-                        <input type="hidden" name="Id" asp-for="Id">
-                        <input type="hidden" name="UsersId" asp-for="UsersId">
+                        <input type="hidden" name="Id" value="@Model">
+                        <input type="hidden" name="UsersId" value=@Context.Session.GetInt32("IdUser") asp-for="@Model">
 
                         <p class="text-danger mt-3">@ViewData["messagePost"]</p>
                         <p class="text-danger mt-3">@ViewData["messagePostError"]</p>

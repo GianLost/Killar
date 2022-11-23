@@ -32,19 +32,8 @@ namespace Killar.Controllers
                 PostsService ps = new PostsService();
                 ps.AddPost(newPost);
 
-                if (HttpContext.Session.GetInt32("type") == 0)
-                {
-
-                    return RedirectToAction("PostList");
-
-                }
-                else
-                {
-
-                    return RedirectToAction("RegisterPost");
-
-                }
-
+                return RedirectToAction("Comunity", "Users");
+                
             }
             catch (Exception e)
             {
