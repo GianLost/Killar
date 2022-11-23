@@ -1,0 +1,12 @@
+@model ICollection<Comments>
+
+@foreach (Comments c in Model)
+{
+    <div class="mt-3 text-justify comment-list">
+
+        <h5>@c.Author </h5><span class="post-date">@c.CommentDate.ToString("dd/MM/yy HH:mm")</span>
+        <p>@c.Content</p>
+
+    </div> 
+
+}

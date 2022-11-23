@@ -269,6 +269,14 @@ namespace Killar.Controllers
             }
         }
 
+        public IActionResult Comunity ()
+        {
+            Authentication.CheckLogin(this);
+            PostsService ps = new PostsService();
+            ICollection<Posts> postList = ps.GetPostsFullToComunity();
+            return View(postList);
+        }
+
         public IActionResult Logout()
         {
             // Encerra a sessão limpando os dados e redirecionando para página de login;

@@ -1,0 +1,59 @@
+@model List<Posts>
+@{
+    Layout = "_LayoutBlog";
+    ViewData["Title"] = "Comunidade";
+}
+
+
+<body class="text-center">
+
+    <main role="main">
+
+        <div class="container-fluid col-md-6 offset-md-3 comunity-container">
+            @foreach (Posts item in Model)
+            {
+                <div class="row mt-5">
+
+                    <article id="post-@item.Id" class="article text-justify">
+
+                        <span class="post-author mt-5">@item.Author</span>
+
+                        <span class="post-date mt-5">@item.PostDate</span>
+
+                        <hr class="">
+
+                        <div class="post-content mt-4 mb-4">
+
+                            <p>@item.Content</p>
+
+                        </div>
+                    </article>
+                </div>
+
+                <div class="">
+
+                    <hr class="col-md-10">
+
+                    <div class="modal-comment">
+
+                        <section id="comments-@item.Id" class="comments">
+
+                            <h4 class="comente">Comente nesta publicação:</h4>
+
+                            <partial name="_CommentForm" model="@item.Id" />
+                            <partial name="_CommentList" model="@item.Comment" />
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+                <hr class="">
+            }
+
+        </div>
+
+    </main>
+
+</body>

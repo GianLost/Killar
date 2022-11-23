@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Killar.Models
 {
@@ -93,5 +94,16 @@ namespace Killar.Models
             }
         }
 
+        public ICollection<Posts> GetPostsFullToComunity()
+        {
+            using (KillarContext dataBase = new KillarContext())
+            {
+                IQueryable<Posts> query = dataBase.Posters.Include(p => p.Comment).OrderByDescending(p => p.PostDate);
+
+                return query.ToList();
+            }
+        }
+
     }
+
 }

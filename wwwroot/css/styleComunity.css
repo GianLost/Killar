@@ -1,0 +1,15 @@
+.comunity-container {
+    background-color: #007bff;
+    margin-top: 5%;
+    padding: 50px;
+}
+
+.article {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.comment-list {
+    background-color: #fff;
+    padding: 10px;
+}
