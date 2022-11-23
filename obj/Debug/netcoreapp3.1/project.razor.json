@@ -14422,11 +14422,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "e:\\Killar\\Views\\Shared\\_LayoutBlog.cshtml",
-      "TargetPath": "Views\\Shared\\_LayoutBlog.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "e:\\Killar\\Views\\Users\\UserList.cshtml",
       "TargetPath": "Views\\Users\\UserList.cshtml",
       "FileKind": "mvc"

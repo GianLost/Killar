@@ -12,6 +12,7 @@ namespace Killar.Models
             {
                 dataBase.Add (newComment);
                 dataBase.SaveChanges();
+                
                 return newComment.Id;
             }
         }
