@@ -246,3 +246,5 @@ C:\Users\Ufo\Desktop\Killar2.0\obj\Debug\netcoreapp3.1\Killar.pdb
 C:\Users\Ufo\Desktop\Killar2.0\obj\Debug\netcoreapp3.1\Killar.genruntimeconfig.cache
 C:\Users\Ufo\Desktop\Killar2.0\obj\Debug\netcoreapp3.1\Razor\Views\Posts\PostEdit.cshtml.g.cs
 C:\Users\Ufo\Desktop\Killar2.0\obj\Debug\netcoreapp3.1\Razor\Views\Posts\PostDelete.cshtml.g.cs
+D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\PostDelete.cshtml.g.cs
+D:\Workspace\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\PostEdit.cshtml.g.cs

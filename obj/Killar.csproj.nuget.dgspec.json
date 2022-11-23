@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ufo\\Desktop\\Killar2.0\\Killar.csproj": {}
+    "D:\\Workspace\\Killar\\Killar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ufo\\Desktop\\Killar2.0\\Killar.csproj": {
+    "D:\\Workspace\\Killar\\Killar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ufo\\Desktop\\Killar2.0\\Killar.csproj",
+        "projectUniqueName": "D:\\Workspace\\Killar\\Killar.csproj",
         "projectName": "Killar",
-        "projectPath": "C:\\Users\\Ufo\\Desktop\\Killar2.0\\Killar.csproj",
+        "projectPath": "D:\\Workspace\\Killar\\Killar.csproj",
         "packagesPath": "C:\\Users\\Ufo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ufo\\Desktop\\Killar2.0\\obj\\",
+        "outputPath": "D:\\Workspace\\Killar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ufo\\AppData\\Roaming\\NuGet\\NuGet.Config"
