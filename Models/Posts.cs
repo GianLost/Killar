@@ -20,7 +20,7 @@ namespace Killar.Models
 
         public int UsersId { get; set; } // foreign key for convention
 
-        public Users User { get; set; }
+        public Users Users { get; set; }
 
     }
 }

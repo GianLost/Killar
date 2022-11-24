@@ -18,18 +18,21 @@ namespace Killar.Controllers
         [HttpPost]
         public IActionResult RegisterComment(Comments c)
         {
-            try{
+            try
+            {
 
                 Authentication.CheckLogin(this);
 
                 CommentsService cs = new CommentsService();
 
                 c.CommentDate = DateTime.Now; //data do comentário é o momento em que ele foi cadastrado
-                cs.AddComment (c);
+                cs.AddComment(c);
 
                 return RedirectToAction("Comunity", "Users");
 
-            }catch(Exception e){
+            }
+            catch (Exception e)
+            {
 
                 _logger.LogError("Erro ao cadastrar comentário" + e.Message);
                 return RedirectToAction("Login", "Home");

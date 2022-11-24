@@ -269,7 +269,7 @@ namespace Killar.Controllers
             }
         }
 
-        public IActionResult Comunity ()
+        public IActionResult Comunity()
         {
             Authentication.CheckLogin(this);
             PostsService ps = new PostsService();

@@ -33,7 +33,7 @@ namespace Killar.Controllers
                 ps.AddPost(newPost);
 
                 return RedirectToAction("Comunity", "Users");
-                
+
             }
             catch (Exception e)
             {

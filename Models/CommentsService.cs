@@ -10,9 +10,9 @@ namespace Killar.Models
         {
             using (KillarContext dataBase = new KillarContext())
             {
-                dataBase.Add (newComment);
+                dataBase.Add(newComment);
                 dataBase.SaveChanges();
-                
+
                 return newComment.Id;
             }
         }

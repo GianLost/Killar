@@ -2,16 +2,29 @@
 
 @model int
 
+<!-- Formulário de cadastro de comentários, foi utilizado uma PartialView -->
+
 <form asp-action="RegisterComment" asp-controller="Comments" method="POST" class="form-comment">
 
-    <input name="PostsId" value="@Model" type="hidden"/>
+    <Input class="form-control btn-block" type="text" name="Content" placeholder="Digite seu Comentário" required />
 
-    <input type="hidden" name="UsersId" value=@Context.Session.GetInt32("IdUser") asp-for="@Model"/>
+    <div class="button-comment">
 
-    <input class="form-control btn-block mb-2" type="hidden" name="Author" value=@Context.Session.GetString("login") class="comment-name mb-3 ml-3" required/>
+        <input class="btn btn-md btn-outline-primary btn-cad mt-3 mr-3" type="submit" value="Comentar" />
+        <!-- Botão de submit para comentar -->
 
-    <textarea class="form-control mb-2" name="Content" placeholder="Digite seu Comentário" class="comment-text ml-3" rows="4" cols="40" required></textarea>
+        <input type="button" class="btn btn-md btn-cad btn-outline-primary mt-3" data-toggle="modal"
+            data-target="#exampleModalCenter-@Model" value="Comentários" />
+        <!-- Botão que aciona modal presente em Comunity -->
 
-    <input class="btn btn-sm btn-dark" type="submit" value="Comentar"/>
+    </div>
+
+    <input class="form-control btn-block" type="hidden" name="PostsId" value="@Model" />
+
+    <input class="form-control btn-block" type="hidden" name="UsersId" value=@Context.Session.GetInt32("IdUser")
+        asp-for="@Model" />
+
+    <input class="form-control btn-block" type="hidden" name="Author" value=@Context.Session.GetString("login")
+        required />
 
 </form>

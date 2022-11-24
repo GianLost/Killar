@@ -15,9 +15,7 @@
 
         <div class="row justify-content-md-center">
 
-            <div class="jumbotron col-md-10 col-lg-10 col-sm-10 mt-5">
-
-                <h2 class="mb-4 mr-5">Crie seu Post</h2>
+            <div class="jumbotron col-md-12 col-lg-12 col-sm-12">
 
                 <div class="">
 
@@ -31,17 +29,16 @@
                         </p>
 
                         <p>
-                            <textarea class="form-control btn-block" placeholder="Insira seu Texto" name="Content"
-                            cols="40" rows="5" required></textarea>
+                            <textarea class="form-control btn-block post-textarea"
+                                placeholder="O que te passas no Rift??" name="Content" cols="40" rows="13"
+                                required></textarea>
                         </p>
 
-                        <input type="hidden" name="Id" value="@Model">
+                        <input type="hidden" name="Id" value="@Model" asp-for="@Model">
                         <input type="hidden" name="UsersId" value=@Context.Session.GetInt32("IdUser") asp-for="@Model">
 
-                        <p class="text-danger mt-3">@ViewData["messagePost"]</p>
-                        <p class="text-danger mt-3">@ViewData["messagePostError"]</p>
-
-                        <button class="btn btn-primary btn-lg mt-5 but-post" type="submit">Postar</button>
+                        <button class="btn btn-outline-primary btn-lg mt-3 but-post" type="submit">Faça uma
+                            Postagem</button>
 
                     </form>
 
