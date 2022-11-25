@@ -30,6 +30,7 @@ namespace Killar.Controllers
                 Authentication.CheckLogin(this);
 
                 PostsService ps = new PostsService();
+                newPost.PostDate = DateTime.Now;
                 ps.AddPost(newPost);
 
                 return RedirectToAction("Comunity", "Users");

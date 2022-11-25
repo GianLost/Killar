@@ -24,13 +24,15 @@ namespace Killar.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Author")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<DateTime>("CommentDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Content")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(500) CHARACTER SET utf8mb4")
+                        .HasMaxLength(500);
 
                     b.Property<int>("PostsId")
                         .HasColumnType("int");
@@ -54,7 +56,8 @@ namespace Killar.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Author")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(60) CHARACTER SET utf8mb4")
+                        .HasMaxLength(60);
 
                     b.Property<string>("Content")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -86,10 +89,12 @@ namespace Killar.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("Elo")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
+                        .HasMaxLength(40);
 
                     b.Property<string>("Lane")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
+                        .HasMaxLength(40);
 
                     b.Property<string>("LoginName")
                         .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
@@ -132,7 +137,7 @@ namespace Killar.Migrations
 
             modelBuilder.Entity("Killar.Models.Posts", b =>
                 {
-                    b.HasOne("Killar.Models.Users", "User")
+                    b.HasOne("Killar.Models.Users", "Users")
                         .WithMany("PostsList")
                         .HasForeignKey("UsersId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -10,8 +10,7 @@ namespace Killar.Models
 
         [StringLength(60)]
         public string Author { get; set; }
-
-        [StringLength(500)]
+        
         public string Content { get; set; }
 
         public DateTime PostDate { get; set; }
