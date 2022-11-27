@@ -98,7 +98,7 @@
 
                                                 <td>@Model[i].Id</td>
                                                 <td>@Model[i].Author</td>
-                                                <td>@Model[i].PostDate</td>
+                                                <td>@Model[i].PostDate.ToString("dd/MM/yyyy")</td>
                                                 <td>@subIndex</td>
 
                                                 <td><a href="/Posts/PostEdit?id=@Model[i].Id"><i

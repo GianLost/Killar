@@ -214,6 +214,11 @@
     flex-direction: row;
     background-color: #007bff;
     padding: 50px;
+    color: #fff;
+}
+
+.container-end-page h2 {
+    color: #f3e70f;
 }
 
 .slideshow-container img {
@@ -298,6 +303,10 @@
     -webkit-animation-duration: 3s;
     animation-name: fade;
     animation-duration: 3s;
+}
+
+.form-signin h1{
+    color: #007bff;
 }
 
 @-webkit-keyframes fade {

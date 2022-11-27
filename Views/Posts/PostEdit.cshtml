@@ -10,14 +10,14 @@
 
 }
 
-<body class="text-center">
+<body class="text-center comunity-main p-4 mt-5">
 
     <main role="main" class="body-post img-fluid">
 
-        <div class="row justify-content-md-center cadpost">
+        <div class="row justify-content-md-center">
 
-            <div class="jumbotron col-md-6 col-lg-6 col-sm-12 jumb">
-                <h2 class="mb-4 mr-5">Crie seu Post</h2>
+            <div class="jumbotron col-md-6 col-lg-6 col-sm-12">
+
                 <div class="">
 
                     <form id="frmCadastro" asp-controller="Posts" asp-action="PostEdit" method="post">
@@ -30,8 +30,8 @@
                         </p>
 
                         <p>
-                            <textarea class="form-control btn-block" placeholder="Insira seu Texto" asp-for="Content"
-                                cols="40" rows="5" required></textarea>
+                            <textarea class="form-control btn-block post-textarea" placeholder="O que te passas no Rift??" asp-for="Content"
+                                cols="40" rows="13" required></textarea>
                         </p>
 
                         <input value=@Context.Session.GetInt32("IdUser") type="hidden" asp-for="UsersId">
@@ -41,7 +41,7 @@
                         <p class="text-danger mt-3">@ViewData["messagePost"]</p>
                         <p class="text-danger mt-3">@ViewData["messagePostError"]</p>
 
-                        <button class="btn btn-primary btn-lg mt-5 but-post" type="submit">Salvar Alterações</button>
+                        <button class="btn btn-outline-primary btn-lg mt-3 but-post"  type="submit">Salvar Alterações</button>
 
                     </form>
 

@@ -1,0 +1,1 @@
+2022-11-27T13:32:05.1639164-03:00 0HMMGII8LSMC0:00000107 [ERR] Erro ao Cadastrar Post!An error occurred while updating the entries. See the inner exception for details. (5028bb77)

@@ -3,20 +3,24 @@
 @foreach (Comments c in Model)
 {
 
-    <div class="row comment-container">
+    <div class="col-md-12 comment-container">
 
-        <h5 class="ml-3 mr-3">@c.Author </h5>
+        <div class="row comment-head">
 
-        <span class="post-date ml-3 mr-3">@c.CommentDate.ToString("dd/MM/yyyy HH:mm")</span>
+            <h5 class="ml-2"><b>feito por: @c.Author.ToUpper()</b> -</h5>
+
+            <span class="post-date">@c.CommentDate.ToString("dd/MM/yyyy")</span>
+
+        </div>
+
+        <div class="text-justify  content-comment">
+
+            <p class="">@c.Content</p>
+
+        </div>
+
+        <hr class="mb-4">
 
     </div>
-
-    <div class="text-justify  body-comment p-1">
-
-        <p class="ml-3 mr-3">@c.Content</p>
-
-    </div>
-
-    <hr class="mb-4">
 
 }

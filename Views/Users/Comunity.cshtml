@@ -21,12 +21,26 @@
             {
                 <div class="col-md-12 comunity-container">
 
-                    <article id="post-@item.Id" class=" col-md-10 article text-justify">
+                    <article id="post-@item.Id" class=" col-md-12 article text-justify">
 
-                        <span class="post-author mt-5">@item.Author</span>
+                        <div class="row">
+                        
+                            <span class="post-author mt-3 mb-3 ml-3">Escrito por: <b>@item.Author.ToUpper()</b></span>
 
-                        <span class="post-date mt-5">@item.PostDate.ToString("dd/MM/yyyy HH:mm")</span>
+                            <span class="post-date mt-3 mb-3 ml-3">@item.PostDate.ToString("dd/MM/yyyy")</span>
 
+                            <!--<div class="but offset-md-5">
+
+                                <a href="/Posts/PostEdit?id=@item.Id"><i
+                                class="fa-solid btn btn-md btn-cad btn-outline-primary fa-user-pen ml-4 mr-4"></i></a>
+
+                                <a href="/Posts/PostDelete?id=@item.Id"><i
+                                class="fa-solid fa-user-xmark btn btn-md btn-cad btn-outline-primary ml-4 mr-4"></i></a>
+                            </div>-->
+
+
+                        </div>
+                        
                         <hr>
 
                         <div class="post-content mt-4 mb-4">
@@ -38,9 +52,9 @@
                     </article>
 
 
-                    <section class="comment-view col-md-10 mt-4" id="comments-@item.Id">
+                    <section class="comment-view col-md-12 mt-4" id="comments-@item.Id">
 
-                        <h4 class="text-justify mb-2 ml-1">Comente nesta publicação:</h4>
+                        <h4 class="text-justify mb-2 ml-2">Comente nesta publicação:</h4>
 
                         <partial name="_CommentForm" model="@item.Id" />
 

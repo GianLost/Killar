@@ -17,7 +17,7 @@
                     <img class="mb-4 ml-3 mt-5 img-fluid" src="../images/logo.jpeg" alt="Imagem Logo tela de Login"
                         width="400" height="180">
 
-                    <h1 class="h3 mb-5 font-weight-200">Bem - Vindos a Killar!</h1>
+                    <h1 class="mb-5 font-weight-200">Bem - Vindos a Killar!</h1>
 
                     <label asp-for="LoginName" class="sr-only">Nick Name</label>
 
@@ -29,13 +29,11 @@
                     <input asp-for="CheckedPassword" name="password" type="password" class="form-control mb-3"
                         placeholder="Password" required>
 
-                    <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Log in</button>
+                    <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Log in</button>
 
                 </form>
 
                 <p class="text-danger mt-3">@ViewData["ErrorLogin"]</p>
-
-                <hr class="mb-4">
 
                 <p>Não tem uma conta? <a asp-controller="Users" asp-action=RegisterUser> Cadastre-se agora mesmo!</a>
                 </p>
