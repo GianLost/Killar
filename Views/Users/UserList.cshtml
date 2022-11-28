@@ -6,112 +6,102 @@
 
 <body class="text-center">
 
-    <main role="main userFormList-container">
+    <main role="main" class="p-2 mb-4">
 
-        <div class="container-fluid ">
+        <div class="container-fluid userFormList-container">
 
-            <div class="row">
+            <div class="col-md-10 col-xl-10 col-lg-10 col-sm-10 offset-md-1 userFormList">
 
-                <div class="col-md-10 col-xl-10 col-lg-10 col-sm-10 userFormList">
+                <!--<h4>@ViewData["msg"]</h4>-->
+                <form asp-controller="Users" asp-action="UserList" method="Get">
 
-                    <h4>@ViewData["msg"]</h4>
+                    <div class="col-md-12 p-3">
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <form asp-controller="Users" asp-action="UserList" method="Get">
+                        <p style="float:left; margin-right:10px;">
+                            <!-- *********** Retirar estilos in-line *********** -->
+                            <input class="btn btn-md btn-light text-justify" type="text"
+                                placeholder="Busque por usuários" name="q" />
+                            <input class="btn btn-md btn-dark btn-searchUser" type="submit" value="Pesquisar" />
+                        </p>
 
-                                <div class="form-group mb-2">
+                    </div>
 
-                                    <p style="float:left; margin-right:10px;">
-                                        <!-- *********** Retirar estilos in-line *********** -->
-                                        <input class="btn btn-md btn-light text-justify" type="text"
-                                            placeholder="Busque por usuários" name="q" />
-                                        <input class="btn btn-md btn-dark btn-searchUser" type="submit"
-                                            value="Pesquisar" />
-                                    </p>
+                </form>
 
-                                </div>
+                @if (Model.Count != 0)
+                {
 
-                            </form>
+                    <table class=" table table-responsive table-bordered table-striped table-light text-center">
 
-                        </div>
+                        <thead class="thead-dark text-center">
 
-                        @if (Model.Count != 0)
-                        {
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Data de Nascimento</th>
+                                <th>Nick WR</th>
+                                <th>Nome de Usuário</th>
+                                <th>Senha</th>
+                                <th>Lane</th>
+                                <th>Elo</th>
+                                <th>Tipo</th>
 
-                            <table class=" table table-responsive table-bordered table-striped table-light text-center">
+                            </tr>
 
-                                <thead class="thead-dark text-center">
+                        </thead>
 
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Nome</th>
-                                        <th>Data de Nascimento</th>
-                                        <th>Nick WR</th>
-                                        <th>Nome de Usuário</th>
-                                        <th>Senha</th>
-                                        <th>Lane</th>
-                                        <th>Elo</th>
-                                        <th>Tipo</th>
+                        <tbody>
 
-                                    </tr>
+                            @foreach (Users u in Model)
+                            {
+                                <tr>
+                                    <td>@u.Id</td>
+                                    <td>@u.Name</td>
+                                    <td>@u.BirthDate</td>
+                                    <td>@u.LoginWr</td>
+                                    <td>@u.LoginName</td>
+                                    <td>@u.Password</td>
+                                    <td>@u.Lane</td>
+                                    <td>@u.Elo</td>
+                                    <td>@u.Tipo</td>
 
-                                </thead>
+                                    <td><a href="/Users/UserEdit?id=@u.Id"><i class="fa-solid fa-user-pen"></i></a></td>
+                                    <td><a href="/Users/UserDelete?id=@u.Id"><i class="fa-solid fa-user-xmark"></i></a>
+                                    </td>
 
-                                <tbody>
+                                </tr>
 
-                                    @foreach (Users u in Model)
-                                    {
-                                        <tr>
-                                            <td>@u.Id</td>
-                                            <td>@u.Name</td>
-                                            <td>@u.BirthDate</td>
-                                            <td>@u.LoginWr</td>
-                                            <td>@u.LoginName</td>
-                                            <td>@u.Password</td>
-                                            <td>@u.Lane</td>
-                                            <td>@u.Elo</td>
-                                            <td>@u.Tipo</td>
+                            }
 
-                                            <td><a href="/Users/UserEdit?id=@u.Id"><i class="fa-solid fa-user-pen"></i></a></td>
-                                            <td><a href="/Users/UserDelete?id=@u.Id"><i class="fa-solid fa-user-xmark"></i></a>
-                                            </td>
+                        </tbody>
 
-                                        </tr>
+                    </table>
 
-                                    }
+                    <div class="filterButton-container">
 
-                                </tbody>
+                        <p>Páginas : </p>
 
-                            </table>
+                        @for (int i = 1; i <= (int)ViewData["pageQuantity"]; i++)
+                        { // paginação cria os links para as páginas
+                            <a class="btn btn-sm btn-outline-primary" href="/Users/UserList?pages=@i">@i</a>
 
-                            <div class="filterButton-container">
-
-                                <p>Páginas : </p>
-
-                                @for (int i = 1; i <= (int)ViewData["pageQuantity"]; i++)
-                                { // paginação cria os links para as páginas
-                                    <a class="btn btn-sm btn-outline-primary" href="/Users/UserList?pages=@i">@i</a>
-
-                                }
-
-                            </div>
-
-                        }
-                        else
-                        {
-                            <strong class="text-center">Nenhum registro encontrado</strong>
                         }
 
                     </div>
 
-                    <div style="margin-top: 45px;">
-                        <a class="btn btn-lg btn-dark" href="/Users/RegisterUser">Cadastrar um novo usuario</a>
-                    </div>
+                }
+                else
+                {
+                    <strong class="text-center">Nenhum registro encontrado</strong>
+                }
 
+                <div class="mt-5">
+                    <a class="btn btn-lg btn-dark" href="/Users/RegisterUser">Cadastrar um novo usuario</a>
                 </div>
 
             </div>
+
+        </div>
 
     </main>
 

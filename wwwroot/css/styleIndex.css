@@ -2,22 +2,38 @@
     font-family: 'fantasy';
 }
 
+:root {
+    --mainBlue: #007bff;
+    --mainWhite: #fff;
+    --blackShadow: #000;
+    --mainGrey: rgb(130, 129, 129);
+    --buttonShadow: #ffffffde;
+    --buttonPrevNextBackground: #292727;
+    --mainBlueOpacity: #007bff88;
+    --mainYellow: rgb(227, 191, 49);
+    --mainBlueModal: #3590f1;
+}
+
+.carousel-img {
+    border-radius: 10px 10px 0 0 ;
+}
+
 .showUser {
     margin-left: 20%;
 }
 
 .dropdown-menu {
-    background-color: #fff;
-    box-shadow: #007bff 5px 5px 10px;
-    border: 1px solid #fff;
+    background-color: var(--mainWhite);
+    box-shadow: var(--mainBlue) 5px 5px 10px;
+    border: 1px solid var(--mainWhite);
 }
 
 .dropdown-menu a {
-    color: #007bff;
+    color: var(--mainBlue);
 }
 
 .dropdown-menu a:hover {
-    background-color: #007bff;
+    background-color: var(--mainBlue);
 }
 
 
@@ -25,9 +41,8 @@
 
 .carousel-container {
     margin-top: 70px;
-    padding: 15px;
     border-radius: 10px;
-    box-shadow: #000 5px 8px 25px;
+    box-shadow: var(--blackShadow) 5px 8px 25px;
 }
 
 .custom-carosel {
@@ -36,22 +51,22 @@
 
 .custom-carosel h1 {
     text-align: center;
-    color: #007bff;
+    color: var(--mainBlue);
     font-weight: bold;
 }
 
 .custom-carosel p {
     font-size: 20px;
-    color: rgb(130, 129, 129);
+    color: var(--mainGrey);
 }
 
 .carousel-item img {
-    border-radius: 40px;
     margin-top: 10px;
+    padding: 0;
 }
 
 .indicador li {
-    background-color: black;
+    background-color: var(--blackShadow);
 }
 
 .but-next {
@@ -62,8 +77,8 @@
     height: 35px;
     padding: 15px;
     border-radius: 20px;
-    box-shadow: #ffffffde 5px 5px 10px;
-    background-color: #292727;
+    box-shadow: var(--buttonShadow) 5px 5px 10px;
+    background-color: var(--buttonPrevNextBackground);
 }
 
 .but-prev {
@@ -74,19 +89,19 @@
     height: 35px;
     padding: 15px;
     border-radius: 20px;
-    box-shadow: #ffffffde 5px 5px 10px;
-    background-color: #292727;
+    box-shadow: var(--buttonShadow) 5px 5px 10px;
+    background-color: var(--buttonPrevNextBackground);
 }
 
 .but-next:hover {
 
-    color: #007bff;
+    color: var(--mainBlue);
     transition: ease-in-out 0.3s;
     transform: translateX(8px);
 }
 
 .but-prev:hover {
-    color: #007bff;
+    color: var(--mainBlue);
     transition: ease-in-out 0.3s;
     transform: translateX(-8px);
 }
@@ -102,10 +117,10 @@
 /* Start Modal css */
 
 .modal-container {
-    background-color: #007bff88;
+    background-color: var(--mainBlueOpacity);
     padding: 50px;
-    margin-top: 150px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .modal-card {
@@ -113,38 +128,38 @@
     padding: 10px;
     margin-left: 60px;
     border-radius: 10px;
-    background-color: #007bff;
-    box-shadow: #000000de 10px -8px 40px;
-    border: 2px solid rgb(254, 254, 254);
+    background-color: var(--mainBlue);
+    box-shadow: var(--blackShadow) 10px -8px 20px;
+    border: 2px solid var(--mainWhite);
 }
 
 .modal-card img {
-    border: 10px double rgb(254, 254, 254);
-    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 50px;
+    border: 10px double var(--mainWhite);
+    box-shadow: var(--mainWhite) -5px 5px 10px;
     border-radius: 20px;
 }
 
 .modal-card h2 {
-    color: #fff;
+    color: var(--mainWhite);
     font-size: 30px;
-    text-decoration: 2px underline #fff;
-    text-shadow: #000000de 8px 8px 5px;
+    text-decoration: 2px underline var(--mainWhite);
+    text-shadow: var(--blackShadow) 8px 8px 5px;
 }
 
 .modal-card h3 {
     font-family: 'fantasy';
     text-align: left;
     font-size: 30px;
-    color: rgb(227, 191, 49);
-    text-shadow: #000000de 8px 8px 5px;
+    color: var(--mainYellow);
+    text-shadow: var(--blackShadow) 8px 8px 5px;
 }
 
 .modal-card h5 {
-    color: #000;
+    color: var(--blackShadow);
 }
 
 .modal-card p {
-    color: white;
+    color: var(--mainWhite);
     text-align: justify;
 }
 
@@ -155,11 +170,11 @@
 }
 
 .modal-button a {
-    color: #fff;
+    color: var(--mainWhite);
 }
 
 .modal-card:hover {
-    background-color: #3590f1;
+    background-color: var(--mainBlueModal);
     cursor: pointer;
 }
 
@@ -182,17 +197,17 @@
 .container-mid-page {
 
     padding: 50px;
-    box-shadow: #000000de 10px -8px 40px;
+    box-shadow: var(--blackShadow) 10px -8px 40px;
 }
 
 .mid-colum {
-    border: 10px double #007bff;
+    border: 10px double var(--mainBlue);
     padding: 30px;
     border-radius: 20px;
 }
 
 .mid-colum2 {
-    border: 10px double #007bff;
+    border: 10px double var(--mainBlue);
     padding: 30px;
     margin-left: 50px;
     border-radius: 20px;
@@ -212,17 +227,17 @@
 .container-end-page {
     display: flex;
     flex-direction: row;
-    background-color: #007bff;
-    padding: 50px;
-    color: #fff;
+    background-color: var(--mainBlue);
+    padding: 80px;
+    color: var(--mainWhite);
 }
 
 .container-end-page h2 {
-    color: #f3e70f;
+    color: var(--mainYellow);
 }
 
 .slideshow-container img {
-    box-shadow: rgba(185, 183, 183, 0.437) 8px 15px 10px;
+    box-shadow: var(--mainGrey) 8px 15px 10px;
     border-radius: 20px;
 }
 
@@ -241,8 +256,8 @@
     width: auto;
     height: auto;
     padding: 16px;
-    background-color: rgba(29, 102, 204, 0.963);
-    box-shadow: #fff 5px 5px 30px;
+    background-color: var(--mainBlue);
+    box-shadow: var(--mainWhite) 5px 5px 30px;
     border-radius: 10px;
     font-weight: bold;
     font-size: 20px;
@@ -287,7 +302,7 @@
     height: 15px;
     margin: 0 2px;
     display: inline-block;
-    background-color: #007bff5b;
+    background-color: var(--mainBlueOpacity);
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.6s ease;
@@ -295,7 +310,7 @@
 
 .active,
 .dot:active {
-    background-color: #fff;
+    background-color: var(--mainWhite);
 }
 
 .fade {
@@ -306,7 +321,7 @@
 }
 
 .form-signin h1{
-    color: #007bff;
+    color: var(--mainBlue);
 }
 
 @-webkit-keyframes fade {
@@ -402,13 +417,13 @@
     }
 
     .dropdown-menu {
-        background-color: #fff;
-        box-shadow: #fff 5px 5px 10px;
-        border: 1px solid #fff;
+        background-color: var(--mainWhite);
+        box-shadow: var(--mainWhite) 5px 5px 10px;
+        border: 1px solid var(--mainWhite);
     }
 
     .dropdown-menu a {
-        color: #007bff;
+        color: var(--mainBlue);
     }
 
     .prev,
@@ -459,13 +474,17 @@
     }
 
     .dropdown-menu {
-        background-color: #fff;
-        box-shadow: #fff 5px 5px 10px;
-        border: 1px solid #fff;
+        background-color: var(--mainWhite);
+        box-shadow: var(--mainWhite) 5px 5px 10px;
+        border: 1px solid var(--mainWhite);
     }
 
     .dropdown-menu a {
-        color: #007bff;
+        color: var(--mainBlue);
+    }
+
+    .container-end-page {
+        padding: 50px;
     }
 }
 
@@ -476,5 +495,60 @@
 
     .modal-card {
         margin-left: 0;
+    }
+
+    .container-end-page {
+        padding: 50px;
+    }
+
+    .showUser {
+        display: none;
+    }
+
+    .modal-card {
+        margin-left: 33px;
+    }
+
+    .mid-colum-frame {
+        display: none;
+    }
+
+    .mid-colum {
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .mid-colum2 {
+        margin-left: 0;
+    }
+
+    .custom-carosel p {
+        font-size: 18px;
+    }
+
+    .container-second-carousel {
+        display: none;
+    }
+
+    .footer a {
+        font-size: 12px;
+    }
+
+    .modal-card {
+        margin-left: 0;
+    }
+
+    .dropdown-menu {
+        background-color: var(--mainWhite);
+        box-shadow: var(--mainWhite) 5px 5px 10px;
+        border: 1px solid var(--mainWhite);
+    }
+
+    .dropdown-menu a {
+        color: var(--mainBlue);
+    }
+
+    .container-end-page {
+        padding: 50px;
     }
 }

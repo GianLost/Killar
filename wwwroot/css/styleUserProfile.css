@@ -2,17 +2,29 @@
     font-family: 'fantasy';
 }
 
+:root {
+    --mainBlue: #007bff;
+    --mainWhite: #fff;
+    --blackShadow: #000;
+    --mainGrey: rgb(130, 129, 129);
+    --buttonShadow: #ffffffde;
+    --buttonPrevNextBackground: #292727;
+    --mainBlueOpacity: #007bff88;
+    --mainYellow: rgb(227, 191, 49);
+    --mainBlueModal: #3590f1;
+}
+
 .buttonProfile {
     margin-left: 6%;
     margin-right: 6%;
     margin-top: 15px;
-    box-shadow: #000 -2px 2px 5px;
+    box-shadow: var(--blackShadow) -2px 2px 5px;
 }
 
 .buttonProfile:hover {
-    border: 1px solid #007bff;
-    background-color: #fff;
-    color: #007bff;
+    border: 1px solid var(--mainBlue);
+    background-color: var(--mainWhite);
+    color: var(--mainBlue);
 }
 
 

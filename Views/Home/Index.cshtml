@@ -4,110 +4,43 @@
 
 <body class="text-center">
 
-    <div class="container-fluid">
+    <div id="myCarousel" class="container-fluid carousel carousel-container slide mb-5" data-ride="carousel">
 
-        <div id="myCarousel" class=" carousel carousel-container slide mb-5" data-ride="carousel">
+        <ol class="carousel-indicators indicador">
 
-            <ol class="carousel-indicators indicador">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
 
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-            </ol>
+        <div class="carousel-inner mt-2">
 
-            <div class="carousel-inner mt-2">
+            <div class="carousel-item active custom-carosel">
 
-                <div class="carousel-item active custom-carosel">
+                <img class="first-slide img-fluid carousel-img w-100" src="../images/carosel-1-.png" alt="Bem vindos a killar wild rift">
 
-                    <img class="first-slide col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 img-fluid"
-                        src="../images/carosel-1-.png" alt="Bem vindos a killar wild rift">
+                <div class="container">
 
-                    <div class="container">
+                    <div class="carousel-caption6 mt-3">
 
-                        <div class="carousel-caption6 mt-3">
+                        <h1 class="mt-5">Bem-Vindo a Killar</h1>
 
-                            <h1 class="mt-5">Bem-Vindo a Killar</h1>
+                        <p class="mt-3">Boas-Vindas a Killar Guild. Aproveite e crie seu cadastro para poder
+                            participar do nosso time. Venha participar das Ranked's, PvP's e GvG's em equipe
+                            com vários jogadores empenhados na auto-evolução no Rift. Conheça Pessoas, desenvolva
+                            sua jogabilidade, treine com amigos, suba de elo e muito mais. Não
+                            perca tempo cadastre-se já
+                            e
+                            garanta
+                            uma vaga
+                            com nosso time agora mesmo...
+                        </p>
 
-                            <p class="mt-3">Boas-Vindas a Killar Guild. Aproveite e crie seu cadastro para poder
-                                participar do nosso time. Venha participar das Ranked's, PvP's e GvG's em equipe
-                                com vários jogadores empenhados na auto-evolução no Rift. Conheça Pessoas, desenvolva
-                                sua jogabilidade, treine com amigos, suba de elo e muito mais. Não
-                                perca tempo cadastre-se já
-                                e
-                                garanta
-                                uma vaga
-                                com nosso time agora mesmo...
-                            </p>
-
-                            <p>
-                                <a class="btn btn-block btn-dark mt-5 mb-5" asp-controller="Users"
-                                    asp-action="RegisterUser" role="button">Cadastre-se</a>
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="carousel-item custom-carosel">
-
-                    <img class="second-slide col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 img-fluid"
-                        src="../images/carosel-2-.png" alt="Patch 3.3 karma astromante">
-
-                    <div class="container">
-
-                        <div class="carousel-caption6 mt-3 ">
-
-                            <h1 class="mt-5">Notas da atualização 3.3 </h1>
-
-                            <p class="mt-3">É hora de um Brilho Intenso — chegou a Atualização 3.3! Estamos canalizando
-                                os elementos
-                                e as estrelas nessa atualização, pois o Rift Elemental chegou para ficar permanentemente
-                                e as Guardiãs Estelares, novas e antigas, estão aqui para nos proteger das forças do
-                                mal! Também temos a Temporada Ranqueada 6, um novo Passe Wild e muito mais!&copy;"Riot
-                                Games"
-                            </p>
-
-                            <p>
-                                <a class="btn btn-block btn-dark mt-5 mb-5"
-                                    href="https://wildrift.leagueoflegends.com/en-us/news/game-updates/wild-rift-patch-notes-3-3/"
-                                    role="button">Veja mais</a>
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="carousel-item custom-carosel">
-
-                    <img class="third-slide col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 img-fluid"
-                        src="../images/carosel-3-.png" alt="Imagem wild tour">
-
-                    <div class="container">
-
-                        <div class="carousel-caption6 mt-3">
-
-                            <h1 class="mt-5">Wild Rift 2022</h1>
-
-                            <p class="mt-3">"Estamos incrivelmente felizes por poder anunciar que nosso primeiro
-                                Campeonato Mundial
-                                de Wild Rift – Icons acontecerá em Singapura", comenta Leo Faria, Diretor Global de
-                                Esports do Wild Rift. "O Icons promete ser o clímax da temporada de Esports do Wild
-                                Rift, colocando em evidência o que há de melhor nos Esports para dispositivos móveis ao
-                                redor do mundo. &copy;"Riot Games""
-                            </p>
-
-                            <p>
-                                <a class="btn btn-block btn-dark mt-5 mb-5"
-                                    href="https://wildrift.leagueoflegends.com/pt-br/news/esports/wild-tour-brasil-2022-grupos-e-agenda-completa/"
-                                    role="button">Veja mais</a>
-                            </p>
-
-                        </div>
+                        <p>
+                            <a class="btn btn-block btn-dark mt-5 mb-5" asp-controller="Users" asp-action="RegisterUser"
+                                role="button">Cadastre-se</a>
+                        </p>
 
                     </div>
 
@@ -115,95 +48,155 @@
 
             </div>
 
-            <a class=" carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <div class="carousel-item custom-carosel">
 
-                <i class=" but-prev button-carosel fa-solid fa-backward" aria-hidden="true"></i>
+                <img class="second-slide img-fluid carousel-img w-100" src="../images/carosel-2-.png" alt="Patch 3.3 karma astromante">
 
-            </a>
+                <div class="container">
 
-            <a class=" carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <div class="carousel-caption6 mt-3 ">
 
-                <i class=" but-next fa-solid fa-forward" aria-hidden="true"></i>
+                        <h1 class="mt-5">Notas da atualização 3.3 </h1>
 
-            </a>
+                        <p class="mt-3">É hora de um Brilho Intenso — chegou a Atualização 3.3! Estamos canalizando
+                            os elementos
+                            e as estrelas nessa atualização, pois o Rift Elemental chegou para ficar permanentemente
+                            e as Guardiãs Estelares, novas e antigas, estão aqui para nos proteger das forças do
+                            mal! Também temos a Temporada Ranqueada 6, um novo Passe Wild e muito mais!&copy;"Riot
+                            Games"
+                        </p>
+
+                        <p>
+                            <a class="btn btn-block btn-dark mt-5 mb-5"
+                                href="https://wildrift.leagueoflegends.com/en-us/news/game-updates/wild-rift-patch-notes-3-3/"
+                                role="button">Veja mais</a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="carousel-item custom-carosel">
+
+                <img class="third-slide img-fluid carousel-img w-100" src="../images/carosel-3-.png" alt="Imagem wild tour">
+
+                <div class="container">
+
+                    <div class="carousel-caption6 mt-3">
+
+                        <h1 class="mt-5">Wild Rift 2022</h1>
+
+                        <p class="mt-3">"Estamos incrivelmente felizes por poder anunciar que nosso primeiro
+                            Campeonato Mundial
+                            de Wild Rift – Icons acontecerá em Singapura", comenta Leo Faria, Diretor Global de
+                            Esports do Wild Rift. "O Icons promete ser o clímax da temporada de Esports do Wild
+                            Rift, colocando em evidência o que há de melhor nos Esports para dispositivos móveis ao
+                            redor do mundo. &copy;"Riot Games""
+                        </p>
+
+                        <p>
+                            <a class="btn btn-block btn-dark mt-5 mb-5"
+                                href="https://wildrift.leagueoflegends.com/pt-br/news/esports/wild-tour-brasil-2022-grupos-e-agenda-completa/"
+                                role="button">Veja mais</a>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <hr class="mt-5 mb-5">
+        <a class=" carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
 
-        <div class="container modal-container">
+            <i class=" but-prev button-carosel fa-solid fa-backward" aria-hidden="true"></i>
 
-            <!--cards modais-->
+        </a>
 
-            <div class="row mt-5">
+        <a class=" carousel-control-next" href="#myCarousel" role="button" data-slide="next">
 
-                <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-5 modal-card mb-5">
+            <i class=" but-next fa-solid fa-forward" aria-hidden="true"></i>
 
-                    <h2 class="mb-5 mt-5">PATCH 3.3</h2>
+        </a>
 
-                    <img class=" mb-2 mod-img img-fluid" src="../images/card-mod-1-.png" alt="Rift elemental novidades"
-                        width="100%" height="160">
+    </div>
 
-                    <hr class="mb-4">
+    <hr class="mt-5">
 
-                    <h3 class="mb-2 modal-title">RIFT ELEMENTAL</h3>
+    <div class="container modal-container">
 
-                    <p>
-                        Após uma montanha de testes, estamos prontos pra inundar suas partidas ranqueadas. O Rift
-                        Elemental vai trazer grandes mudanças para cada partida que você jogar, literalmente remodelando
-                        o mapa depois da eliminação do primeiro dragão.&copy;"Riot Games"
-                    </p>
+        <!--cards modais-->
 
-                    <hr class="mb-4">
+        <div class="row mt-5">
 
-                    <a type="button" class="btn btn-light mt-4" data-toggle="modal"
-                        data-target="#exampleModalCenter">Leia mais &raquo;</a>
+            <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-5 modal-card mb-5">
 
-                    <!--Modal-->
+                <h2 class="mb-5 mt-5">PATCH 3.3</h2>
 
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <img class=" mb-2 mod-img img-fluid" src="../images/card-mod-1-.png" alt="Rift elemental novidades"
+                    width="100%" height="160">
 
-                        <div class="modal-dialog modal-dialog-centered" role="document">
+                <hr class="mb-4">
 
-                            <div class="modal-content">
+                <h3 class="mb-2 modal-title">RIFT ELEMENTAL</h3>
 
-                                <div class="modal-header">
+                <p>
+                    Após uma montanha de testes, estamos prontos pra inundar suas partidas ranqueadas. O Rift
+                    Elemental vai trazer grandes mudanças para cada partida que você jogar, literalmente remodelando
+                    o mapa depois da eliminação do primeiro dragão.&copy;"Riot Games"
+                </p>
 
-                                    <h5 class="modal-title" id="exampleModalLongTitle">RIFT ELEMENTAL - DRAGÕES</h5>
+                <hr class="mb-4">
 
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <a type="button" class="btn btn-outline-light mt-4" data-toggle="modal"
+                    data-target="#exampleModalCenter">Leia mais &raquo;</a>
 
-                                        <span aria-hidden="true">&times;</span>
+                <!--Modal-->
 
-                                    </button>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
-                                </div>
+                    <div class="modal-dialog modal-dialog-centered" role="document">
 
-                                <div class="modal-body">
+                        <div class="modal-content">
 
-                                    <article><b>Infernal:</b> Queima arbustos e derruba paredes.</br>
-                                        <b>Montanha:</b>Ergue paredes e terrenos do chão.</br>
-                                        <b>Oceano:</b> Arbustos e Frutomel crescem com a cheia do rio.</br>
-                                        Junto com as mudanças no mapa, também estamos apresentando um sistema atualizado
-                                        para o Matador de Dragões. Eliminar um único Dragão Elemental não concederá
-                                        muito
-                                        poder por si só, mas o seu poder aumenta a cada dragão adicional, ficando mais
-                                        potente conforme você coleta os efeitos adicionais concedidos por cada dragão
-                                        que
-                                        sua equipe elimina. Se você decidir eliminar todos os 3 Dragões Elementais, será
-                                        um
-                                        oponente formidável antes que a outra equipe tenha a chance de tentar lutar pelo
-                                        Dragão Ancião.&copy;"Riot Games"
-                                    </article>
+                            <div class="modal-header">
 
-                                </div>
+                                <h5 class="modal-title" id="exampleModalLongTitle">RIFT ELEMENTAL - DRAGÕES</h5>
 
-                                <div class="modal-footer">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                                    <span aria-hidden="true">&times;</span>
 
-                                </div>
+                                </button>
+
+                            </div>
+
+                            <div class="modal-body">
+
+                                <article><b>Infernal:</b> Queima arbustos e derruba paredes.</br>
+                                    <b>Montanha:</b>Ergue paredes e terrenos do chão.</br>
+                                    <b>Oceano:</b> Arbustos e Frutomel crescem com a cheia do rio.</br>
+                                    Junto com as mudanças no mapa, também estamos apresentando um sistema atualizado
+                                    para o Matador de Dragões. Eliminar um único Dragão Elemental não concederá
+                                    muito
+                                    poder por si só, mas o seu poder aumenta a cada dragão adicional, ficando mais
+                                    potente conforme você coleta os efeitos adicionais concedidos por cada dragão
+                                    que
+                                    sua equipe elimina. Se você decidir eliminar todos os 3 Dragões Elementais, será
+                                    um
+                                    oponente formidável antes que a outra equipe tenha a chance de tentar lutar pelo
+                                    Dragão Ancião.&copy;"Riot Games"
+                                </article>
+
+                            </div>
+
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
 
                             </div>
 
@@ -211,92 +204,92 @@
 
                     </div>
 
-                </div><!-- /.col-lg-10 -->
+                </div>
+
+            </div><!-- /.col-lg-10 -->
 
 
-                <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-5 modal-card mb-5">
+            <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-5 modal-card mb-5">
 
-                    <h2 class="mb-5 mt-5">RANKEDS</h2>
+                <h2 class="mb-5 mt-5">RANKEDS</h2>
 
-                    <img class=" mb-2 mod-img img-fluid" src="../images/card-mod-2-.png" alt="Generic placeholder image"
-                        width="100%" height="160">
-                    <hr class="mb-4">
-                    <h3 class="mb-2 modal-title">FILA LENDÁRIA</h3>
+                <img class=" mb-2 mod-img img-fluid" src="../images/card-mod-2-.png" alt="Generic placeholder image"
+                    width="100%" height="160">
+                <hr class="mb-4">
+                <h3 class="mb-2 modal-title">FILA LENDÁRIA</h3>
 
-                    <p> E esta atualização trouxe o lançamento das Ranqueadas Lendárias. Essa fila com base
-                        em pontos será apenas solo, disponível para as pessoas que estão no ranque Diamante ou acima.
-                        Juntamente com a novidade.&copy;"Riot Games"</p>
+                <p> E esta atualização trouxe o lançamento das Ranqueadas Lendárias. Essa fila com base
+                    em pontos será apenas solo, disponível para as pessoas que estão no ranque Diamante ou acima.
+                    Juntamente com a novidade.&copy;"Riot Games"</p>
 
-                    <hr class="mb-4">
+                <hr class="mb-4">
 
-                    <a type="button" class="btn btn-light mt-5" data-toggle="modal"
-                        data-target="#exampleModalCenter2">Leia mais &raquo;</a>
+                <a type="button" class="btn btn-outline-light mt-5" data-toggle="modal"
+                    data-target="#exampleModalCenter2">Leia mais &raquo;</a>
 
-                    <!--Modal-->
+                <!--Modal-->
 
-                    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
-                        <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
 
-                            <div class="modal-content">
+                        <div class="modal-content">
 
-                                <div class="modal-header">
+                            <div class="modal-header">
 
-                                    <h5 class="modal-title" id="exampleModalLongTitle">SOBRE - FILA LENDÁRIA</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">SOBRE - FILA LENDÁRIA</h5>
 
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                                        <span aria-hidden="true">&times;</span>
+                                    <span aria-hidden="true">&times;</span>
 
-                                    </button>
+                                </button>
 
-                                </div>
+                            </div>
 
-                                <div class="modal-body">
+                            <div class="modal-body">
 
-                                    <article>
+                                <article>
 
-                                        A Fila Lendária será uma <b>fila solo</b>, e quem estiver em tiers a partir do
-                                        <b>Diamante</b>
-                                        (do atual sistema de ranqueadas) poderá participar dela. Ela será lançada em
-                                        algumas semanas após o início da nova temporada e só ficará disponível durante
-                                        algumas horas do dia.
+                                    A Fila Lendária será uma <b>fila solo</b>, e quem estiver em tiers a partir do
+                                    <b>Diamante</b>
+                                    (do atual sistema de ranqueadas) poderá participar dela. Ela será lançada em
+                                    algumas semanas após o início da nova temporada e só ficará disponível durante
+                                    algumas horas do dia.
 
-                                        Haverá seis novos ranques principais nessa fila, e cada ranque terá quatro
-                                        subtiers para vocês alcançarem. Do mesmo jeito que os tiers a partir de Diamante
-                                        já funcionavam antes, para subir de ranque no nosso sistema atual, vocês
-                                        precisarão ganhar Pontos Lendários suficientes para atingir cada objetivo. Vocês
-                                        só poderão receber Pontos Lendários se, junto da equipe, conquistarem uma
-                                        vitória. A quantidade de pontos recebidos será baseada na habilidade de cada um
-                                        e na dos oponentes.
+                                    Haverá seis novos ranques principais nessa fila, e cada ranque terá quatro
+                                    subtiers para vocês alcançarem. Do mesmo jeito que os tiers a partir de Diamante
+                                    já funcionavam antes, para subir de ranque no nosso sistema atual, vocês
+                                    precisarão ganhar Pontos Lendários suficientes para atingir cada objetivo. Vocês
+                                    só poderão receber Pontos Lendários se, junto da equipe, conquistarem uma
+                                    vitória. A quantidade de pontos recebidos será baseada na habilidade de cada um
+                                    e na dos oponentes.
 
-                                        Os ranques Lendários são:
+                                    Os ranques Lendários são:
 
-                                        <ul class="mt-3">
+                                    <ul class="mt-3">
 
-                                            <li><b>Combatente VI-I</b></li>
-                                            <li><b>Comandante VI-I</b></li>
-                                            <li><b>Guardião VI-I</b></li>
-                                            <li><b>Aniquilador VI-I</b></li>
-                                            <li><b>Imortal VI-I</b></li>
-                                            <li><b>Lenda</b></li>
+                                        <li><b>Combatente VI-I</b></li>
+                                        <li><b>Comandante VI-I</b></li>
+                                        <li><b>Guardião VI-I</b></li>
+                                        <li><b>Aniquilador VI-I</b></li>
+                                        <li><b>Imortal VI-I</b></li>
+                                        <li><b>Lenda</b></li>
 
-                                        </ul>
+                                    </ul>
 
-                                        </br>
+                                    </br>
 
-                                        &copy;"Riot Games"
+                                    &copy;"Riot Games"
 
-                                    </article>
+                                </article>
 
-                                </div>
+                            </div>
 
-                                <div class="modal-footer">
+                            <div class="modal-footer">
 
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-
-                                </div>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
 
                             </div>
 
@@ -304,305 +297,305 @@
 
                     </div>
 
+                </div>
 
-                </div><!-- /.col-lg-10 -->
 
-            </div>
+            </div><!-- /.col-lg-10 -->
 
-            <div class="row">
-
-                <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-5 modal-card mb-5">
-
-                    <h2 class="mb-5 mt-5">EVENTOS</h2>
-
-                    <img class="mb-2 mod-img img-fluid" src="../images/card-mod-3-.png" alt="Evento patch 3.3 image"
-                        width="100%" height="160">
-
-                    <hr class="mb-4">
-
-                    <h3 class="mb-2 modal-title">SKINS</h3>
-
-                    <p>Façam o juramento para a Primeira Estrela e entrem no evento Guardiãs Estelares, repleto de
-                        magia, esperança e amizades que podem salvar a galáxia. Ao jogar partidas, vocês poderão obter
-                        Guloseimas Estelares e recompensas exclusivas... E talvez possam até encontrar algo mais durante
-                        sua jornada.&copy;"Riot Games"</p>
-
-                    <hr class="mb-4">
-
-                    <a type="button" class="btn btn-light mt-4" data-toggle="modal"
-                        data-target="#exampleModalCenter3">Leia mais &raquo;</a>
-                    <!--Modal-->
-
-                    <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-
-                            <div class="modal-content">
-
-                                <div class="modal-header">
-
-                                    <h5 class="modal-title" id="exampleModalLongTitle">SKINS</h5>
-
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-                                        <span aria-hidden="true">&times;</span>
-
-                                    </button>
-
-                                </div>
-
-                                <hr>
-
-                                <div class="modal-body">
-
-                                    <article>
-
-                                        <img class="mb-5 mod-img img-fluid w-100" src="../images/card-skins-.png"
-                                            alt="oriana guardiã estelar">
-
-
-                                        <span>
-                                            Agitaremos as coisas nesta atualização, então coloquem seus óculos de sol,
-                                            sentem-se perto da piscina e observem o céu estrelado brilhando
-                                            intensamente.
-                                        </span>
-
-                                        </br>
-
-                                        <h4 class="mt-3">Guardiãs Estelares</h4>
-
-                                        </br>
-
-                                        <ul>
-                                            <li>Ahri Guardiã Estelar;</li>
-                                            <li>Miss Fortune Guardiã Estelar;</li>
-                                            <li>Orianna Guardiã Estelar;</li>
-                                            <li>Rakan Guardião Estelar;</li>
-                                            <li>Rakan Guardião Estelar Redimido;</li>
-                                            <li>Senna Guardiã Estelar;</li>
-                                            <li>Seraphine Guardiã Estelar;</li>
-                                            <li>Xayah Guardiã Estelar;</li>
-                                            <li>Xayah Guardiã Estelar Redimida;</li>
-
-                                        </ul>
-
-                                        </br>
-
-                                        <h4 class="mt-3">Curtindo o Verão</h4>
-
-                                        </br>
-
-                                        <ul>
-                                            <li>Caitlyn Curtindo o Verão;</li>
-                                            <li>Graves Curtindo o Verão;</li>
-                                            <li>Mundo Curtindo o Verão;</li>
-                                            <li>Ziggs Curtindo o Verão;</li>
-                                        </ul>
-
-                                        </br>
-
-                                        <h4 class="mt-3">Outras</h4>
-
-                                        <ul>
-
-                                            <li>Lee Sin Punhos Divinos</li>
-                                            <li>Tristana Treinadora de Dragões</li>
-                                            <li>Singed Apicultor</li>
-                                            <li>Kassadin Emissário das Trevas</li>
-                                            <li>Diana Deusa Lunar</li>
-                                            <li>Sion Anunciador da Guerra</li>
-
-                                        </ul>
-
-                                        &copy;"Riot Games"
-
-                                    </article>
-
-                                </div>
-
-                                <div class="modal-footer">
-
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div><!-- /.col-lg-10 -->
-
-
-                <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-5 modal-card mb-5">
-
-                    <h2 class="mb-5 mt-5">Novos campeões</h2>
-
-                    <img class="mb-2 modal-img img-fluid" src="../images/card-mod-4-.png" alt="Campeões patch 3.3 image"
-                        width="100%" height="160">
-
-                    <hr class="mb-4">
-
-                    <h3 class="mb-2 modal-title">Campeões</h3>
-
-                    <p>
-                        Acabamos de receber um relatório de alguns dos melhores astrônomos e sugerimos ficar de olho nas
-                        estrelas nesta Atualização, já que algo muito brilhante chegará em breve. Mas não são apenas
-                        estrelas brilhantes que esperam por você! Se alguém perdeu a Prévia da Atualização, vamos
-                        recapitular todos os destaques que anunciamos por lá. &copy;"Riot Games"
-                    </p>
-
-                    <hr class="mb-4">
-
-                    <a type="button" class="btn btn-light mt-4" data-toggle="modal"
-                        data-target="#exampleModalCenter4">Leia mais &raquo;</a>
-
-                    <!--Modal-->
-
-                    <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-
-                            <div class="modal-content">
-
-                                <div class="modal-header">
-
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Fica Ligado!</h5>
-
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-                                        <span aria-hidden="true">&times;</span>
-
-                                    </button>
-
-                                </div>
-
-                                <div class="modal-body">
-
-                                    <article>
-
-                                        <h4>KASSADIN, O ANDARILHO DO VAZIO</h4>
-
-                                        <hr class="mb-4">
-
-                                        <img class=" mb-3 mod-img img-fluid" src="../images/champ-1-.png"
-                                            alt="KASSADIN, O ANDARILHO DO VAZIO">
-
-                                        </br>
-
-                                        <h4>SAMIRA, A ROSA DO DESERTO</h4>
-
-                                        <hr class="mb-4">
-
-                                        <img class=" mb-3 mod-img img-fluid" src="../images/champ-2-.png"
-                                            alt="SAMIRA, A ROSA DO DESERTO">
-
-                                        </br>
-
-                                        <h4>SION, O COLOSSO MORTO-VIVO</h4>
-
-                                        <hr class="mb-4">
-
-                                        <img class=" mb-3 mod-img img-fluid" src="../images/champ-3-.png"
-                                            alt="SION, O COLOSSO MORTO-VIVO">
-
-                                        </br>
-
-                                        &copy;"Riot Games"
-
-                                    </article>
-
-                                </div>
-
-                                <div class="modal-footer">
-
-                                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div><!-- /.col-lg-10 -->
-
-            </div><!-- div row-->
         </div>
 
-        <hr class="mt-5 mb-5">
+        <div class="row">
 
-        <div class="container container-mid-page">
+            <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-5 modal-card mb-5">
 
-            <div class="row featurette">
+                <h2 class="mb-5 mt-5">EVENTOS</h2>
 
-                <div class="col-md-12 col-lg-5 col-xl-5 col-sm-12 mt-3 mb-3 mid-colum">
-
-                    <h2 class="featurette-heading">Transforme seu estilo ranqueada! <span class="text-muted">Confira
-                            dicas e estratégias com membros do time...</span></h2>
-
-                    <p class="text-justify lead mt-5">
-
-                        Cadastre-se e faça parte da família. Cresça junto
-                        com diversos jogadores que vem se
-                        empnhando para crescer perante o rift. Seja um membro e participe da comunidade para conferir
-                        dicas e muito mais.
-
-                    </p>
-
-                    <a asp-controller="Users" asp-action="RegisterUser"
-                        class="btn btn-primary but-index">Cadastre-se</a>
-
-                </div>
+                <img class="mb-2 mod-img img-fluid" src="../images/card-mod-3-.png" alt="Evento patch 3.3 image"
+                    width="100%" height="160">
 
                 <hr class="mb-4">
 
-                <div
-                    class="col-md-12 col-lg-6 col-xl-6 col-sm-12 mt-3 mb-3 mid-colum-frame embed-responsive embed-responsive-16by9">
+                <h3 class="mb-2 modal-title">SKINS</h3>
 
-                    <iframe class="embed-responsive-ite frame" src="https://www.youtube.com/embed/8O9MQ2fI6Os"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                <p>Façam o juramento para a Primeira Estrela e entrem no evento Guardiãs Estelares, repleto de
+                    magia, esperança e amizades que podem salvar a galáxia. Ao jogar partidas, vocês poderão obter
+                    Guloseimas Estelares e recompensas exclusivas... E talvez possam até encontrar algo mais durante
+                    sua jornada.&copy;"Riot Games"</p>
+
+                <hr class="mb-4">
+
+                <a type="button" class="btn btn-outline-light mt-4" data-toggle="modal"
+                    data-target="#exampleModalCenter3">Leia mais &raquo;</a>
+                <!--Modal-->
+
+                <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+
+                                <h5 class="modal-title" id="exampleModalLongTitle">SKINS</h5>
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                    <span aria-hidden="true">&times;</span>
+
+                                </button>
+
+                            </div>
+
+                            <hr>
+
+                            <div class="modal-body">
+
+                                <article>
+
+                                    <img class="mb-5 mod-img img-fluid w-100" src="../images/card-skins-.png"
+                                        alt="oriana guardiã estelar">
+
+
+                                    <span>
+                                        Agitaremos as coisas nesta atualização, então coloquem seus óculos de sol,
+                                        sentem-se perto da piscina e observem o céu estrelado brilhando
+                                        intensamente.
+                                    </span>
+
+                                    </br>
+
+                                    <h4 class="mt-3">Guardiãs Estelares</h4>
+
+                                    </br>
+
+                                    <ul>
+                                        <li>Ahri Guardiã Estelar;</li>
+                                        <li>Miss Fortune Guardiã Estelar;</li>
+                                        <li>Orianna Guardiã Estelar;</li>
+                                        <li>Rakan Guardião Estelar;</li>
+                                        <li>Rakan Guardião Estelar Redimido;</li>
+                                        <li>Senna Guardiã Estelar;</li>
+                                        <li>Seraphine Guardiã Estelar;</li>
+                                        <li>Xayah Guardiã Estelar;</li>
+                                        <li>Xayah Guardiã Estelar Redimida;</li>
+
+                                    </ul>
+
+                                    </br>
+
+                                    <h4 class="mt-3">Curtindo o Verão</h4>
+
+                                    </br>
+
+                                    <ul>
+                                        <li>Caitlyn Curtindo o Verão;</li>
+                                        <li>Graves Curtindo o Verão;</li>
+                                        <li>Mundo Curtindo o Verão;</li>
+                                        <li>Ziggs Curtindo o Verão;</li>
+                                    </ul>
+
+                                    </br>
+
+                                    <h4 class="mt-3">Outras</h4>
+
+                                    <ul>
+
+                                        <li>Lee Sin Punhos Divinos</li>
+                                        <li>Tristana Treinadora de Dragões</li>
+                                        <li>Singed Apicultor</li>
+                                        <li>Kassadin Emissário das Trevas</li>
+                                        <li>Diana Deusa Lunar</li>
+                                        <li>Sion Anunciador da Guerra</li>
+
+                                    </ul>
+
+                                    &copy;"Riot Games"
+
+                                </article>
+
+                            </div>
+
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
+
+
+            </div><!-- /.col-lg-10 -->
+
+
+            <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-5 modal-card mb-5">
+
+                <h2 class="mb-5 mt-5">Novos campeões</h2>
+
+                <img class="mb-2 modal-img img-fluid" src="../images/card-mod-4-.png" alt="Campeões patch 3.3 image"
+                    width="100%" height="160">
+
+                <hr class="mb-4">
+
+                <h3 class="mb-2 modal-title">Campeões</h3>
+
+                <p>
+                    Acabamos de receber um relatório de alguns dos melhores astrônomos e sugerimos ficar de olho nas
+                    estrelas nesta Atualização, já que algo muito brilhante chegará em breve. Mas não são apenas
+                    estrelas brilhantes que esperam por você! Se alguém perdeu a Prévia da Atualização, vamos
+                    recapitular todos os destaques que anunciamos por lá. &copy;"Riot Games"
+                </p>
+
+                <hr class="mb-4">
+
+                <a type="button" class="btn btn-outline-light mt-4" data-toggle="modal"
+                    data-target="#exampleModalCenter4">Leia mais &raquo;</a>
+
+                <!--Modal-->
+
+                <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+
+                                <h5 class="modal-title" id="exampleModalLongTitle">Fica Ligado!</h5>
+
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                    <span aria-hidden="true">&times;</span>
+
+                                </button>
+
+                            </div>
+
+                            <div class="modal-body">
+
+                                <article>
+
+                                    <h4>KASSADIN, O ANDARILHO DO VAZIO</h4>
+
+                                    <hr class="mb-4">
+
+                                    <img class=" mb-3 mod-img img-fluid" src="../images/champ-1-.png"
+                                        alt="KASSADIN, O ANDARILHO DO VAZIO">
+
+                                    </br>
+
+                                    <h4>SAMIRA, A ROSA DO DESERTO</h4>
+
+                                    <hr class="mb-4">
+
+                                    <img class=" mb-3 mod-img img-fluid" src="../images/champ-2-.png"
+                                        alt="SAMIRA, A ROSA DO DESERTO">
+
+                                    </br>
+
+                                    <h4>SION, O COLOSSO MORTO-VIVO</h4>
+
+                                    <hr class="mb-4">
+
+                                    <img class=" mb-3 mod-img img-fluid" src="../images/champ-3-.png"
+                                        alt="SION, O COLOSSO MORTO-VIVO">
+
+                                    </br>
+
+                                    &copy;"Riot Games"
+
+                                </article>
+
+                            </div>
+
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div><!-- /.col-lg-10 -->
+
+        </div><!-- div row-->
+    </div>
+
+    <hr class="mt-5 mb-5">
+
+    <div class="container container-mid-page">
+
+        <div class="row featurette">
+
+            <div class="col-md-12 col-lg-5 col-xl-5 col-sm-12 mt-3 mb-3 mid-colum">
+
+                <h2 class="featurette-heading">Transforme seu estilo ranqueada! <span class="text-muted">Confira
+                        dicas e estratégias com membros do time...</span></h2>
+
+                <p class="text-justify lead mt-5">
+
+                    Cadastre-se e faça parte da família. Cresça junto
+                    com diversos jogadores que vem se
+                    empnhando para crescer perante o rift. Seja um membro e participe da comunidade para conferir
+                    dicas e muito mais.
+
+                </p>
+
+                <a asp-controller="Users" asp-action="RegisterUser"
+                    class="btn btn-lg btn-outline-primary mt-2">Cadastre-se</a>
 
             </div>
 
-            <hr class="featurette-divider">
+            <hr class="mb-4">
 
-            <div class="row featurette ">
+            <div
+                class="col-md-12 col-lg-6 col-xl-6 col-sm-12 mt-3 mb-3 mid-colum-frame embed-responsive embed-responsive-16by9">
+
+                <iframe class="embed-responsive-ite frame" src="https://www.youtube.com/embed/8O9MQ2fI6Os"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+            </div>
+
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette ">
 
 
-                <div class="col-md-12 col-lg-6 col-xl-6 col-sm-12 mt-3 mb-3 embed-responsive embed-responsive-16by9">
+            <div class="col-md-12 col-lg-6 col-xl-6 col-sm-12 mt-3 mb-3 embed-responsive embed-responsive-16by9">
 
-                    <iframe class="embed-responsive-ite frame" src="https://www.youtube.com/embed/-idEJO_GK-w"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                <iframe class="embed-responsive-ite frame" src="https://www.youtube.com/embed/-idEJO_GK-w"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
 
-                </div>
+            </div>
 
-                <hr class="mb-4">
+            <hr class="mb-4">
 
-                <div class="col-md-12 col-lg-5 col-xl-5 col-sm-12 mt-3 mb-3 mid-colum2">
+            <div class="col-md-12 col-lg-5 col-xl-5 col-sm-12 mt-3 mb-3 mid-colum2">
 
-                    <h2 class="featurette-heading">Ainda não conhece o Wild Rift? <span class="text-muted">Tá esperando
-                            o que? Vem com a gente jogar esse game insano!</span>
-                    </h2>
-                    <p class="lead text-justify mt-5">O irmão de League of Legends, Wild Rift é a versão do MOBA
-                        desenvolvido pela Riot Games para dispositivos móveis. Lançado em 2020, o Wild Rift (também
-                        carinhosamente chamado de CeluLoL pelos jogadores) é o último jogo mobile a aparecer na nossa
-                        lista. Ao total, 68 campeonatos foram ou ainda serão promovidos este ano, totalizando a
-                        premiação de quase US$ 5 milhões (ou R$ 26,7 milhões na atual cotação do dólar)&copy;"Riot
-                        Games".</p>
-
-                </div>
+                <h2 class="featurette-heading">Ainda não conhece o Wild Rift? <span class="text-muted">Tá esperando
+                        o que? Vem com a gente jogar esse game insano!</span>
+                </h2>
+                <p class="lead text-justify mt-5">O irmão de League of Legends, Wild Rift é a versão do MOBA
+                    desenvolvido pela Riot Games para dispositivos móveis. Lançado em 2020, o Wild Rift (também
+                    carinhosamente chamado de CeluLoL pelos jogadores) é o último jogo mobile a aparecer na nossa
+                    lista. Ao total, 68 campeonatos foram ou ainda serão promovidos este ano, totalizando a
+                    premiação de quase US$ 5 milhões (ou R$ 26,7 milhões na atual cotação do dólar)&copy;"Riot
+                    Games".</p>
 
             </div>
 
@@ -610,50 +603,46 @@
 
     </div>
 
+
+
     <hr class="mt-5 mb-5">
 
     <div class="container-fluid container-end-page featurette last">
 
-        <div class="">
+        <div>
 
-            <h2 class="featurette-heading mt-5">Um dos maiores lançamento da gigante<span class="text-muted"> RIOT
+            <h2 class="featurette-heading mt-3">Um dos maiores lançamento da gigante<span class="text-muted"> RIOT
                     GAMES... Vem novidade por ai!</span>
             </h2>
 
             <p class="lead text-justify mt-5">
 
-                Nas Atualizações 3.1 e 3.1a, lançamos a primeira versão do Rift
-                Elemental para os jogadores testarem. Foi muito bom conhecer as opiniões de vocês e ver a
-                mecânica de jogo durante o nosso primeiro teste. Estamos ansiosos para que todo mundo
-                experimente a nossa segunda versão! Voltaremos em breve com um /dev de um dos nossos designers,
-                e aí vamos nos aprofundar nesses testes. Mas, agora, que tal uma espiadinha na Atualização 3.1b
-                do Rift Elemental? Esta versão do Rift Elemental ficará disponível para jogar num modo de jogo
-                limitado de 28 de abril às 21:01 BRT a 8 de maio às 21:01 BRT*. Ela vai ter um visual semelhante
-                ao da primeira versão, com apenas alguns ajustes feitos com base no feedback que recebemos de
-                vocês:
+                Nas Atualizações 3.1 e 3.1a, lançamos a primeira versão do Rift Elemental para os jogadores testarem.
+                Foi muito bom conhecer as opiniões de vocês e ver a mecânica de jogo durante o nosso primeiro teste.
+                Estamos ansiosos para que todo mundo experimente a nossa segunda versão! Voltaremos em breve com um /dev
+                de um dos nossos designers,
+                e aí vamos nos aprofundar nesses testes. Mas, agora, que tal uma espiadinha na Atualização 3.1b do Rift
+                Elemental? Esta versão do Rift Elemental ficará disponível para jogar num modo de jogo limitado de 28 de
+                abril às 21:01 BRT a 8 de maio às 21:01 BRT*. Ela vai ter um visual semelhante ao da primeira versão,
+                com apenas alguns ajustes feitos com base no feedback que recebemos de vocês:
 
-            <ul>
+            </p>
 
-                <li class="lead text-justify mb-3">
-                    O primeiro dragão ainda vai surgir aos 5 minutos e os dragões
-                    terão um tempo de
-                    ressurgimento de 5 minutos.
-                    Agora, o Rift vai mudar após a eliminação do primeiro dragão. Mas o elemento que vai dominar
-                    o Rift será determinado pelo segundo dragão que surgir.
-                </li>
+            <p class="lead text-justify" style="font-style: italic;">
+                O primeiro dragão ainda vai surgir aos 5 minutos e os dragões terão um tempo de ressurgimento de 5
+                minutos.
+            </p>
 
-                <li class="lead text-justify mb-3">
-                    A equipe que eliminar dois dragões ganhará suas almas
-                    poderosas.
-                </li>
+            <p class="lead text-justify" style="font-style: italic;">
+                Agora, o Rift vai mudar após a eliminação do primeiro dragão. Mas o elemento que vai dominar
+                o Rift será determinado pelo segundo dragão que surgir.
+                A equipe que eliminar dois dragões ganhará suas almas
+                poderosas.
+            </p>
 
-                <li class="lead text-justify mb-3">
-                    O Dragão Ancião vai surgir 5 minutos depois que uma equipe
-                    garantir a Alma de Dragão, com um tempo de ressurgimento de 5 minutos.&copy;"Riot Games"
-                </li>
-
-            </ul>
-
+            <p class="lead text-justify" style="font-style: italic;">
+                O Dragão Ancião vai surgir 5 minutos depois que uma equipe
+                garantir a Alma de Dragão, com um tempo de ressurgimento de 5 minutos.&copy;"Riot Games"
             </p>
 
         </div>

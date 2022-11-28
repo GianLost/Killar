@@ -2,27 +2,38 @@
     font-family: 'fantasy';
 }
 
+:root {
+    --mainBlue: #007bff;
+    --mainWhite: #fff;
+    --blackShadow: rgba(0, 0, 0, 0.626);
+    --mainGrey: rgb(130, 129, 129);
+    --buttonShadow: #ffffffde;
+    --buttonPrevNextBackground: #292727;
+    --mainBlueOpacity: #007bff88;
+    --mainYellow: rgb(227, 191, 49);
+    --mainBlueModal: #3590f1;
+}
 
 .userFormList-container {
     align-items: center;
 }
 
 .userFormList {
+
     padding: 50px;
-    margin-left: 8%;
     margin-top: 4%;
-    background-color: #007bff;
-    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 8px;
+    background-color: var(--mainBlue);
+    box-shadow: var(--blackShadow) -10px 8px 8px;
     border-radius: 15px;
 }
 
 .userFormList h2 {
-    color: #fff;
+    color: var(--mainWhite);
     margin-top: -15px;
 }
 
 .userFormList table {
-    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 8px;
+    box-shadow: var(--blackShadow) -10px 8px 8px;
     border-radius: 5px;
 
 }
@@ -34,8 +45,8 @@
     flex-wrap: wrap;
     padding: 15px;
     flex-direction: row;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.712) -10px 8px 8px;
+    background-color: var(--mainWhite);
+    box-shadow: var(--blackShadow) -10px 8px 8px;
     border-radius: 8px;
 }
 
@@ -48,21 +59,21 @@
     font-size: 14px;
     font-weight: bold;
     border-radius: 8px;
-    box-shadow: #000 -2px 2px 5px;
-    background-color: rgba(255, 255, 255, 0.647);
+    box-shadow: var(--blackShadow) -2px 2px 5px;
+    background-color: var(--mainWhite);
 }
 
 .filterButton-container a:hover {
 
-    text-decoration: 1px underline #fff;
+    text-decoration: 1px underline var(--mainWhite);
     transition: ease 0.5s;
     transform: translateY(-3px);
 }
 
 .filterButton-container p {
-    color: #007bff;
+    color: var(--mainBlue);
     font-weight: bold;
-    text-decoration: 1px underline #007bff;
+    text-decoration: 1px underline var(--mainBlue);
     margin-bottom: 0;
     margin-top: 10px;
     font-size: 15px;
@@ -84,6 +95,11 @@
     .userFormList {
         margin-left: 0;
         margin-top: 15%;
+    }
+
+    .submitButton {
+        margin-left: 35%;
+        margin-top: 30px;
     }
 }
 

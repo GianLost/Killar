@@ -53,8 +53,8 @@ namespace Killar.Controllers
 
         public IActionResult UserList(string q, int pages = 1)
         {
-            Authentication.CheckLogin(this);
-            Authentication.CheckIfUserIsAdministrator(this);
+            //Authentication.CheckLogin(this);
+            //Authentication.CheckIfUserIsAdministrator(this);
 
             // Esse método só será utilizado por usuários administradores que obterão em formato de lista todos os usuários cadastrados.
 
