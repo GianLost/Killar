@@ -1,6 +1,8 @@
 * {
     font-family: 'fantasy';
+    box-sizing: border-box;
 }
+
 
 :root {
     --mainBlue: #007bff;
@@ -14,9 +16,13 @@
     --mainBlueModal: #3590f1;
 }
 
-.carousel-img {
-    border-radius: 10px 10px 0 0 ;
+
+.body-index {
+    background-color: #000;
 }
+
+
+/* Start NavBar Css */
 
 .showUser {
     margin-left: 20%;
@@ -36,37 +42,55 @@
     background-color: var(--mainBlue);
 }
 
+/* End NavBar Css */
+
+
 
 /* Start Top-Carosel Css */
 
+.carousel-main {
+    border-radius: 20px;
+    border-top: 1px solid var(--mainBlue);
+    border-bottom: 5px solid var(--mainBlue);
+    border-right: 1px solid var(--mainBlue);
+    border-left: 20px solid var(--mainBlue);
+}
+
 .carousel-container {
     margin-top: 70px;
-    border-radius: 10px;
-    box-shadow: var(--blackShadow) 5px 8px 25px;
+    border-radius: 20px;
+    padding: 0%;
 }
 
 .custom-carosel {
     text-align: justify;
 }
 
+.carousel-content {
+    background-color: #000;
+    padding: 50px;
+}
+
 .custom-carosel h1 {
+    margin-top: -30px;
     text-align: center;
     color: var(--mainBlue);
     font-weight: bold;
 }
 
 .custom-carosel p {
-    font-size: 20px;
-    color: var(--mainGrey);
+    color: var(--mainWhite);
+    font-size: 18px;
 }
 
-.carousel-item img {
-    margin-top: 10px;
-    padding: 0;
+.content-carousel {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
 }
 
-.indicador li {
-    background-color: var(--blackShadow);
+.indicator li {
+    background-color: var(--mainBlue);
 }
 
 .but-next {
@@ -77,7 +101,7 @@
     height: 35px;
     padding: 15px;
     border-radius: 20px;
-    box-shadow: var(--buttonShadow) 5px 5px 10px;
+    box-shadow: var(--mainBlue) 3px 2px 5px;
     background-color: var(--buttonPrevNextBackground);
 }
 
@@ -89,7 +113,7 @@
     height: 35px;
     padding: 15px;
     border-radius: 20px;
-    box-shadow: var(--buttonShadow) 5px 5px 10px;
+    box-shadow: var(--mainBlue) 3px 2px 5px;
     background-color: var(--buttonPrevNextBackground);
 }
 
@@ -115,28 +139,39 @@
 
 
 /* Start Modal css */
+.hr-index {
+    background-color: var(--mainBlue);
+}
 
-.modal-container {
-    background-color: var(--mainBlueOpacity);
+.modal-container-row {
+    background-image: url("../images/fundomain.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: rgb(37, 106, 128) -5px 5px 20px;
     padding: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+}
+
+.modal-container-row2 {
+    background-image: url("../images/champ-3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: rgb(80, 14, 14) -5px 5px 20px;
+    padding: 50px;
 }
 
 .modal-card {
     justify-content: space-between;
-    padding: 10px;
     margin-left: 60px;
     border-radius: 10px;
-    background-color: var(--mainBlue);
     box-shadow: var(--blackShadow) 10px -8px 20px;
-    border: 2px solid var(--mainWhite);
+    border: 2px solid var(--mainBlue);
+    padding: 0%;
 }
 
 .modal-card img {
-    border: 10px double var(--mainWhite);
-    box-shadow: var(--mainWhite) -5px 5px 10px;
-    border-radius: 20px;
+    border-radius: 10px 10px 0 0;
 }
 
 .modal-card h2 {
@@ -169,17 +204,8 @@
     padding: 25px;
 }
 
-.modal-button a {
-    color: var(--mainWhite);
-}
-
 .modal-card:hover {
-    background-color: var(--mainBlueModal);
-    cursor: pointer;
-}
-
-.modal-card img:hover {
-    opacity: 85%;
+    background-color: #007bff35;
     cursor: pointer;
 }
 
@@ -195,9 +221,7 @@
 /* Start Mid-Page Css*/
 
 .container-mid-page {
-
     padding: 50px;
-    box-shadow: var(--blackShadow) 10px -8px 40px;
 }
 
 .mid-colum {
@@ -206,11 +230,8 @@
     border-radius: 20px;
 }
 
-.mid-colum2 {
-    border: 10px double var(--mainBlue);
-    padding: 30px;
+.mid-colum-2 {
     margin-left: 50px;
-    border-radius: 20px;
 }
 
 /* End Mid-Page Css*/
@@ -320,7 +341,7 @@
     animation-duration: 3s;
 }
 
-.form-signin h1{
+.form-signin h1 {
     color: var(--mainBlue);
 }
 
@@ -457,8 +478,13 @@
         margin-left: 0;
     }
 
+    .custom-carosel h1 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
     .custom-carosel p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .container-second-carousel {
@@ -485,6 +511,10 @@
 
     .container-end-page {
         padding: 50px;
+    }
+
+    .modal-container {
+        background-image: none;
     }
 }
 
@@ -522,8 +552,13 @@
         margin-left: 0;
     }
 
+    .custom-carosel h1 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
     .custom-carosel p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .container-second-carousel {

@@ -79,9 +79,12 @@ C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\killa
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\killar-logo-login.png
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\killar-logo2.jpg
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\log-fundo.jpg
+C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\logo-log.jpg
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\logo-log.png
+C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\logo-log.psd
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\logo.jpeg
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\logoNews.png
+C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\logoPsd.png
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\logowr.png
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\maniaco-tela.jpg
 C:\Users\Ufo\Desktop\Killar\bin\Debug\netcoreapp3.1\publish\wwwroot\images\mapa-wild.jpg
