@@ -133,11 +133,6 @@
 /* End Top-Carosel Css */
 
 
-
-
-
-
-
 /* Start Modal css */
 .hr-index {
     background-color: var(--mainBlue);
@@ -162,6 +157,7 @@
 }
 
 .modal-card {
+    background-color: #007bff35;
     justify-content: space-between;
     margin-left: 60px;
     border-radius: 10px;
@@ -205,29 +201,26 @@
 }
 
 .modal-card:hover {
-    background-color: #007bff35;
     cursor: pointer;
 }
 
 /* End Modal css */
 
 
-
-
-
-
-
-
 /* Start Mid-Page Css*/
-
-.container-mid-page {
-    padding: 50px;
-}
 
 .mid-colum {
     border: 10px double var(--mainBlue);
     padding: 30px;
     border-radius: 20px;
+}
+
+.mid-colum p {
+    color: #fff;
+}
+
+.mid-colum h2 {
+    color: #007bff;
 }
 
 .mid-colum-2 {
@@ -248,7 +241,7 @@
 .container-end-page {
     display: flex;
     flex-direction: row;
-    background-color: var(--mainBlue);
+    background-color: #007bff35;
     padding: 80px;
     color: var(--mainWhite);
 }
@@ -516,6 +509,7 @@
     .modal-container {
         background-image: none;
     }
+    
 }
 
 @media (max-width: 576px) {

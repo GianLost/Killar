@@ -1,0 +1,584 @@
+* {
+    font-family: 'fantasy';
+    box-sizing: border-box;
+}
+
+
+:root {
+    --mainBlue: #007bff;
+    --mainWhite: #fff;
+    --blackShadow: #000;
+    --mainGrey: rgb(130, 129, 129);
+    --buttonShadow: #ffffffde;
+    --buttonPrevNextBackground: #292727;
+    --mainBlueOpacity: #007bff88;
+    --mainYellow: rgb(227, 191, 49);
+    --mainBlueModal: #3590f1;
+}
+
+
+.body-index {
+    background-color: #000;
+}
+
+
+/* Start NavBar Css */
+
+.showUser {
+    margin-left: 20%;
+}
+
+.dropdown-menu {
+    background-color: var(--mainWhite);
+    box-shadow: var(--mainBlue) 5px 5px 10px;
+    border: 1px solid var(--mainWhite);
+}
+
+.dropdown-menu a {
+    color: var(--mainBlue);
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--mainBlue);
+}
+
+/* End NavBar Css */
+
+
+
+/* Start Top-Carosel Css */
+
+.carousel-main {
+    border-radius: 20px;
+    border-top: 1px solid var(--mainBlue);
+    border-bottom: 5px solid var(--mainBlue);
+    border-right: 1px solid var(--mainBlue);
+    border-left: 20px solid var(--mainBlue);
+}
+
+.carousel-container {
+    margin-top: 70px;
+    border-radius: 20px;
+    padding: 0%;
+}
+
+.custom-carosel {
+    text-align: justify;
+}
+
+.carousel-content {
+    background-color: #000;
+    padding: 50px;
+}
+
+.custom-carosel h1 {
+    margin-top: -30px;
+    text-align: center;
+    color: var(--mainBlue);
+    font-weight: bold;
+}
+
+.custom-carosel p {
+    color: var(--mainWhite);
+    font-size: 18px;
+}
+
+.content-carousel {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+
+.indicator li {
+    background-color: var(--mainBlue);
+}
+
+.but-next {
+    margin-top: -300px;
+    margin-left: 20px;
+    right: 1;
+    width: 35px;
+    height: 35px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: var(--mainBlue) 3px 2px 5px;
+    background-color: var(--buttonPrevNextBackground);
+}
+
+.but-prev {
+    margin-top: -300px;
+    margin-right: 30px;
+    left: 1;
+    width: 35px;
+    height: 35px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: var(--mainBlue) 3px 2px 5px;
+    background-color: var(--buttonPrevNextBackground);
+}
+
+.but-next:hover {
+
+    color: var(--mainBlue);
+    transition: ease-in-out 0.3s;
+    transform: translateX(8px);
+}
+
+.but-prev:hover {
+    color: var(--mainBlue);
+    transition: ease-in-out 0.3s;
+    transform: translateX(-8px);
+}
+
+/* End Top-Carosel Css */
+
+
+
+
+
+
+
+/* Start Modal css */
+.hr-index {
+    background-color: var(--mainBlue);
+}
+
+.modal-container-row {
+    background-image: url("../images/fundomain.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: rgb(37, 106, 128) -5px 5px 20px;
+    padding: 50px;
+}
+
+.modal-container-row2 {
+    background-image: url("../images/champ-3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    box-shadow: rgb(80, 14, 14) -5px 5px 20px;
+    padding: 50px;
+}
+
+.modal-card {
+    justify-content: space-between;
+    margin-left: 60px;
+    border-radius: 10px;
+    box-shadow: var(--blackShadow) 10px -8px 20px;
+    border: 2px solid var(--mainBlue);
+    padding: 0%;
+}
+
+.modal-card img {
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-card h2 {
+    color: var(--mainWhite);
+    font-size: 30px;
+    text-decoration: 2px underline var(--mainWhite);
+    text-shadow: var(--blackShadow) 8px 8px 5px;
+}
+
+.modal-card h3 {
+    font-family: 'fantasy';
+    text-align: left;
+    font-size: 30px;
+    color: var(--mainYellow);
+    text-shadow: var(--blackShadow) 8px 8px 5px;
+}
+
+.modal-card h5 {
+    color: var(--blackShadow);
+}
+
+.modal-card p {
+    color: var(--mainWhite);
+    text-align: justify;
+}
+
+.modal-body {
+    text-align: justify;
+    line-height: 25px;
+    padding: 25px;
+}
+
+.modal-card:hover {
+    background-color: #007bff35;
+    cursor: pointer;
+}
+
+/* End Modal css */
+
+
+
+/* Start Mid-Page Css*/
+
+.container-mid-page {
+    padding: 50px;
+}
+
+.mid-colum {
+    border: 10px double var(--mainBlue);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.mid-colum-2 {
+    margin-left: 50px;
+}
+
+/* End Mid-Page Css*/
+
+
+
+/* Start End-Page Css */
+
+.slideshow-container {
+    border-radius: 20px;
+    margin-top: 45%;
+}
+
+.container-end-page {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--mainBlue);
+    padding: 80px;
+    color: var(--mainWhite);
+}
+
+.container-end-page h2 {
+    color: var(--mainYellow);
+}
+
+.slideshow-container img {
+    box-shadow: var(--mainGrey) 8px 15px 10px;
+    border-radius: 20px;
+}
+
+.container-second-carousel {
+    margin-left: 80px;
+    background-image: url("../images/champ-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+.prev,
+.next {
+    position: absolute;
+    margin-top: -140px;
+    width: auto;
+    height: auto;
+    padding: 16px;
+    background-color: var(--mainBlue);
+    box-shadow: var(--mainWhite) 5px 5px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    user-select: none;
+    opacity: 50%;
+}
+
+.next {
+    margin-right: 20px;
+    right: 0;
+}
+
+.prev {
+    margin-left: 20px;
+    left: 0;
+}
+
+.prev:hover {
+    opacity: 100%;
+    transition: ease-in-out 0.3s;
+    transform: translateX(-8px);
+    cursor: pointer;
+
+}
+
+.next:hover {
+    opacity: 100%;
+    transition: ease-in-out 0.3s;
+    transform: translateX(8px);
+    cursor: pointer;
+}
+
+.dot-container {
+    text-align: center;
+    position: relative;
+    bottom: 30px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    display: inline-block;
+    background-color: var(--mainBlueOpacity);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:active {
+    background-color: var(--mainWhite);
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-duration: 3s;
+}
+
+.form-signin h1 {
+    color: var(--mainBlue);
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Start End-Page Css */
+
+
+
+
+
+/* Start Footer Css */
+
+/* End Footer Css */
+
+
+
+/* Medias */
+
+@media (max-width: 1200px) {
+    .but-next {
+        display: none;
+    }
+
+    .but-prev {
+        display: none;
+    }
+
+    .modal-card {
+        margin-left: 75px;
+    }
+
+    .mid-colum2 {
+        margin-left: 0;
+    }
+
+    .slideshow-container {
+        border-radius: 20px;
+        margin-top: 100%;
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    .modal-card {
+        margin-left: 60px;
+    }
+
+    .mid-colum2 {
+        margin-left: 0;
+    }
+
+    .slideshow-container {
+        border-radius: 20px;
+        margin-top: 250%;
+    }
+
+    .prev,
+    .next {
+
+        margin-top: -80px;
+
+    }
+}
+
+@media (max-width: 990px) {
+
+    .showUser {
+        display: none;
+    }
+
+    .slideshow-container {
+        border-radius: 20px;
+        margin-top: 170%;
+    }
+
+    .dropdown-menu {
+        background-color: var(--mainWhite);
+        box-shadow: var(--mainWhite) 5px 5px 10px;
+        border: 1px solid var(--mainWhite);
+    }
+
+    .dropdown-menu a {
+        color: var(--mainBlue);
+    }
+
+    .prev,
+    .next {
+
+        margin-top: -100px;
+
+    }
+}
+
+@media (max-width: 768px) {
+
+    .showUser {
+        display: none;
+    }
+
+    .modal-card {
+        margin-left: 33px;
+    }
+
+    .mid-colum-frame {
+        display: none;
+    }
+
+    .mid-colum {
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .mid-colum2 {
+        margin-left: 0;
+    }
+
+    .custom-carosel h1 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .custom-carosel p {
+        font-size: 16px;
+    }
+
+    .container-second-carousel {
+        display: none;
+    }
+
+    .footer a {
+        font-size: 12px;
+    }
+
+    .modal-card {
+        margin-left: 0;
+    }
+
+    .dropdown-menu {
+        background-color: var(--mainWhite);
+        box-shadow: var(--mainWhite) 5px 5px 10px;
+        border: 1px solid var(--mainWhite);
+    }
+
+    .dropdown-menu a {
+        color: var(--mainBlue);
+    }
+
+    .container-end-page {
+        padding: 50px;
+    }
+
+    .modal-container {
+        background-image: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-second-carousel {
+        display: none;
+    }
+
+    .modal-card {
+        margin-left: 0;
+    }
+
+    .container-end-page {
+        padding: 50px;
+    }
+
+    .showUser {
+        display: none;
+    }
+
+    .modal-card {
+        margin-left: 33px;
+    }
+
+    .mid-colum-frame {
+        display: none;
+    }
+
+    .mid-colum {
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .mid-colum2 {
+        margin-left: 0;
+    }
+
+    .custom-carosel h1 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    .custom-carosel p {
+        font-size: 16px;
+    }
+
+    .container-second-carousel {
+        display: none;
+    }
+
+    .footer a {
+        font-size: 12px;
+    }
+
+    .modal-card {
+        margin-left: 0;
+    }
+
+    .dropdown-menu {
+        background-color: var(--mainWhite);
+        box-shadow: var(--mainWhite) 5px 5px 10px;
+        border: 1px solid var(--mainWhite);
+    }
+
+    .dropdown-menu a {
+        color: var(--mainBlue);
+    }
+
+    .container-end-page {
+        padding: 50px;
+    }
+}
