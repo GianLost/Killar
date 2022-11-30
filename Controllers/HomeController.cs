@@ -16,6 +16,7 @@ namespace Killar.Controllers
 
         public IActionResult Index()
         {
+            Authentication.CheckLogin(this);
             return View();
         }
 
@@ -41,7 +42,7 @@ namespace Killar.Controllers
                 }
                 else
                 {
-                    ViewData["ErrorLogin"] = "Usuário ou senha inválidos";
+                    ViewData["ErrorLogin"] = "Login ou senha inválidos";
 
                     return View();
                 }

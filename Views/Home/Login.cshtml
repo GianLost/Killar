@@ -4,38 +4,38 @@
 
 @model Users
 
-<body style="background-color: black;" class="text-center">
+<body style="background-image: url(../images/login.jpg); background-size: cover; background-repeat: no-repeat;" class="text-center">
 
-    <div class="container">
+    <div class="container-fluid">
 
         <div class="row">
 
-            <div class="col-md-6 col-lg-6 col-sm-12 offset-md-3">
+            <div style=" padding: 30px;" class="col-md-6 col-lg-6 col-sm-12 offset-md-3">
 
                 <form method="post" asp-action="Login" asp-controller="Home" class="form-signin mt-5">
 
-                    <img class="img-fluid w-100 h-100" src="../images/logoWr.png" alt="Imagem Logo da tela de Login"
-                    width="400" height="180">
+                    <img class="img-fluid w-100 h-100" src="../images/logoWr.png" alt="Imagem Logo da tela de Login">
 
-                    <h1 class="mb-4 mr-3 font-weight-200">Bem - Vindos a Killar!</h1>
+                    <h1 style="text-shadow: #000 2px 2px 5px; color: rgb(227, 191, 49); font-Size: 55px;" class="mb-4 mr-3 font-weight-200">Bem - Vindos a Killar!</h1>
 
                     <label asp-for="LoginName" class="sr-only">Nick Name</label>
 
                     <input asp-for="LoginName" name="login" type="text" class="form-control mb-3"
-                    placeholder="Login Name" required autofocus>
+                        placeholder="Login Name" required autofocus>
 
                     <label asp-for="CheckedPassword" class="sr-only">Password</label>
 
-                    <input asp-for="CheckedPassword" name="password" type="password" class="form-control mb-3"
-                    placeholder="Password" required>
+                    <input asp-for="CheckedPassword" name="password" type="password" class="form-control mb-4"
+                        placeholder="Password" required>
 
-                    <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Log in</button>
+                    <p style="font-style: italic;" class="text-danger">@ViewData["ErrorLogin"]</p>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
 
                 </form>
 
-                <p class="text-danger mt-5">@ViewData["ErrorLogin"]</p>
-
-                <p class="mt-5" style="color: #fff;">Não tem uma conta? <a asp-controller="Users" asp-action=RegisterUser> Cadastre-se agora mesmo!</a>
+                <p class="mt-5" style="color: #fff;">Não tem uma conta? <a asp-controller="Users"
+                        asp-action=RegisterUser> Cadastre-se agora mesmo!</a>
                 </p>
 
             </div>

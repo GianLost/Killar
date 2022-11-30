@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="~/css/styleUserDelete.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styleUserProfile.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styleComunity.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styleRegisterUser.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/all.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/fontawesome.min.css" asp-append-version="true" />
 
@@ -34,14 +35,12 @@
 
             <div class="container">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">- WR KILLAR BROTHERHOOD
-                    -</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">- WR KILLAR BROTHERHOOD -</a>
 
                 @if (Context.Session.GetString("login") != null)
                 {
                     <a class="showUser btn btn-sm btn-outline-light" asp-area="" asp-controller="Users"
-                    asp-action="UserProfile">Olá,
-                        @Context.Session.GetString("login")</a>
+                    asp-action="UserProfile">Olá, @Context.Session.GetString("login")</a>
                 }
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -57,22 +56,16 @@
 
                         @if (Context.Session.GetString("login") == null)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link ml-2" asp-controller="Home" asp-action="Index"><i
-                                    class="fa-solid fa-house"></i> Home
-                                    <span class="sr-only">(current)</span></a>
-                            </li>
-
-                            <li class="nav-item ml-2">
-                                <a class="nav-link" asp-controller="Users" asp-action="RegisterUser"><i
-                                    class="fa-solid fa-user-plus"></i> Cadastre-se</a>
-                            </li>
 
                             <li class="nav-item ml-2">
                                 <a class="nav-link" asp-controller="Home" asp-action="Login"><i
                                     class="fa-solid fa-right-to-bracket"></i> Login</a>
                             </li>
 
+                            <li class="nav-item ml-2">
+                                <a class="nav-link" asp-controller="Users" asp-action="RegisterUser"><i
+                                    class="fa-solid fa-user-plus"></i> Cadastre-se</a>
+                            </li>
 
                         }
                         @if (Context.Session.GetInt32("type") == 0)

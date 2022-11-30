@@ -47,7 +47,8 @@ namespace Killar.Controllers
 
         public IActionResult PostList(string filterType, string filter, string itemsPerPage, int numberOfPage, int currentPage)
         {
-            //Authentication.CheckLogin(this);
+            Authentication.CheckLogin(this);
+            Authentication.CheckIfUserIsAdministrator(this);
 
             PostsFilter filterPosts = null;
 
