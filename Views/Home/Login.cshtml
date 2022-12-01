@@ -4,7 +4,7 @@
 
 @model Users
 
-<body style="background-image: url(../images/login.jpg); background-size: cover; background-repeat: no-repeat;" class="text-center">
+<body class="text-center body-login">
 
     <div class="container-fluid">
 
@@ -12,11 +12,11 @@
 
             <div style=" padding: 30px;" class="col-md-6 col-lg-6 col-sm-12 offset-md-3">
 
-                <form method="post" asp-action="Login" asp-controller="Home" class="form-signin mt-5">
+                <form method="post" asp-action="Login" asp-controller="Home" class="form-login mt-5">
 
                     <img class="img-fluid w-100 h-100" src="../images/logoWr.png" alt="Imagem Logo da tela de Login">
 
-                    <h1 style="text-shadow: #000 2px 2px 5px; color: rgb(227, 191, 49); font-Size: 55px;" class="mb-4 mr-3 font-weight-200">Bem - Vindos a Killar!</h1>
+                    <h1 class="mb-4 mr-3 font-weight-200">Bem - Vindos a Killar!</h1>
 
                     <label asp-for="LoginName" class="sr-only">Nick Name</label>
 
@@ -34,9 +34,7 @@
 
                 </form>
 
-                <p class="mt-5" style="color: #fff;">Não tem uma conta? <a asp-controller="Users"
-                        asp-action=RegisterUser> Cadastre-se agora mesmo!</a>
-                </p>
+                <p class="mt-5" style="color: #fff;">Não tem uma conta? <a asp-controller="Users" asp-action=RegisterUser> Cadastre-se agora mesmo!</a></p>
 
             </div>
 

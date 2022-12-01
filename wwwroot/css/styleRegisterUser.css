@@ -34,6 +34,7 @@
 .register-form h1 {
     color: var(--mainYellow);
     font-size: 60px;
+    text-shadow: var(--blackShadow) 2px 2px 5px; 
 }
 
 .register-form hr{
