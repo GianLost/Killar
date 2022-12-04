@@ -1,0 +1,39 @@
+@model Posts
+@using Microsoft.AspNetCore.Http;
+
+@{
+    ViewData["Title"] = "Excluir Postagem";
+}
+
+<div class="container">
+
+    @if (Context.Session.GetInt32("type") == 0)
+    {
+
+        <p class="text-justify"><b>@Context.Session.GetString("login")</b> Tem certeza que deseja excluir a postagem número
+            <b>@Model.Id</b> de <b>@Model.Author</b> ? Essa ação
+            excluirá o Post de forma permanente, e não poderá ser desfeita.
+        </p>
+
+    }
+    else
+    {
+        <p class="text-justify"><b>@Context.Session.GetString("login")</b> Tem certeza que deseja excluir sua postagem
+            número <b>@Model.Id</b> ? Essa ação excluirá o Post de forma permanente, e não poderá ser desfeita.
+        </p>
+    }
+
+    <hr>
+
+    <form asp-action="PostDelete" asp-controller="Posts" method="post">
+
+        <input type="hidden" asp-for="Id">
+
+        <button class="btn btn-outline-primary btn-md mt-3" name="decision" type="submit" value="yes"><i
+                class="fa-solid fa-trash"></i> Excluir</button>
+        <button class="btn btn-outline-primary btn-md mt-3" name="decision" type="submit" value="Cancel"><i
+                class="fa-solid fa-rotate-left"></i> Cancelar</button>
+
+    </form>
+
+</div>

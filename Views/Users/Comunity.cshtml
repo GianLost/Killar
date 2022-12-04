@@ -1,5 +1,6 @@
 @model List<Posts>
 @using Killar.Models;
+@using Microsoft.AspNetCore.Http;
 @{
     ViewData["Title"] = "Bem Vindos à Killar Community";
 
@@ -15,7 +16,7 @@
             <partial name="_RegisterPost" model="@post" />
         </div>
 
-        <div class="container-fluid community col-md-10 offset-md-1">
+        <div class="container-fluid community col-md-10 col-sm-12">
 
             @foreach (Posts item in Model)
             {
@@ -24,23 +25,72 @@
                     <article id="post-@item.Id" class=" col-md-12 article text-justify">
 
                         <div class="row">
-                        
+
                             <span class="post-author mt-3 mb-3 ml-3">Escrito por: <b>@item.Author.ToUpper()</b></span>
 
                             <span class="post-date mt-3 mb-3 ml-3">@item.PostDate.ToString("dd/MM/yyyy")</span>
 
-                            <!--<div class="but offset-md-5">
+                            <div class="but">
 
-                                <a href="/Posts/PostEdit?id=@item.Id"><i
-                                class="fa-solid btn btn-md btn-cad btn-outline-primary fa-user-pen ml-4 mr-4"></i></a>
+                                @if (Context.Session.GetString("login") == item.Author)
+                                {
 
-                                <a href="/Posts/PostDelete?id=@item.Id"><i
-                                class="fa-solid fa-user-xmark btn btn-md btn-cad btn-outline-primary ml-4 mr-4"></i></a>
-                            </div>-->
+                                    <a class="btn btn-sm btn-outline-primary ml-4 mr-4" href="/Posts/PostEdit?id=@item.Id"><i
+                                    class="fa-solid fa-file-pen"></i></a>
 
+                                    <td><button class="btn btn-sm btn-outline-primary" type="button" data-toggle="modal"
+                                    data-target="#delteComunityPost-@item.Id"><i
+                                        class="fa-solid fa-trash-can"></i></button></td>
+
+                                }
+
+                                <!--Start PostDelete Modal-->
+
+                            <div class="modal fade" id="delteComunityPost-@item.Id" tabindex="-1" role="dialog"
+                                aria-labelledby="delteComunityPostTitle" aria-hidden="true">
+
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+
+                                        <div class="modal-content">
+
+                                            <div class="modal-header">
+
+                                                <h1 class="modal-title text-danger text-center bold"
+                                                id="delteComunityPostLongTitle">
+                                                    Alerta!</h1>
+
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                                    <span aria-hidden="true">&times;</span>
+
+                                                </button>
+
+                                            </div>
+
+                                            <div class="modal-body">
+
+                                                <partial name="_PostDeleteComunity" model="@item" />
+
+                                            </div>
+
+                                            <div class="modal-footer">
+
+                                                <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!--Finish PostDelete Modal-->
+                        </div>
 
                         </div>
-                        
+
                         <hr>
 
                         <div class="post-content mt-4 mb-4">

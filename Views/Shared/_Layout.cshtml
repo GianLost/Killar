@@ -15,7 +15,7 @@
     <title>@ViewData["Title"] - WR KILLAR BROTHERHOOD -</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styleIndex.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styleUserList.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styleUserDelete.css" asp-append-version="true" />
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="~/css/styleComunity.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styleRegisterUser.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/styleLogin.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/stylePostEdit.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/all.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="/css/FontAwesome/fontawesome.min.css" asp-append-version="true" />
 
@@ -36,7 +37,8 @@
 
             <div class="container">
 
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">- WR KILLAR BROTHERHOOD -</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">- WR KILLAR BROTHERHOOD
+                    -</a>
 
                 @if (Context.Session.GetString("login") != null)
                 {

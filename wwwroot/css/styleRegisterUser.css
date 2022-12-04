@@ -1,128 +1,160 @@
 * {
-    font-family: 'fantasy';
-    box-sizing: border-box;
+  font-family: "fantasy";
+  box-sizing: border-box;
 }
 
-
 :root {
-    --mainBlue: #007bff;
-    --mainWhite: #fff;
-    --blackShadow: #000;
-    --mainGrey: rgb(130, 129, 129);
-    --buttonShadow: #ffffffde;
-    --buttonPrevNextBackground: #292727;
-    --mainBlueOpacity: #007bff88;
-    --mainYellow: rgb(227, 191, 49);
-    --mainBlueModal: #3590f1;
+  --mainBlue: #007bff;
+  --mainWhite: #fff;
+  --blackShadow: #000;
+  --mainGrey: rgb(130, 129, 129);
+  --buttonShadow: #ffffffde;
+  --buttonPrevNextBackground: #292727;
+  --mainBlueOpacity: #007bff88;
+  --mainYellow: rgb(227, 191, 49);
+  --mainBlueModal: #3590f1;
 }
 
 .register-body {
-    background-image: url("../images/RegisterBackground.jpg");
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    color:var(--mainWhite); 
-    text-shadow: var(--blackShadow) 2px 2px 55px;
+  background-image: url("../images/RegisterBackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--mainWhite);
+  text-shadow: var(--blackShadow) 2px 2px 55px;
 }
 
 .register-form {
-
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: var(--blackShadow) 2px 2px 35px;
+  margin-top: 70px;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: var(--blackShadow) 2px 2px 35px;
+  background-color: #007bff23;
 }
 
 .register-form h1 {
-    color: var(--mainYellow);
-    font-size: 60px;
-    text-shadow: var(--blackShadow) 2px 2px 5px; 
+  color: var(--mainYellow);
+  font-size: 60px;
+  text-shadow: var(--blackShadow) 2px 2px 5px;
 }
 
-.register-form hr{
-    background-color: var(--mainWhite);
+.register-form hr {
+  background-color: var(--mainWhite);
 }
 
-.register-form input{
-    height: 58px;
-    border-radius: 10px;
-    background: none;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 2px solid var(--mainYellow);
-    background: rgba(0, 0, 0, 0.416);
-    color: var(--mainYellow);
-    font-size: 20px;
-
+.register-form input {
+  height: 58px;
+  border-radius: 10px;
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid var(--mainYellow);
+  background: rgba(0, 0, 0, 0.416);
+  text-shadow: var(--blackShadow) 2px 2px 5px;
+  box-shadow: var(--blackShadow) 2px 2px 5px;
+  color: var(--mainYellow);
+  font-size: 20px;
 }
 
-.register-form input:focus{
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 3px solid var(--mainYellow);
-    background: rgba(0, 0, 0, 0.416);
-    color: var(--mainYellow);
-    font-size: 20px;
+.register-form input:focus {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 3px solid var(--mainYellow);
+  background: rgba(0, 0, 0, 0.416);
+  color: var(--mainYellow);
+  font-size: 20px;
 }
 
 .register-form input::placeholder {
-    color: var(--mainYellow);
-    font-size: 20px;
+  color: var(--mainYellow);
+  font-size: 20px;
+  font-style: italic;
+  text-shadow: var(--blackShadow) 2px 2px 5px;
+
 }
 
 .dropdown-select {
-    background: none;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    background: rgba(0, 0, 0, 0.416);
-    border-radius: 10px;
-    border-bottom: 3px solid var(--mainYellow);
-    color: var(--mainYellow);
-    font-size: 20px;
+  background: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background: rgba(0, 0, 0, 0.416);
+  border-radius: 10px;
+  border-bottom: 3px solid var(--mainYellow);
+  color: var(--mainYellow);
+  font-size: 20px;
+  font-style: italic;
+  box-shadow: var(--blackShadow) 2px 2px 5px;
+  text-shadow: var(--blackShadow) 2px 2px 5px;
+}
+
+.dropdown-select:hover {
+  cursor: pointer;
 }
 
 .dropdown-select:focus {
-    background: none;
+  background: none;
 }
 
 .dropdown-select option {
-    background-color: var(--mainWhite);
-    color: var(--mainBlue);
-    padding: 50px;
+  background-color: var(--mainWhite);
+  color: var(--mainBlue);
+  padding: 50px;
 }
 
 .dropdown-select option:hover {
-    background-color: var(--mainWhite);
-    cursor: pointer;
+  background-color: var(--mainWhite);
+  cursor: pointer;
 }
-
-
-
-
 
 /* Medias */
 
 @media (max-width: 1200px) {
-
 }
 
 @media (max-width: 992px) {
-
 }
-    
+
 @media (max-width: 990px) {
-   
 }
 
 @media (max-width: 768px) {
-    .register-form h1 {
-        font-size: 35px;
-    }
+
+  .register-form{
+    padding: 20px;
+  }
+
+  .register-form h1 {
+    font-size: 35px;
+  }
+
+  .register-form input::placeholder {
+    font-size: 18px;
+  }
+
+  .register-form select {
+    font-size: 18px;
+  }
+  
 }
 
 @media (max-width: 576px) {
-    .register-form h1 {
-        font-size: 35px;
-    }
+
+  .register-form{
+    padding: 20px;
+  }
+
+  .register-form h1 {
+    font-size: 35px;
+  }
+
+  .register-form input::placeholder {
+    font-size: 18px;
+  }
+
+  .register-form select {
+    font-size: 18px;
+  }
+
 }

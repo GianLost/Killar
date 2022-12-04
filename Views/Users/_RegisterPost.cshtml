@@ -23,19 +23,23 @@
 
                         <p>
 
-                            <input value="@postDate" class="form-control btn-block" type="hidden" name="PostDate" />
-                            <input value="@postAuthor" class="form-control btn-block" type="hidden" name="Author" />
+                            <input value="@postDate" type="datetime" class="form-control btn-block hidden"
+                                name="PostDate" asp-for="@Model.PostDate" readonly />
+                            <input value="@postAuthor" type="text" class="form-control btn-block hidden" name="Author"
+                                asp-for="@Model.Author" readonly />
 
                         </p>
 
                         <p>
-                            <textarea class="form-control btn-block post-textarea"
-                                placeholder="O que te passas no Rift??" name="Content" cols="40" rows="13"
+                            <textarea class="form-control btn-block post-textarea" asp-for="@Model.Content"
+                                placeholder="Conte-nos o que almeja..." name="Content" cols="40" rows="13"
                                 required></textarea>
                         </p>
 
-                        <input type="hidden" name="Id" value="@Model" asp-for="@Model">
-                        <input type="hidden" name="UsersId" value=@Context.Session.GetInt32("IdUser") asp-for="@Model">
+                        <input class="form-control btn-block hidden" type="number" name="Id" value="@Model.Id"
+                            asp-for="@Model.Id" readonly>
+                        <input class="form-control btn-block hidden" type="number" name="UsersId"
+                            value=@Context.Session.GetInt32("IdUser") asp-for="@Model.UsersId" readonly>
 
                         <button class="btn btn-outline-primary btn-lg mt-3 but-post" type="submit">Faça uma
                             Postagem</button>

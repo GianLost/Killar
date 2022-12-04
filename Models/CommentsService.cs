@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Killar.Models;
 using System.Linq;
 
 namespace Killar.Models

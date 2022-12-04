@@ -108,7 +108,7 @@ namespace Killar.Controllers
                 Authentication.CheckIfUserIsAdministrator(this);
 
                 new UsersService().EditUser(editUser); // Chamada do método que modifica e sobrescreve os dados ao editar o usuário;
-                
+
                 return RedirectToAction("UserList", "Users");
             }
             catch (Exception e)
@@ -150,9 +150,12 @@ namespace Killar.Controllers
 
                 new UsersService().EditUserProfile(editUser); // Chamada do método que raliza as edições e sobrescreve os dados editados;
 
-                if(HttpContext.Session.GetInt32("type") == 0) {
+                if (HttpContext.Session.GetInt32("type") == 0)
+                {
                     return RedirectToAction("UserList", "Users");
-                }else {
+                }
+                else
+                {
                     HttpContext.Session.Clear();
                     return RedirectToAction("Login", "Home");
                 }

@@ -2,11 +2,11 @@ INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, 
 
 INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Pablo','2022-11-16 00:00:00.000000','Pablo123','Pablo','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Mid Lane','Platina','0');
 
-INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Gian','2022-11-16 00:00:00.000000','Gian123','Gian','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Top Lane','Platina','1');
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Luna','2022-11-16 00:00:00.000000','Luna123','Luna','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Top Lane','Platina','1');
 
 INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Carol','2022-11-16 00:00:00.000000','Carol123','Carol','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','AD Carry','Bronze','1');
 
-INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Lucas','2022-11-16 00:00:00.000000','Lucas123','Lucas','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Top Lane','Ferro','0');
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Reinaldo','2022-11-16 00:00:00.000000','Reinaldo123','Reinaldo','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Top Lane','Ferro','0');
 
 INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Kauã','2022-11-16 00:00:00.000000','Kauã123','Kauã','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Suporte','Desafiante','1');
 

@@ -20,28 +20,30 @@
 
                 <div class="">
 
-                    <form id="frmCadastro" asp-controller="Posts" asp-action="PostEdit" method="post">
+                    <form id="frmEditPost" asp-controller="Posts" asp-action="PostEdit" method="post">
 
                         <p>
 
-                            <input value="@postDate" class="form-control btn-block" type="hidden" asp-for="PostDate" />
-                            <input value="@postAuthor" class="form-control btn-block" type="hidden" asp-for="Author" />
+                            <input value="@postDate" type="datetime" class="form-control btn-block hidden"
+                                name="PostDate" asp-for="@Model.PostDate" readonly />
+                            <input value="@postAuthor" type="text" class="form-control btn-block hidden" name="Author"
+                                asp-for="@Model.Author" readonly />
 
                         </p>
 
                         <p>
-                            <textarea class="form-control btn-block post-textarea" placeholder="O que te passas no Rift??" asp-for="Content"
-                                cols="40" rows="13" required></textarea>
+                            <textarea class="form-control btn-block post-textarea"
+                                placeholder="O que te passas no Rift??" asp-for="@Model.Content" cols="40" rows="13"
+                                required></textarea>
                         </p>
 
-                        <input value=@Context.Session.GetInt32("IdUser") type="hidden" asp-for="UsersId">
-                        <input type="hidden" name="Id" asp-for="Id">
-                        <input type="hidden" name="UsersId" asp-for="UsersId">
+                        <input class="form-control btn-block hidden" type="number" name="Id" value="@Model.Id"
+                            asp-for="@Model.Id" readonly>
+                        <input class="form-control btn-block hidden" type="number" name="UsersId"
+                            value=@Context.Session.GetInt32("IdUser") asp-for="@Model.UsersId" readonly>
 
-                        <p class="text-danger mt-3">@ViewData["messagePost"]</p>
-                        <p class="text-danger mt-3">@ViewData["messagePostError"]</p>
-
-                        <button class="btn btn-outline-primary btn-lg mt-3 but-post"  type="submit">Salvar Alterações</button>
+                        <button class="btn btn-outline-primary btn-lg mt-3 but-post" type="submit">Salvar
+                            Alterações</button>
 
                     </form>
 

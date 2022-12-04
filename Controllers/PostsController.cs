@@ -74,7 +74,6 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
-                Authentication.CheckIfUserIsAdministrator(this);
 
                 Posts foundPost = new PostsService().GetPostDetail(id);
                 return View(foundPost);
@@ -97,11 +96,17 @@ namespace Killar.Controllers
             {
 
                 Authentication.CheckLogin(this);
-                Authentication.CheckIfUserIsAdministrator(this);
 
                 new PostsService().EditPost(postEdit);
 
-                return RedirectToAction("PostList");
+                if (HttpContext.Session.GetInt32("type") == 0)
+                {
+                    return RedirectToAction("PostList");
+                }
+                else
+                {
+                    return RedirectToAction("Comunity", "Users");
+                }
 
             }
             catch (Exception e)
@@ -150,7 +155,15 @@ namespace Killar.Controllers
                     PostsService ps = new PostsService();
                     ps.DeletePost(id);
                 }
-                return RedirectToAction("PostList");
+                if (HttpContext.Session.GetInt32("type") == 0)
+                {
+                    return RedirectToAction("PostList");
+                }
+                else
+                {
+                    return RedirectToAction("Comunity", "Users");
+                }
+
 
             }
             catch (Exception e)

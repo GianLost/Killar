@@ -1,106 +1,92 @@
 * {
-    font-family: 'fantasy';
+  font-family: "fantasy";
 }
 
 :root {
-    --mainBlue: #007bff;
-    --mainWhite: #fff;
-    --blackShadow: rgba(0, 0, 0, 0.626);
-    --mainGrey: rgb(130, 129, 129);
-    --buttonShadow: #ffffffde;
-    --buttonPrevNextBackground: #292727;
-    --mainBlueOpacity: #007bff88;
-    --mainYellow: rgb(227, 191, 49);
-    --mainBlueModal: #3590f1;
+  --mainBlue: #007bff;
+  --mainWhite: #fff;
+  --blackShadow: rgba(0, 0, 0, 0.626);
+  --mainGrey: rgb(130, 129, 129);
+  --buttonShadow: #ffffffde;
+  --buttonPrevNextBackground: #292727;
+  --mainBlueOpacity: #007bff88;
+  --mainYellow: rgb(227, 191, 49);
+  --mainBlueModal: #3590f1;
 }
 
-.userFormList-container {
-    align-items: center;
+.list-body {
+  background-image: url("../images/userList-Background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin-top: 100px;
 }
 
-.userFormList {
-
-    padding: 50px;
-    margin-top: 4%;
-    background-color: var(--mainBlue);
-    box-shadow: var(--blackShadow) -10px 8px 8px;
-    border-radius: 15px;
-}
-
-.userFormList h2 {
-    color: var(--mainWhite);
-    margin-top: -15px;
-}
-
-.userFormList table {
-    box-shadow: var(--blackShadow) -10px 8px 8px;
-    border-radius: 5px;
-
+.list-body table {
+  box-shadow: var(--blackShadow) -10px 8px 8px;
+  border-radius: 5px;
 }
 
 .filterButton-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 15px;
-    flex-direction: row;
-    background-color: var(--mainWhite);
-    box-shadow: var(--blackShadow) -10px 8px 8px;
-    border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-radius: 8px;
 }
 
 .filterButton-container a {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    margin-top: 5px;
-    margin-left: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 8px;
-    box-shadow: var(--blackShadow) -2px 2px 5px;
-    background-color: var(--mainWhite);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--mainBlue);
+  border-radius: 8px;
+  box-shadow: var(--blackShadow) -2px 2px 5px;
+  background-color: var(--mainWhite);
 }
 
 .filterButton-container a:hover {
-
-    text-decoration: 1px underline var(--mainWhite);
-    transition: ease 0.5s;
-    transform: translateY(-3px);
+  text-decoration: 1px underline var(--mainWhite);
+  transition: ease 0.5s;
+  border: 1px solid var(--mainWhite);
+  transform: translateY(-3px);
 }
 
 .filterButton-container p {
-    color: var(--mainBlue);
-    font-weight: bold;
-    text-decoration: 1px underline var(--mainBlue);
-    margin-bottom: 0;
-    margin-top: 10px;
-    font-size: 15px;
+  color: var(--mainWhite);
+  font-weight: bold;
+  text-decoration: 1px underline var(--mainWhite);
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-shadow: var(--blackShadow) -2px 2px 5px;
+  font-size: 15px;
 }
-
-
 
 /* Medias */
 
-@media (max-width: 1200px) {}
+@media (max-width: 1200px) {
+}
 
 @media (max-width: 992px) {
-    .userFormList {
-        margin-left: 8%;
-    }
+
 }
 
 @media (max-width: 768px) {
-    .userFormList {
-        margin-left: 0;
-        margin-top: 15%;
-    }
+  .search {
+    margin-top: 10px;
+  }
 
-    .submitButton {
-        margin-left: 35%;
-        margin-top: 30px;
-    }
+  .submitButton {
+    margin-top: 10px;
+    margin-left: 15px;
+  }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+
+}

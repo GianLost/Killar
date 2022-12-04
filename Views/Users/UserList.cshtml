@@ -4,107 +4,106 @@
     ViewData["Title"] = "Listagem De Usuários Cadastrados";
 }
 
-<body class="text-center">
+<body class="text-center list-body">
 
-    <main role="main" class="p-2 mb-4">
+    <main role="main" class="mb-5">
 
-        <div class="container-fluid userFormList-container">
+        <div class="container-fluid col-md-10 col-sm-12">
 
-            <div class="col-md-10 col-xl-10 col-lg-10 col-sm-10 offset-md-1 userFormList">
 
-                <!--<h4>@ViewData["msg"]</h4>-->
-                <form asp-controller="Users" asp-action="UserList" method="Get">
+            <!--<h4>@ViewData["msg"]</h4>-->
+            <form asp-controller="Users" asp-action="UserList" method="Get">
 
-                    <div class="col-md-12 p-3">
+                <div class="col-md-12">
 
-                        <p style="float:left; margin-right:10px;">
-                            <!-- *********** Retirar estilos in-line *********** -->
-                            <input class="btn btn-md btn-light text-justify" type="text"
-                                placeholder="Busque por usuários" name="q" />
-                            <input class="btn btn-md btn-dark btn-searchUser" type="submit" value="Pesquisar" />
-                        </p>
+                    <p style="float:left; margin-right:10px;">
+                        <!-- *********** Retirar estilos in-line *********** -->
+                        <input class="btn btn-md search btn-light text-justify" type="text" placeholder="Busque por usuários"
+                            name="q" />
+                        <input class="btn btn-md btn-dark btn-searchUser" type="submit" value="Pesquisar" />
+                    </p>
 
-                    </div>
+                </div>
 
-                </form>
+            </form>
 
-                @if (Model.Count != 0)
-                {
+            @if (Model.Count != 0)
+            {
 
-                    <table class=" table table-responsive table-bordered table-striped table-light text-center">
+                <table class=" table table-responsive table-bordered table-striped table-light text-center">
 
-                        <thead class="thead-dark text-center">
+                    <thead class="thead-dark text-center">
 
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Data de Nascimento</th>
+                            <th>Nick WR</th>
+                            <th>Nome de Usuário</th>
+                            <th>Senha</th>
+                            <th>Lane</th>
+                            <th>Elo</th>
+                            <th>Tipo</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (Users u in Model)
+                        {
                             <tr>
-                                <th>Id</th>
-                                <th>Nome</th>
-                                <th>Data de Nascimento</th>
-                                <th>Nick WR</th>
-                                <th>Nome de Usuário</th>
-                                <th>Senha</th>
-                                <th>Lane</th>
-                                <th>Elo</th>
-                                <th>Tipo</th>
+                                <td>@u.Id</td>
+                                <td>@u.Name</td>
+                                <td>@u.BirthDate</td>
+                                <td>@u.LoginWr</td>
+                                <td>@u.LoginName</td>
+                                <td>@u.Password</td>
+                                <td>@u.Lane</td>
+                                <td>@u.Elo</td>
+                                <td>@u.Tipo</td>
+
+                                <td><a class="btn btn-sm btn-outline-primary" href="/Users/UserEdit?id=@u.Id"><i
+                                    class="fa-solid fa-user-pen"></i></a></td>
+
+                                <td><button class="btn btn-sm btn-outline-primary" type="button" data-toggle="modal"
+                                data-target="#exampleModalCenter-@u.Id"><i class="fa-solid fa-user-xmark"></i></button>
+                                </td>
 
                             </tr>
 
-                        </thead>
+                            <!--Start UserDelete Modal-->
 
-                        <tbody>
+                            <div class="modal fade" id="exampleModalCenter-@u.Id" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
-                            @foreach (Users u in Model)
-                            {
-                                <tr>
-                                    <td>@u.Id</td>
-                                    <td>@u.Name</td>
-                                    <td>@u.BirthDate</td>
-                                    <td>@u.LoginWr</td>
-                                    <td>@u.LoginName</td>
-                                    <td>@u.Password</td>
-                                    <td>@u.Lane</td>
-                                    <td>@u.Elo</td>
-                                    <td>@u.Tipo</td>
+                                <div class="modal-dialog modal-dialog-centered" role="document">
 
-                                    <td><a class="btn btn-sm btn-outline-primary" href="/Users/UserEdit?id=@u.Id"><i class="fa-solid fa-user-pen"></i></a></td>
+                                    <div class="modal-content">
 
-                                    <td><button class="btn btn-sm btn-outline-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter-@u.Id"><i
-                                    class="fa-solid fa-user-xmark"></i></button></td>
+                                        <div class="modal-header">
 
-                                </tr>
+                                            <h1 class="modal-title text-danger text-center bold" id="exampleModalLongTitle">
+                                                Alerta!</h1>
 
-                                <!--Start UserDelete Modal-->
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                                <div class="modal fade" id="exampleModalCenter-@u.Id" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <span aria-hidden="true">&times;</span>
 
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                            </button>
 
-                                        <div class="modal-content">
+                                        </div>
 
-                                            <div class="modal-header">
+                                        <div class="modal-body">
 
-                                                <h1 class="modal-title text-danger text-center bold"  id="exampleModalLongTitle">Alerta!</h1>
+                                            <partial name="_UserDelete" model="@u" />
 
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        </div>
 
-                                                    <span aria-hidden="true">&times;</span>
+                                        <div class="modal-footer">
 
-                                                </button>
-
-                                            </div>
-
-                                            <div class="modal-body">
-
-                                                <partial name="_UserDelete" model="@u" />
-
-                                            </div>
-
-                                            <div class="modal-footer">
-
-                                                <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Close</button>
-
-                                            </div>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                                         </div>
 
@@ -112,36 +111,36 @@
 
                                 </div>
 
-                                <!--Finish UserDelete Modal-->
+                            </div>
 
-                            }
-
-                        </tbody>
-
-                    </table>
-
-                    <div class="filterButton-container">
-
-                        <p>Páginas : </p>
-
-                        @for (int i = 1; i <= (int)ViewData["pageQuantity"]; i++)
-                        { // paginação cria os links para as páginas
-                            <a class="btn btn-sm btn-outline-primary" href="/Users/UserList?pages=@i">@i</a>
+                            <!--Finish UserDelete Modal-->
 
                         }
 
-                    </div>
+                    </tbody>
 
-                }
-                else
-                {
-                    <strong class="text-center">Nenhum registro encontrado</strong>
-                }
+                </table>
 
-                <div class="mt-5">
-                    <a class="btn btn-lg btn-dark" href="/Users/RegisterUser">Cadastrar um novo usuario</a>
+                <div class="filterButton-container">
+
+                    <p>Páginas : </p>
+
+                    @for (int i = 1; i <= (int)ViewData["pageQuantity"]; i++)
+                    { // paginação cria os links para as páginas
+                        <a class="btn btn-sm btn-outline-primary" href="/Users/UserList?pages=@i">@i</a>
+
+                    }
+
                 </div>
 
+            }
+            else
+            {
+                <strong class="text-danger">Nenhum registro encontrado</strong>
+            }
+
+            <div class="mt-3">
+                <a class="btn btn-md btn-primary" href="/Users/RegisterUser">Cadastrar um novo usuario</a>
             </div>
 
         </div>

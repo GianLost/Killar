@@ -358,7 +358,6 @@ C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Killar.TagHelpers.output.cac
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Killar.RazorCoreGenerate.cache
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
-C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\PostEdit.cshtml.g.cs
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\PostList.cshtml.g.cs
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -382,3 +381,5 @@ C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Killar.pdb
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Killar.genruntimeconfig.cache
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Users\_UserDelete.cshtml.g.cs
 C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\_PostDelete.cshtml.g.cs
+C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Users\_PostDeleteComunity.cshtml.g.cs
+C:\Users\Ufo\Desktop\Killar\obj\Debug\netcoreapp3.1\Razor\Views\Posts\PostEdit.cshtml.g.cs
