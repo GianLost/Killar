@@ -18,7 +18,25 @@ INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, 
 
 INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Júlia','2022-11-16 00:00:00.000000','Júlia123','Júlia','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','AD Carry','Ouro','0');
 
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Carlos','2022-11-16 00:00:00.000000','Carlos123','Carlos','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','AD Carry','Esmeralda','1');
 
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Afonso','2022-11-16 00:00:00.000000','Afonso123','Afonso','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Mid Lane','Platina','0');
+
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Adélia','2022-11-16 00:00:00.000000','Adélia123','Adélia','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Top Lane','Platina','1');
+
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Adelson','2022-11-16 00:00:00.000000','Adelson123','Adelson','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','AD Carry','Bronze','1');
+
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Fábio','2022-11-16 00:00:00.000000','Fábio123','Fábio','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Top Lane','Ferro','0');
+
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Jean','2022-11-16 00:00:00.000000','Jean123','Jean','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Suporte','Desafiante','1');
+
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Sisley','2022-11-16 00:00:00.000000','Sisley123','Sisley','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','AD Carry','Ferro','0');
+
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Sonaly','2022-11-16 00:00:00.000000','Sonaly123','Sonaly','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Suporte','Diamante','0');
+
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Cláudia','2022-11-16 00:00:00.000000','Cláudia123','Cláudia','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','Suporte','Ferro','1');
+
+INSERT INTO `usuarios`(`Name`, `BirthDate`, `LoginWr`, `LoginName`, `Password`, `CheckedPassword`, `Lane`, `Elo`, `Tipo`) VALUES ('Ramon','2022-11-16 00:00:00.000000','Ramon123','Ramon','e10adc3949ba59abbe56e057f20f883e','e10adc3949ba59abbe56e057f20f883e','AD Carry','Ouro','0');
 
 
 

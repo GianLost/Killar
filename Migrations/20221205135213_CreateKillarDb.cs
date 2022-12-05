@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Killar.Migrations
 {
-    public partial class CreateKillarDataBase : Migration
+    public partial class CreateKillarDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
